@@ -1,0 +1,503 @@
+/* =========================================
+   1. VARIABLES & RESET (CHARTE ROUGE/NOIR)
+========================================= */
+:root {
+    /* --- PALETTE DE COULEURS --- */
+    --primary-red: #E62020;        /* Rouge vif (Action, Important) */
+    --primary-red-dark: #b30000;   /* Rouge plus foncé (au survol) */
+    
+    --dark-black: #121212;         /* Noir presque pur (Header, Footer) */
+    --dark-grey: #2C2C2C;          /* Gris foncé (Cartes, éléments secondaires) */
+    --medium-grey: #666666;        /* Gris moyen (Texte secondaire) */
+    --light-grey: #f4f4f4;         /* Gris très clair (Fond de site) */
+    
+    --white: #ffffff;
+    
+    /* --- CONFIGURATION --- */
+    --max-width: 1200px;
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--white);
+    color: #333; /* Texte gris foncé pour lecture agréable */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    color: var(--dark-black);
+    font-weight: 700;
+}
+
+/* =========================================
+   2. UTILITAIRES
+========================================= */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--light-grey);
+}
+
+.text-red {
+    color: var(--primary-red);
+}
+
+/* =========================================
+   3. HEADER (MENU) - STYLE NOIR & ROUGE
+========================================= */
+.main-header {
+    background-color: var(--dark-black);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Ombre plus marquée */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-red); /* Ligne rouge distinctive */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+/* Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: var(--primary-red); /* Si tu veux colorer une partie du logo */
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 15px;
+    background: var(--white); /* Petit fond blanc si le logo est transparent */
+    border-radius: 5px;
+    padding: 2px;
+}
+
+/* Navigation Desktop */
+.nav-list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-list a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e0e0e0; /* Blanc cassé */
+}
+
+.nav-list a:hover, 
+.nav-list a.active {
+    color: var(--primary-red);
+}
+
+/* Menu Déroulant */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--dark-grey); /* Fond gris foncé */
+    min-width: 240px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    padding: 0;
+    z-index: 1001;
+    border-top: 2px solid var(--primary-red);
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-content li a:hover {
+    background-color: var(--primary-red); /* Fond rouge au survol */
+    color: var(--white);
+    padding-left: 25px; /* Petit effet de glissement */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Bouton Contact (Menu) */
+.btn-contact {
+    background-color: var(--primary-red);
+    color: var(--white) !important;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-contact:hover {
+    background-color: var(--white);
+    color: var(--primary-red) !important;
+}
+
+/* Burger Menu (Mobile) */
+.burger-menu {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary-red);
+}
+
+/* =========================================
+   4. HERO SECTION (BANNIÈRE)
+========================================= */
+.hero-section {
+    height: 85vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #222; /* Fallback couleur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+/* Boutons Généraux */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: 2px solid var(--primary-red);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-red);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--dark-black);
+    border-color: var(--white);
+}
+
+/* =========================================
+   5. SECTIONS CONTENU (CARTES)
+========================================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Petite barre rouge sous le titre */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-red);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: var(--transition);
+    border-bottom: 4px solid transparent; /* Prêt pour l'effet hover */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--primary-red);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    color: var(--dark-black);
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.card:hover .card-icon {
+    color: var(--primary-red); /* L'icône devient rouge au survol */
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.link-arrow {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--primary-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.link-arrow:hover {
+    color: var(--dark-black);
+    letter-spacing: 1px; /* Petit effet d'écartement */
+}
+
+/* Section Trust (Satisfaction) */
+.trust-section {
+    background-color: var(--light-grey);
+    border-top: 1px solid #e1e1e1;
+}
+
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.text-col h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--dark-black);
+}
+
+.text-col p {
+    margin-bottom: 20px;
+    color: var(--medium-grey);
+    font-size: 1.05rem;
+}
+
+.img-responsive {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border: 5px solid var(--white);
+}
+
+/* =========================================
+   6. FOOTER (NOIR)
+========================================= */
+footer {
+    background-color: var(--dark-black);
+    color: #999;
+    padding-top: 70px;
+    border-top: 5px solid var(--primary-red);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Petit trait rouge à gauche des titres du footer */
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 20px;
+    width: 4px;
+    background-color: var(--primary-red);
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-red);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    background-color: #000;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* =========================================
+   7. RESPONSIVE (MOBILE)
+========================================= */
+@media (max-width: 768px) {
+    
+    .burger-menu {
+        display: block;
+    }
+
+    .main-header .container {
+        position: relative;
+    }
+
+    .nav-list {
+        position: fixed; /* Mieux que absolute pour le mobile */
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px); /* Prend toute la hauteur restante */
+        background-color: var(--dark-black);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 40px;
+        transform: translateX(-100%); /* Caché à gauche */
+        transition: transform 0.4s ease;
+    }
+
+    .nav-list.active {
+        transform: translateX(0); /* Apparait */
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 15px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #333;
+    }
+
+    /* Sous-menus mobile */
+    .dropdown-content {
+        position: static;
+        background-color: #222;
+        box-shadow: none;
+        border-top: none;
+        width: 100%;
+    }
+    
+    .dropdown-content li a {
+        font-size: 1rem;
+        padding-left: 30px;
+        border-bottom: 1px solid #333;
+        color: #ccc;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .content-row {
+        flex-direction: column;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
