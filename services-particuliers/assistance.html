@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Factor-I : Assistance informatique pour particuliers. Forfaits maintenance, dépannage et accompagnement.">
+
+    <title>Assistance Particulier | Factor-I</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Modern Clean Layout Overrides */
+        body {
+            background-color: #f8f9fa;
+            /* Light background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Cleaner font stack if needed */
+        }
+
+        .split-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 0;
+            gap: 4rem;
+            background-color: #fff;
+        }
+
+        .split-image {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .split-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .split-content h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .split-content p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #2c3e50;
+            /* Factor-I Blueish-Dark */
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+
+        /* Premium Card Styling */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            /* Soft shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ef3e36;
+            /* Factor-I Red accent */
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            /* Smaller icon header */
+            color: #ef3e36;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+            flex-grow: 1;
+            /* Push price down */
+        }
+
+        .pricing-list li {
+            margin-bottom: 0.8rem;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+        }
+
+        .pricing-list li i {
+            color: #27ae60;
+            margin-right: 12px;
+            margin-top: 4px;
+            font-size: 0.9em;
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ef3e36;
+            /* Red Price */
+            margin-top: 1.5rem;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1.5rem;
+            width: 100%;
+        }
+
+        .price-note {
+            font-size: 0.8rem;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .split-section {
+                flex-direction: column;
+                padding: 2rem 0;
+                gap: 2rem;
+            }
+
+            .split-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="../index.html" class="logo-link">
+                <!-- Using relative path up to assets -->
+                <img src="../assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Accueil</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="../services-pro/maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="../services-pro/sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="../services-pro/conseil.html">Conseil & Accompagnement</a></li>
+                            <li><a href="../services-pro/mail-in-black.html">Mail in Black</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="assistance.html" class="active">Assistance Particulier</a></li>
+                            <li><a href="reparation.html">Réparation / Atelier</a></li>
+                            <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
+                            <li><a href="occasion.html">Occasion</a></li>
+                            <li><a href="sav-apple.html">SAV Apple</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../contact.html" class="btn-contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Intro Section (Text Only) -->
+        <div class="container">
+            <div class="split-section" style="justify-content: center; text-align: center;">
+                <div class="split-content" style="text-align: center; max-width: 800px;">
+                    <h1>Assistance pour le particulier</h1>
+                    <p>
+                        Profitez d'une tranquillité d'esprit totale en matière d'informatique grâce à notre gamme de
+                        forfaits,
+                        proposée à des tarifs compris entre <strong>19€ et 29€</strong>, spécialement conçue pour vous !
+                    </p>
+                    <p>
+                        Nos forfaits vous garantissent une équipe d'experts en assistance informatique qui se tient
+                        à vos côtés et intervient à distance et même chez vous en cas de besoin.
+                    </p>
+                    <p>
+                        Faites confiance à notre service professionnel et fiable pour répondre à tous vos besoins
+                        informatiques.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Intro Section -->
+
+        <!-- Pricing Section -->
+        <section class="services-overview section-padding" style="background-color: #f4f6f7;">
+            <div class="container">
+                <h2 class="section-title">Deux formules à votre disposition !</h2>
+
+                <div class="cards-grid">
+                    <!-- Formule Essentiel -->
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Assistance Essentiel</h3>
+                        <p>Ne restez plus seul face à vos soucis informatiques, le forfait essentiel vous accompagne au
+                            quotidien incluant :</p>
+
+                        <ul class="pricing-list">
+                            <li><i class="fas fa-check"></i> L’assistance par téléphone illimitée</li>
+                            <li><i class="fas fa-check"></i> La prise en main à distance illimitée</li>
+                            <li><i class="fas fa-check"></i> Priorité de prise en charge atelier</li>
+                            <li><i class="fas fa-check"></i> Maintenance en atelier illimitée</li>
+                            <li><i class="fas fa-check"></i> Supervision et historique de la machine</li>
+                        </ul>
+
+                        <div class="price-tag">19 € TTC <span style="font-size:1rem; font-weight:400; color:#555;">/
+                                mois</span></div>
+                        <p class="price-note">sous réserve de souscription 24 mois</p>
+                    </div>
+
+                    <!-- Formule Tranquillité -->
+                    <div class="card" style="border: 2px solid #ef3e36;"> <!-- Highlighted Card -->
+                        <div class="card-icon"><i class="fas fa-home"></i></div>
+                        <h3>Assistance Tranquillité</h3>
+                        <p>Vivez votre informatique en toute tranquillité. C’est l’assurance d’avoir une équipe qui
+                            intervient chez vous.</p>
+
+                        <ul class="pricing-list">
+                            <li><i class="fas fa-check"></i> <strong>Toutes les options Essentiel</strong></li>
+                            <li><i class="fas fa-check"></i> Prise en charge chez vous si non résolu à distance (zone 1)
+                            </li>
+                            <li><i class="fas fa-check"></i> Antivirus inclus et actualisé</li>
+                            <li><i class="fas fa-check"></i> Ordinateur de prêt en cas d'immobilisation prolongée</li>
+                        </ul>
+
+                        <div class="price-tag">29 € TTC <span style="font-size:1rem; font-weight:400; color:#555;">/
+                                mois</span></div>
+                        <p class="price-note">sous réserve de souscription 24 mois</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="trust-section section-padding">
+            <div class="container">
+                <div class="content-row">
+                    <div class="text-col" style="text-align:center; width:100%;">
+                        <h2>Besoin de plus d'informations ?</h2>
+                        <p>Nos techniciens sont à votre disposition pour vous conseiller.</p>
+                        <a href="../contact.html" class="btn btn-primary"
+                            style="margin-top: 1rem; background-color:#ef3e36; border-color:#ef3e36;">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <h4>Factor-I</h4>
+                <p>L'informatique à vos côtés.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><a href="../contact.html">Prendre rendez-vous</a></li>
+                    <li><a href="../services-pro/maintenance.html">Maintenance Pro</a></li>
+                    <li><a href="reparation.html">Réparation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <ul>
+                    <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="../cgv.html">CGV</a></li>
+                    <li><a href="../livraison.html">Livraison & Intervention</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

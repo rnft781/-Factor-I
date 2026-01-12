@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demande de Devis | Factor-I</title>
-    
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/pc-sur-mesure.css">
-    
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/pc-sur-mesure.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo-link">
-                <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
+            <a href="../index.html" class="logo-link">
+                <img src="../assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
             </a>
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="../index.html">Accueil</a></li>
                     <li class="dropdown">
                         <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="services-pro/maintenance.html">Maintenance</a></li>
-                            <li><a href="services-pro/sauvegarde.html">Sauvegarde</a></li>
+                            <li><a href="../services-pro/maintenance.html">Maintenance</a></li>
+                            <li><a href="../services-pro/sauvegarde.html">Sauvegarde</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="services-particuliers/reparation.html">Réparation</a></li>
-                            <li><a href="devis.html">PC sur mesure</a></li>
+                            <li><a href="assistance.html">Assistance Particulier</a></li>
+                            <li><a href="reparation.html">Réparation</a></li>
+                            <li><a href="pc-sur-mesure.html" class="active">PC sur mesure</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html" class="btn-contact">Contact</a></li>
+                    <li><a href="../contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="burger-menu" id="burger-menu">
@@ -44,7 +47,7 @@
     </header>
 
     <main>
-        
+
         <section class="devis-header">
             <div class="container">
                 <h1>Demander un <span class="text-red">Devis Gratuit</span></h1>
@@ -55,11 +58,11 @@
         <section class="section-padding">
             <div class="container">
                 <div class="devis-wrapper">
-                    
+
                     <div class="info-box">
                         <h2>Contact Direct</h2>
                         <p>Besoin d'une réponse immédiate ? Appelez-nous.</p>
-                        
+
                         <div class="direct-contact-item">
                             <i class="fas fa-phone-alt"></i>
                             <div>
@@ -80,7 +83,7 @@
                     <div class="form-box">
                         <h2>Écrivez-nous</h2>
                         <form id="simple-contact-form">
-                            
+
                             <div class="input-group">
                                 <label for="nom">Votre Nom</label>
                                 <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
@@ -98,7 +101,8 @@
 
                             <div class="input-group">
                                 <label for="message">Votre demande</label>
-                                <textarea id="message" name="message" rows="6" placeholder="Bonjour, j'aimerais un devis pour..." required></textarea>
+                                <textarea id="message" name="message" rows="6"
+                                    placeholder="Bonjour, j'aimerais un devis pour..." required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary full-width">Envoyer le message</button>
@@ -120,21 +124,24 @@
             <div class="footer-col">
                 <h4>Liens</h4>
                 <ul>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="services-particuliers/reparation.html">Réparation</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="reparation.html">Réparation</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom"><p>© 2024 Factor-I</p></div>
+        <div class="footer-bottom">
+            <p>© 2024 Factor-I</p>
+        </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    
+    <script src="../assets/js/main.js"></script>
+
     <script>
-        document.getElementById('simple-contact-form').addEventListener('submit', function(e) {
+        document.getElementById('simple-contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
             alert("Merci ! Votre message a bien été envoyé (Simulation).");
         });
     </script>
 </body>
+
 </html>
