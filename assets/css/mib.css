@@ -1,0 +1,230 @@
+/* =========================================
+   STYLE MAILINBLACK (CYBER)
+========================================= */
+
+/* --- HERO SECTION --- */
+.mib-hero {
+    height: 70vh;
+    background-color: var(--dark-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Petit effet de grille en fond pour faire "tech" */
+.mib-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.mib-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.shield-icon {
+    font-size: 4rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.mib-hero h1 {
+    font-size: 3rem;
+    min-height: 60px; /* Pour éviter le saut quand le texte s'écrit */
+    margin-bottom: 20px;
+}
+
+/* Le curseur clignotant de la machine à écrire */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #E62020;
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+/* --- SYSTEME D'ONGLETS (TABS) --- */
+.tabs-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid #ddd;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+    color: #555;
+    font-weight: bold;
+}
+
+.tab-btn i { margin-right: 10px; }
+
+.tab-btn:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border-color: var(--primary-red);
+    box-shadow: 0 5px 15px rgba(214, 40, 40, 0.4);
+}
+
+/* Contenu des onglets */
+.tabs-content-wrapper {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    min-height: 300px;
+}
+
+.tab-content {
+    display: none; /* Caché par défaut */
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block; /* Affiché si actif */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.text { flex: 1; }
+
+.text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--dark-black);
+}
+
+.check-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+/* Petite coche rouge personnalisée */
+.check-list li::before {
+    content: '\f00c'; /* Code FontAwesome check */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--primary-red);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.visual {
+    flex: 1;
+    text-align: center;
+}
+
+.big-icon {
+    font-size: 8rem;
+    color: #eee;
+}
+.big-icon.red { color: var(--primary-red); opacity: 0.8; }
+
+/* --- SECTION STATS (Noir) --- */
+.stats-section {
+    background-color: var(--dark-black);
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.stat-box .number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+.stat-box .label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Animation au scroll */
+.hidden-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.visible-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- CTA --- */
+.cta-mib {
+    background: linear-gradient(135deg, #cc1e1e, #8a0e0e); /* Dégradé rouge */
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+.cta-mib h2 { color: white; margin-bottom: 20px; }
+.btn-white {
+    background: white; color: var(--primary-red);
+    padding: 15px 35px; border-radius: 5px; font-weight: bold;
+    margin-top: 20px; display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-flex { flex-direction: column-reverse; text-align: center; }
+    .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+    .check-list li { justify-content: center; }
+    .mib-hero h1 { font-size: 2rem; }
+}
