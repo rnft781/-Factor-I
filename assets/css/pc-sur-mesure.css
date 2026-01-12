@@ -1,0 +1,160 @@
+/* =========================================
+   STYLE DEVIS SIMPLE (CONTACT RAPIDE)
+========================================= */
+
+/* En-tête */
+.devis-header {
+    background-color: var(--light-grey);
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.devis-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-black);
+}
+
+/* Wrapper principal (Grille) */
+.devis-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0; /* Collés l'un à l'autre pour faire un bloc uni */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Pour les coins arrondis */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- COLONNE GAUCHE : INFOS --- */
+.info-box {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--dark-black); /* Fond Noir */
+    color: var(--white);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-box h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-red);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.info-box p {
+    color: #bbb;
+    margin-bottom: 40px;
+}
+
+.direct-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.direct-contact-item i {
+    font-size: 2rem;
+    color: var(--primary-red);
+    margin-right: 20px;
+    background: rgba(255,255,255,0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.direct-contact-item h3 {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.big-link {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.big-link:hover {
+    color: var(--primary-red);
+}
+
+/* --- COLONNE DROITE : FORMULAIRE --- */
+.form-box {
+    flex: 1.5; /* Un peu plus large que la colonne info */
+    min-width: 300px;
+    background-color: var(--white);
+    padding: 50px;
+}
+
+.form-box h2 {
+    color: var(--dark-black);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #fafafa;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(230, 32, 32, 0.1);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .devis-wrapper {
+        flex-direction: column;
+    }
+    
+    .info-box, .form-box {
+        padding: 30px;
+    }
+}
