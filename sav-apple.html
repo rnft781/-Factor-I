@@ -5,55 +5,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAV Apple | Factor-I</title>
+    <!-- Use the new Unified Bento Style -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bento-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="logo-link"><img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
-                    class="logo-img"></a>
-            <nav class="navbar">
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="index.html">Accueil</a></li>
-
-                    <li class="dropdown"><a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
+                    <li class="dropdown">
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
-                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
-                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
-                            <li><a href="mail-in-black.html">Mail in Black</a></li>
+                            <li><a href="maintenance-pro.html">Maintenance Parc Informatique / Infogérance</a></li>
                         </ul>
                     </li>
-
-                    <li class="dropdown"><a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
+                    <li class="dropdown">
+                        <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="assistance.html">Assistance Particulier</a></li>
                             <li><a href="reparation.html">Réparation / Atelier</a></li>
-                            <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
-                            <li><a href="occasion.html">Occasion</a></li>
+                            <li><a href="forfaits-atelier.html">Forfaits Atelier</a></li>
+                            <li><a href="pc-sur-mesure.html">Assemblage PC gamer & pro</a></li>
+                            <li><a href="occasion.html">PC Reconditionné</a></li>
+                            <li><a href="assistance.html">Assistance Particulier</a></li>
                             <li><a href="sav-apple.html" class="active">SAV Apple</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
+
+            <a href="contact.html" class="btn btn-contact">Contact</a>
+
+            <!-- Mobile Menu Button -->
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
+
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>SAV Apple</h1>
-                <p class="tagline">Service en construction</p>
+
+        <!-- Header & Switcher -->
+        <section class="bento-header">
+            <h1 class="bento-title">Expertise <span>Apple</span></h1>
+            <p class="bento-subtitle">Réparations certifiées et optimisations pour votre Mac & iPhone.</p>
+
+            <div class="service-switcher">
+                <a href="forfaits-atelier.html" class="switch-btn">Univers PC</a>
+                <a href="sav-apple.html" class="switch-btn active"><i class="fab fa-apple"></i> Univers Apple</a>
             </div>
         </section>
+
+        <div class="bento-container">
+            <div class="bento-grid">
+
+                <!-- 1. Star Item: Diagnostic (Large) -->
+                <div class="bento-card span-2">
+                    <div class="card-icon-wrapper icon-white">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="card-title">Diagnostic Complet</h3>
+                    <p class="card-desc">Analyse approfondie de votre Mac ou iPhone pour identifier précisément la panne
+                        matérielle ou logicielle. Déductible si réparation effectuée.</p>
+                    <div class="card-price">39 € <span>TTC</span></div>
+                    <!-- Decorative Icon -->
+                    <i class="fab fa-apple bento-bg-icon"></i>
+                </div>
+
+                <!-- 2. Reinstall System -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <h3 class="card-title">Réinstall. macOS</h3>
+                    <p class="card-desc">Installation propre de la dernière version de macOS compatible.</p>
+                    <div class="card-price">69 € <span>TTC</span></div>
+                </div>
+
+                <!-- 3. Optimization -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper icon-red">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title">Optimisation</h3>
+                    <p class="card-desc">Nettoyage système, suppression malwares, pour redonner de la vitesse.</p>
+                    <div class="card-price">59 € <span>TTC</span></div>
+                </div>
+
+                <!-- 4. Star Item: Screen/Battery -->
+                <div class="bento-card span-2">
+                    <div class="card-icon-wrapper icon-red">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="card-title">Remplacement Écran & Batterie</h3>
+                    <p class="card-desc">Redonnez vie à votre iPhone ou MacBook. Pièces de qualité premium pour une
+                        durabilité maximale. Intervention rapide en atelier.</p>
+                    <div class="card-price">
+                        <span class="from">à partir de</span> 89 € <span>TTC</span>
+                    </div>
+                </div>
+
+                <!-- 5. Keyboard/Trackpad -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 class="card-title">Clavier & Trackpad</h3>
+                    <p class="card-desc">Remplacement en cas de touches bloquées ou trackpad défaillant.</p>
+                    <div class="card-price">Sur devis</div>
+                </div>
+
+                <!-- 6. Motherboard Repair -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="card-title">Microsoudure</h3>
+                    <p class="card-desc">Réparation complexe de carte mère (rétroéclairage, charge).</p>
+                    <div class="card-price">Sur devis</div>
+                </div>
+
+                <!-- 7. Data Recovery -->
+                <div class="bento-card span-2">
+                    <div class="card-icon-wrapper icon-white">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="card-title">Récupération de Données</h3>
+                    <p class="card-desc">Tentative de récupération sur disque dur HS ou Mac ne démarrant plus. Ne perdez
+                        pas vos précieux souvenirs.</p>
+                    <div class="card-price">
+                        <span class="from">à partir de</span> 99 € <span>TTC</span>
+                    </div>
+                </div>
+
+                <!-- 8. Desoxidation -->
+                <div class="bento-card span-2">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="card-title">Désoxydation</h3>
+                    <p class="card-desc">Traitement d'urgence suite à une projection de liquide. Nettoyage ultrason.</p>
+                    <div class="card-price">69 € <span>TTC</span></div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
+                <a href="contact.html" class="btn"
+                    style="background-color: #ef3e36; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block;">Prendre
+                    Rendez-vous</a>
+            </div>
+
+        </div>
+
     </main>
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2024 Factor-I</p>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Factor-I</h3>
+                    <p>Votre partenaire informatique professionnel à Lannion.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Zone Industrielle du Rusquet-Sud<br>22300 Lannion</p>
+                    <p>Tél : 02 96 37 66 18</p>
+                    <p>Email : contact@factor-i.fr</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="sav-apple.html">SAV Apple</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Factor-I. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

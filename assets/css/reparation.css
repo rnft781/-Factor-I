@@ -1,0 +1,66 @@
+/* Reparation / Atelier Specific Styles */
+
+/* Background Override */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Intro Section Text Centered */
+.intro-section {
+    background-color: #fff;
+}
+
+/* Intro Section Text Centered */
+.intro-section {
+    background-color: #fff;
+    padding-bottom: 3rem !important;
+    /* Adjust padding for flow */
+}
+
+.intro-header {
+    margin-bottom: 3rem;
+}
+
+/* Arguments Grid */
+.arguments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.argument-item {
+    padding: 1.5rem;
+    background: #fdfdfd;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.argument-item:hover {
+    transform: translateY(-5px);
+}
+
+.argument-icon {
+    font-size: 2rem;
+    color: #ef3e36;
+    /* Brand Red */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.argument-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.argument-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Cards Grid Layout */

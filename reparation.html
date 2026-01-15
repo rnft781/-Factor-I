@@ -6,100 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réparation / Atelier | Factor-I</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reparation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Modern Clean Layout Overrides matched to Assistance page */
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
 
-        .section-title {
-            text-align: center;
-            color: #2c3e50;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-            line-height: 1.6;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            justify-content: center;
-            padding: 2rem 0;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #ef3e36;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .card h3 {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .card-description {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .price-tag {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ef3e36;
-            margin-top: auto;
-            text-align: right;
-        }
-
-        .price-tag span {
-            font-size: 1rem;
-            color: #95a5a6;
-            font-weight: normal;
-        }
-
-        .alert-box {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 4px;
-            color: #2c3e50;
-        }
-    </style>
 </head>
 
 <body>
@@ -110,7 +19,6 @@
             <nav class="navbar">
                 <ul class="nav-list">
                     <li><a href="index.html">Accueil</a></li>
-
                     <li class="dropdown"><a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="maintenance.html">Comprendre la maintenance</a></li>
@@ -119,12 +27,12 @@
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown"><a href="#" class="active">Nos services Informatique <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="assistance.html">Assistance Particulier</a></li>
                             <li><a href="reparation.html" class="active">Réparation / Atelier</a></li>
+                            <li><a href="sav-pc.html">Forfaits Atelier</a></li>
                             <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
                             <li><a href="occasion.html">Occasion</a></li>
                             <li><a href="sav-apple.html">SAV Apple</a></li>
@@ -138,166 +46,65 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section"
-            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/services/atelier.jpg'); background-size: cover; background-position: center; padding: 100px 0; color: white;">
-            <div class="container text-center">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Réparation en atelier et sur site</h1>
-                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">
-                    Diagnostic exhaustif et transparence totale pour la réparation de vos ordinateurs portables et
-                    fixes.
+        <!-- Intro Section (Centered Text) -->
+        <section class="intro-section" style="padding: 6rem 0 4rem 0;">
+            <div class="container" style="text-align: center; max-width: 900px;">
+                <h2 style="color: #34495e; font-size: 2.5rem; margin-bottom: 2rem; font-weight: 600;">Réparation en
+                    atelier et sur site</h2>
+
+                <p style="color: #555; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.1rem;">
+                    Dans le cadre de notre atelier spécialisé, nous nous consacrons à la réparation et à l'entretien
+                    méticuleux des ordinateurs portables et des PC fixes. Notre équipe compétente procède à un
+                    diagnostic exhaustif de votre équipement, fournissant ensuite un devis détaillé pour garantir une
+                    transparence totale dans nos interventions.
                 </p>
+                <p style="color: #555; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.1rem;">
+                    Nous sommes déterminés à offrir un service professionnel de haute qualité, éliminant toute
+                    incertitude et assurant la satisfaction totale de nos clients.
+                </p>
+                <p style="color: #555; margin-bottom: 3rem; line-height: 1.8; font-size: 1.1rem;">
+                    Nous réalisons également nos interventions sur site <span
+                        style="text-decoration: underline; font-weight: 600; color: #ef3e36;">dans un rayon de 30 Km
+                        autour de LANNION</span>, dans la mesure où la réparation sur place est réalisable. Dans le cas
+                    contraire nous prendrons en charge vos équipements et vous les retournerons en fin de maintenance.
+                </p>
+
+                <div class="buttons-row"
+                    style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
+                    <a href="sav-apple.html" class="btn"
+                        style="background-color: #8c9eff; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(140, 158, 255, 0.4); transition: transform 0.2s;">Nos
+                        forfaits SAV Apple</a>
+                    <a href="sav-pc.html" class="btn"
+                        style="background-color: #ef3e36; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(239, 62, 54, 0.4); transition: transform 0.2s;">Nos
+                        forfaits SAV PC</a>
+                </div>
+
+                <!-- Label Badges -->
+                <div class="labels-container"
+                    style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; border-top: 1px solid #eee; padding-top: 3rem;">
+                    <div style="text-align: center; padding: 1rem;">
+                        <span
+                            style="display: block; font-size: 1.5rem; color: #00a8e8; font-weight: 800; text-transform: uppercase; line-height: 1.2;">Réparateur<br>Labellisé</span>
+                        <div style="height: 4px; width: 50px; background-color: #00a8e8; margin: 10px auto;"></div>
+                    </div>
+
+                    <div style="text-align: center; display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-wrench" style="font-size: 3rem; color: #00a8e8;"></i>
+                        <div style="text-align: left; font-weight: 800; line-height: 1.1; color: #2c3e50;">
+                            LABEL<br><span style="font-size: 1.5rem;">QUALI<br>RÉPAR</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section-padding">
-            <div class="container">
-                <div class="alert-box">
-                    <strong>Information :</strong> Nous réalisons également nos interventions sur site dans un rayon de
-                    30 Km autour de LANNION.
-                </div>
 
-                <h2 class="section-title">Nos Forfaits Atelier</h2>
-                <p class="section-subtitle">Des solutions claires et forfaitaires pour tous vos problèmes informatiques.
-                </p>
-
-                <div class="cards-grid">
-                    <!-- Diagnostic -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Diagnostic de panne</h3>
-                        </div>
-                        <div class="card-description">
-                            Détection de panne sur votre PC fixe et portable. Le diagnostic inclut matériel et logiciel.
-                        </div>
-                        <div class="price-tag">45 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Montage Composant -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Montage Composant</h3>
-                        </div>
-                        <div class="card-description">
-                            Montage et test d'un composant sur carte mère. (Hors opérations complexes).
-                        </div>
-                        <div class="price-tag">15 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Pâte Thermique PC Portable -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Entretien Thermique Portable</h3>
-                        </div>
-                        <div class="card-description">
-                            Démontage/remontage complet, nettoyage processeur et remplacement de la pâte thermique pour
-                            PC Portable.
-                        </div>
-                        <div class="price-tag">59 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Pâte Thermique PC Fixe -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Entretien Thermique Fixe</h3>
-                        </div>
-                        <div class="card-description">
-                            Démontage/remontage, nettoyage processeur et remplacement de la pâte thermique pour PC Fixe.
-                        </div>
-                        <div class="price-tag">15 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Optimisation -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Optimisation Windows</h3>
-                        </div>
-                        <div class="card-description">
-                            Optimisations Windows sans surcouches logiciels et publicitaires pour de meilleures
-                            performances.
-                        </div>
-                        <div class="price-tag">59 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Réparation Système / Virus -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Réparation Système & Virus</h3>
-                        </div>
-                        <div class="card-description">
-                            Recherche de panne, analyse antivirus approfondie, suppression de malwares et réparation du
-                            système.
-                        </div>
-                        <div class="price-tag">70 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Réinstallation Simple -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Réinstallation Système</h3>
-                        </div>
-                        <div class="card-description">
-                            Réinstallation de votre système (Windows, Mac, Linux), pilotes et mise à jour complète.
-                        </div>
-                        <div class="price-tag">75 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Réinstallation + Sauvegarde -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Réinstallation + Sauvegarde</h3>
-                        </div>
-                        <div class="card-description">
-                            Réinstallation complète du système + Récupération et transfert de l'ensemble de vos données.
-                        </div>
-                        <div class="price-tag">140 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Charnière -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Réparation Charnière</h3>
-                        </div>
-                        <div class="card-description">
-                            Démontage et remplacement des charnières (PC Portable). Hors coût des pièces.
-                        </div>
-                        <div class="price-tag">99 € <span>TTC</span></div>
-                    </div>
-
-                    <!-- Récupération Données -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Récupération de Données</h3>
-                        </div>
-                        <div class="card-description">
-                            Suite à une panne, casse ou suppression accidentelle.
-                        </div>
-                        <div class="price-tag"><span>à partir de</span> 70 € <span>TTC</span></div>
-                    </div>
-                    <!-- Dalle -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Remplacement écran (Dalle)</h3>
-                        </div>
-                        <div class="card-description">
-                            Démontage et remplacement de la dalle de votre ordinateur portable.
-                        </div>
-                        <div class="price-tag"><span>à partir de</span> 169 € <span>TTC</span></div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="contact.html" class="btn btn-primary btn-lg">Prendre Rendez-vous</a>
-                </div>
-            </div>
-        </section>
     </main>
     <footer>
         <div class="container text-center">
             <p>&copy; 2024 Factor-I</p>
         </div>
     </footer>
-
     <script src="assets/js/main.js"></script>
 </body>
 

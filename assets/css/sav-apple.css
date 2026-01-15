@@ -1,0 +1,81 @@
+/* SAV Apple Specific Styles */
+
+/* Background Override */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Service Card Styling */
+.cards-grid {
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ef3e36;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.card h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.card-description {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ef3e36;
+    margin-top: auto;
+    text-align: right;
+}
+
+.price-tag span {
+    font-size: 1rem;
+    color: #95a5a6;
+    font-weight: normal;
+}
+
+/* Hero Badge Override */
+.hero-section {
+    height: auto !important;
+    /* Override the 85vh from style.css */
+    min-height: 40vh;
+    /* Reasonable height for a service page */
+    padding: 80px 0 !important;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem !important;
+    /* Smaller than homepage 3.5rem */
+}

@@ -1,0 +1,248 @@
+/* SAV Apple Bento Design */
+
+/* Background with subtle tech mesh/gradient */
+body {
+    background-color: #f0f2f5;
+    background-image:
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    background-color: #1a1a1a;
+    /* Darker theme for "Pro/Tech" feel */
+    color: #fff;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+/* Page Header */
+.bento-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #fff;
+}
+
+.bento-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bento-subtitle {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* Switcher Toggle */
+.service-switcher {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 6px;
+    border-radius: 50px;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.switch-btn {
+    padding: 10px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.switch-btn.active {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.switch-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Bento Grid Layout */
+.bento-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 1.5rem;
+}
+
+/* Card Styles - Glassmorphism */
+.bento-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Sizing utility classes */
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-row-2 {
+    grid-row: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .span-2 {
+        grid-column: span 1;
+    }
+
+    /* Reset spans on tablet */
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .span-2 {
+        grid-column: span 1;
+    }
+}
+
+/* Card Typography & Icons */
+.card-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Variant colors for icons */
+.icon-purple {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.icon-pink {
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
+}
+
+.icon-orange {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+}
+
+.card-icon-wrapper i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    flex-grow: 1;
+    /* Pushes price to bottom if content short */
+}
+
+.card-price {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: right;
+}
+
+.card-price span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.card-price .from {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-right: 5px;
+}
+
+/* Specific Bento Highlights */
+.bento-feature-img {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 150px;
+    opacity: 0.2;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+/* Navbar override for Dark Mode */
+.main-header {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-list li a {
+    color: #e2e8f0;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+    color: #fff;
+}
+
+.logo-img {
+    filter: brightness(0) invert(1);
+}
+
+/* Make logo white if PNG allows, or assume it works on dark */
+
+/* Footer override */
+.main-footer {
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+}
+
+.footer-col h3 {
+    color: #fff;
+}

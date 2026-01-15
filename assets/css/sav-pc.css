@@ -1,0 +1,178 @@
+/* SAV PC Specific Styles */
+
+/* Background Override */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Alert Box */
+.alert-box {
+    background-color: #e8f4f8;
+    border-left: 4px solid #3498db;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    color: #2c3e50;
+}
+
+/* Service Card Styling */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+/* =========================================
+   SUPER-CARTE DESIGN
+========================================= */
+.super-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #eaeff2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.super-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.super-card-header {
+    padding: 2rem 2rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-bubble {
+    width: 50px;
+    height: 50px;
+    background-color: #fceceb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-bubble.blue {
+    background-color: #e3f2fd;
+}
+
+.icon-bubble i {
+    font-size: 1.4rem;
+    color: #ef3e36;
+}
+
+.icon-bubble.blue i {
+    color: #2196f3;
+}
+
+.super-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Body */
+.super-card-body {
+    padding: 0 2rem 2rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.super-card-desc {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Price Section */
+.price-section {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #eee;
+}
+
+/* Scenario A: Standard Price */
+.price-standard {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2c3e50;
+    display: block;
+    text-align: right;
+}
+
+/* Scenario B: QualiRepar */
+.price-qualirepar {
+    text-align: right;
+}
+
+.price-original {
+    text-decoration: line-through;
+    color: #95a5a6;
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+.badge-bonus {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+.price-final {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #27ae60;
+}
+
+.price-suffix {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #95a5a6;
+}
+
+/* Action Button */
+.card-action {
+    padding: 1.5rem 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.btn-card {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #fff;
+    border: 2px solid #ef3e36;
+    color: #ef3e36;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-card:hover {
+    background-color: #ef3e36;
+    color: #fff;
+}
