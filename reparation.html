@@ -7,6 +7,99 @@
     <title>Réparation / Atelier | Factor-I</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Modern Clean Layout Overrides matched to Assistance page */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            line-height: 1.6;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ef3e36;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .card-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ef3e36;
+            margin-top: auto;
+            text-align: right;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: #95a5a6;
+            font-weight: normal;
+        }
+
+        .alert-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +120,8 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown"><a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#" class="active">Nos services Informatique <i
+                                class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="assistance.html">Assistance Particulier</a></li>
                             <li><a href="reparation.html" class="active">Réparation / Atelier</a></li>
@@ -39,13 +133,162 @@
                     <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="burger-menu" id="burger-menu"><i class="fas fa-bars"></i></div>
         </div>
     </header>
+
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Réparation & Atelier</h1>
-                <p class="tagline">Service en construction</p>
+        <!-- Hero Section -->
+        <section class="hero-section"
+            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/services/atelier.jpg'); background-size: cover; background-position: center; padding: 100px 0; color: white;">
+            <div class="container text-center">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Réparation en atelier et sur site</h1>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">
+                    Diagnostic exhaustif et transparence totale pour la réparation de vos ordinateurs portables et
+                    fixes.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="alert-box">
+                    <strong>Information :</strong> Nous réalisons également nos interventions sur site dans un rayon de
+                    30 Km autour de LANNION.
+                </div>
+
+                <h2 class="section-title">Nos Forfaits Atelier</h2>
+                <p class="section-subtitle">Des solutions claires et forfaitaires pour tous vos problèmes informatiques.
+                </p>
+
+                <div class="cards-grid">
+                    <!-- Diagnostic -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Diagnostic de panne</h3>
+                        </div>
+                        <div class="card-description">
+                            Détection de panne sur votre PC fixe et portable. Le diagnostic inclut matériel et logiciel.
+                        </div>
+                        <div class="price-tag">45 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Montage Composant -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Montage Composant</h3>
+                        </div>
+                        <div class="card-description">
+                            Montage et test d'un composant sur carte mère. (Hors opérations complexes).
+                        </div>
+                        <div class="price-tag">15 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Pâte Thermique PC Portable -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Entretien Thermique Portable</h3>
+                        </div>
+                        <div class="card-description">
+                            Démontage/remontage complet, nettoyage processeur et remplacement de la pâte thermique pour
+                            PC Portable.
+                        </div>
+                        <div class="price-tag">59 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Pâte Thermique PC Fixe -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Entretien Thermique Fixe</h3>
+                        </div>
+                        <div class="card-description">
+                            Démontage/remontage, nettoyage processeur et remplacement de la pâte thermique pour PC Fixe.
+                        </div>
+                        <div class="price-tag">15 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Optimisation -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Optimisation Windows</h3>
+                        </div>
+                        <div class="card-description">
+                            Optimisations Windows sans surcouches logiciels et publicitaires pour de meilleures
+                            performances.
+                        </div>
+                        <div class="price-tag">59 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Réparation Système / Virus -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Réparation Système & Virus</h3>
+                        </div>
+                        <div class="card-description">
+                            Recherche de panne, analyse antivirus approfondie, suppression de malwares et réparation du
+                            système.
+                        </div>
+                        <div class="price-tag">70 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Réinstallation Simple -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Réinstallation Système</h3>
+                        </div>
+                        <div class="card-description">
+                            Réinstallation de votre système (Windows, Mac, Linux), pilotes et mise à jour complète.
+                        </div>
+                        <div class="price-tag">75 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Réinstallation + Sauvegarde -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Réinstallation + Sauvegarde</h3>
+                        </div>
+                        <div class="card-description">
+                            Réinstallation complète du système + Récupération et transfert de l'ensemble de vos données.
+                        </div>
+                        <div class="price-tag">140 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Charnière -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Réparation Charnière</h3>
+                        </div>
+                        <div class="card-description">
+                            Démontage et remplacement des charnières (PC Portable). Hors coût des pièces.
+                        </div>
+                        <div class="price-tag">99 € <span>TTC</span></div>
+                    </div>
+
+                    <!-- Récupération Données -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Récupération de Données</h3>
+                        </div>
+                        <div class="card-description">
+                            Suite à une panne, casse ou suppression accidentelle.
+                        </div>
+                        <div class="price-tag"><span>à partir de</span> 70 € <span>TTC</span></div>
+                    </div>
+                    <!-- Dalle -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Remplacement écran (Dalle)</h3>
+                        </div>
+                        <div class="card-description">
+                            Démontage et remplacement de la dalle de votre ordinateur portable.
+                        </div>
+                        <div class="price-tag"><span>à partir de</span> 169 € <span>TTC</span></div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Prendre Rendez-vous</a>
+                </div>
             </div>
         </section>
     </main>
@@ -54,6 +297,8 @@
             <p>&copy; 2024 Factor-I</p>
         </div>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
