@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forfaits Atelier PC | Factor-I</title>
-    <!-- Keep base style but override with Bento Brand -->
+    <title>Atelier PC | Factor-I</title>
+    <!-- Use the new Unified Bento Style -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bento-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,192 +18,329 @@
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
             </a>
 
-            <nav class="main-nav">
+            <nav class="navbar">
                 <ul class="nav-list">
                     <li><a href="index.html">Accueil</a></li>
+
                     <li class="dropdown">
                         <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="maintenance-pro.html">Maintenance Parc Informatique / Infogérance</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
+                            <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="reparation.html">Réparation / Atelier</a></li>
-                            <li><a href="sav-pc.html">Forfaits Atelier</a></li>
-                            <li><a href="pc-sur-mesure.html">Assemblage PC gamer & pro</a></li>
-                            <li><a href="occasion.html">PC Reconditionné</a></li>
                             <li><a href="assistance.html">Assistance Particulier</a></li>
+                            <li><a href="reparation.html">Réparation / Atelier</a></li>
+                            <li><a href="sav-pc.html" class="active">Forfaits Atelier</a></li>
+                            <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
+                            <li><a href="occasion.html">Occasion</a></li>
                             <li><a href="sav-apple.html">SAV Apple</a></li>
                         </ul>
                     </li>
+
+                    <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
 
-            <a href="contact.html" class="btn btn-contact">Contact</a>
-
-            <!-- Mobile Menu Button -->
-            <div class="burger-menu">
+            <div class="burger-menu" id="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
     <main>
-        
-        <!-- Header & Switcher (PC Active) -->
+
+        <!-- Header & Switcher -->
         <section class="bento-header">
-            <h1 class="bento-title">Atelier PC Multimarques</h1>
-            <p class="bento-subtitle">Maintenance, réparation et optimisation pour toutes marques.</p>
-            
-            <div class="service-switcher">
-                <a href="sav-pc.html" class="switch-btn active"><i class="fas fa-desktop"></i> Univers PC</a>
-                <a href="sav-apple.html" class="switch-btn">Univers Apple</a>
+            <h1 class="bento-title">Atelier <span>PC</span></h1>
+            <p class="bento-subtitle">Maintenance, réparation et optimisation pour votre ordinateur Windows.</p>
+
+            <div class="univers-switcher">
+                <a href="sav-pc.html" class="switcher-btn active"><i class="fab fa-windows"></i> Univers PC</a>
+                <a href="sav-apple.html" class="switcher-btn"><i class="fab fa-apple"></i> Univers Apple</a>
             </div>
         </section>
 
-        <div class="bento-container">
-            <div class="bento-grid">
-                
-                <!-- 1. Star Item: Diagnostic (Large) -->
-                <div class="bento-card span-2">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                    <h3 class="card-title">Diagnostic de Panne</h3>
-                    <p class="card-desc">Prise en charge complète pour la détection de panne sur PC fixe ou portable. Inclus diagnostic matériel et logiciel.</p>
-                    <div class="card-price">45 € <span>TTC</span></div>
-                    <!-- Decorative Icon -->
-                    <i class="fas fa-microchip card-hero-icon"></i>
-                </div>
+        <!-- Bento Grid -->
+        <div class="container" style="padding-bottom: 4rem;">
+            <div class="bento-grid grid-cols-3">
 
-                <!-- 2. Montage Composant -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-memory"></i>
-                    </div>
-                    <h3 class="card-title">Montage Composant</h3>
-                    <p class="card-desc">Installation et test d'un composant (RAM, Carte graphique, etc.) sur carte mère.</p>
-                    <div class="card-price">15 € <span>TTC</span></div>
-                </div>
-
-                <!-- 3. Entretien Thermique Portable -->
-                <div class="bento-card bento-card-hover">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-thermometer-half"></i>
-                    </div>
-                    <h3 class="card-title">Pâte Thermique Portable</h3>
-                    <p class="card-desc">Nettoyage complet ventilateur et remplacement pâte thermique haute performance.</p>
-                     <div class="card-price">
-                        <span class="from" style="color:#22c55e; font-size:0.7em; margin-right:5px;">Bonus QualiRépar</span>
-                        59 € <span>TTC</span>
+                <!-- 1. Montage de pièce et composant -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-tools bento-icon"></i>
+                            <h3>Montage de pièce et composant</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait comprend le montage et test d'un composant sur carte mère.
+                            <em>Il exclut les éléments demandant une opération plus complexe tel que carte mère ou
+                                alimentation.</em></p>
+                        <div class="price-container">
+                            <p class="price-value">15 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. Star Item: Reinstallation & Data (Large) -->
-                <div class="bento-card span-2">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-hdd"></i>
-                    </div>
-                    <h3 class="card-title">Réinstallation + Sauvegarde</h3>
-                    <p class="card-desc">La solution sérénité : Réinstallation complète du système (Windows/Linux) + Récupération et transfert de toutes vos données personnelles.</p>
-                    <div class="card-price">140 € <span>TTC</span></div>
-                </div>
-                
-                 <!-- 5. Optimisation -->
-                 <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3 class="card-title">Optimisation Win.</h3>
-                    <p class="card-desc">Suppression surcouches, nettoyage registre et optimisation démarrage.</p>
-                    <div class="card-price">59 € <span>TTC</span></div>
-                </div>
-
-                 <!-- 6. Reparation System -->
-                 <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="card-title">Réparation Système</h3>
-                    <p class="card-desc">Analyse antivirus approfondie, réparation des fichiers corrompus Windows.</p>
-                     <div class="card-price">
-                        <span class="from" style="color:#22c55e; font-size:0.7em; margin-right:5px;">Bonus QualiRépar</span>
-                        70 € <span>TTC</span>
+                <!-- 2. Remplacement de pate Thermique PC Fixe -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-wind bento-icon"></i>
+                            <h3>Remplacement de pate Thermique PC Fixe</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait comprend le démontage, puis le remontage de votre ordinateur
+                            fixe. Le nettoyage composant processeur, et mise en place de la nouvelle pâte thermique.</p>
+                        <div class="price-container">
+                            <p class="price-value">15 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 7. Charnière  -->
-                <div class="bento-card span-2">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-laptop-medical"></i>
+                <!-- 3. Diagnostique de panne -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-search bento-icon"></i>
+                            <h3>Diagnostique de panne</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait inclus une prise en charge pour la détection de panne sur votre
+                            PC fixe et portable. <em>Le diagnostique inclus matériel et logiciel</em></p>
+                        <div class="price-container">
+                            <p class="price-value">45 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
-                    <h3 class="card-title">Réparation Charnières</h3>
-                    <p class="card-desc">Remplacement des charnières cassées sur PC Portable (M.O. uniquement, hors pièces).</p>
-                    <div class="card-price">99 € <span>TTC</span></div>
+                    <i class="fas fa-search bg-icon"></i>
                 </div>
 
-                <!-- 8. Reinstallation Simple -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-desktop"></i>
+
+                <!-- 4. Préparation & Optimisation -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-tachometer-alt bento-icon"></i>
+                            <h3>Préparation & Optimisation</h3>
+                        </div>
+                        <p class="card-desc">La performance de votre PC au quotidien commence par une bonne mise en
+                            service ! Nous optimisons Windows sans surcouches logiciels et publicitaires.</p>
+                        <div class="price-container">
+                            <p class="price-value">59 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
-                    <h3 class="card-title">Réinstall. Système</h3>
-                    <p class="card-desc">Installation propre Windows/Linux + Pilotes + Mises à jour.</p>
-                    <div class="card-price">75 € <span>TTC</span></div>
                 </div>
-                
-                <!-- 9. Dalle -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-tv"></i>
+
+                <!-- 5. Remplacement pate thermique PC Portable -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-laptop-medical bento-icon"></i>
+                            <h3>Remplacement pate thermique PC Portable</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait comprend le démontage, le remontage de votre ordinateur
+                            portable. Le nettoyage composant processeur, et mise en place de la nouvelle pâte thermique.
+                        </p>
+                        <div class="price-container">
+                            <p class="price-value">59 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
-                    <h3 class="card-title">Remplacement Écran</h3>
-                    <p class="card-desc">Changement de dalle cassée sur PC Portable.</p>
-                    <div class="card-price">Sur devis</div>
                 </div>
+
+                <!-- 6. Désinfection ordinateur -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-shield-virus bento-icon"></i>
+                            <h3>Désinfection ordinateur</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait atelier inclus la recherche et l'analyse de votre panne système
+                            afin de confirmer les causes virales. Une analyse antivirus approfondie Système des
+                            logiciels malveillants.</p>
+                        <div class="price-container">
+                            <p class="price-value">70 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Récupération de données -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-database bento-icon"></i>
+                            <h3>Récupération de données</h3>
+                        </div>
+                        <p class="card-desc">Que ce soit dans le cas d'une panne ou de casse ou suite à une erreur de
+                            manipulation ayant entrainé la suppression de tous vos documents, ou un dommage
+                            irrémédiable. <em>Consultez nous, c'est à partir de 70 € TTC</em></p>
+                        <div class="price-container">
+                            <p class="price-label">À partir de</p>
+                            <p class="price-value">70 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Réparation du système -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fab fa-windows bento-icon"></i>
+                            <h3>Réparation du système</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait atelier inclus la recherche et l'analyse de votre panne système,
+                            l'analyse antivirus, la réparation ou la reconstruction du système. La mise à niveau système
+                            (windows & MacOS,).</p>
+                        <div class="price-container">
+                            <p class="price-value">70 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Réinstallation du système -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-compact-disc bento-icon"></i>
+                            <h3>Réinstallation du système</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait inclus, la réinstallation de votre system (Windows, mac ou
+                            linux), la réinstallation des pilotes de votre machines. La mise à niveau système de votre
+                            ordinateur.</p>
+                        <div class="price-container">
+                            <p class="price-value">75 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Réparation de charnière -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-door-open bento-icon"></i>
+                            <h3>Réparation de charnière</h3>
+                        </div>
+                        <p class="card-desc">Le forfait atelier inclus le démontage de l'ancien jeu de charnières de
+                            votre ordinateur portable, et le montage des nouvelles charnières. <em>Ce tarif exclus le
+                                coût des pièces charnière qui feront l'objet d'un devis.</em></p>
+                        <div class="price-container">
+                            <p class="price-value">99 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Réinstallation avec sauvegarde -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-save bento-icon"></i>
+                            <h3>Réinstallation avec sauvegarde</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait inclus la réinstallation du system et des pilotes de votre
+                            machines La récupération de l'ensemble de vos données contenu sur votre ancien ordinateur ou
+                            disque dur.</p>
+                        <div class="price-container">
+                            <p class="price-value">140 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Remplacement dalle PC -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-tv bento-icon"></i>
+                            <h3>Remplacement dalle PC</h3>
+                        </div>
+                        <p class="card-desc">Le forfait inclus le démontage de l'ancienne dalle sur votre ordinateur
+                            portable et le montage de la nouvelle. <em>Ce tarif exclus les dalles tactiles qui feront
+                                l'objet d'un devis.</em></p>
+                        <div class="price-container">
+                            <p class="price-label">À partir de</p>
+                            <p class="price-value">169 € <span class="tax">TTC</span></p>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
-            
+
             <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
-                 <a href="contact.html" class="btn-brand">Prendre Rendez-vous</a>
-                 <p style="margin-top: 1rem; font-size: 0.8rem; color: #6b7280;">* Certains tarifs peuvent varier selon le modèle exact de votre appareil.</p>
+                <a href="contact.html" class="btn"
+                    style="background: linear-gradient(135deg, #ef3e36, #ef3e36); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block;">Prendre
+                    Rendez-vous</a>
             </div>
 
         </div>
 
     </main>
 
-    <footer class="main-footer">
+    <!-- Footer Identique Index -->
+    <footer
+        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <!-- Colonne 1 -->
                 <div class="footer-col">
-                    <h3>Factor-I</h3>
-                    <p>Votre partenaire informatique professionnel à Lannion.</p>
+                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: #ccc; line-height: 1.6;">
+                        Votre expert en informatique à Lannion. Vente, réparation, maintenance pour particuliers et
+                        professionnels.
+                    </p>
                 </div>
+
+                <!-- Colonne 2 -->
                 <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p>Zone Industrielle du Rusquet-Sud<br>22300 Lannion</p>
-                    <p>Tél : 02 96 37 66 18</p>
-                    <p>Email : contact@factor-i.fr</p>
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Liens Rapides
+                        <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="index.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Accueil</a></li>
+                        <li style="margin-bottom: 10px;"><a href="reparation.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Atelier de réparation</a>
+                        </li>
+                        <li style="margin-bottom: 10px;"><a href="pc-sur-mesure.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">PC sur mesure</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Contact</a></li>
+                    </ul>
                 </div>
+
+                <!-- Colonne 3 -->
                 <div class="footer-col">
-                    <h3>Liens Rapides</h3>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="sav-pc.html">Forfaits Atelier</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Contact
+                        <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-map-marker-alt"
+                                style="color: var(--primary-red); margin-right: 10px;"></i> 4 rue St Marc, 22300 Lannion
+                        </li>
+                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-phone"
+                                style="color: var(--primary-red); margin-right: 10px;"></i> 02 96 37 66 12</li>
+                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-envelope"
+                                style="color: var(--primary-red); margin-right: 10px;"></i> contact@factor-i.fr</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Factor-I. Tous droits réservés.</p>
+
+            <div
+                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888; font-size: 0.9rem;">
+                <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

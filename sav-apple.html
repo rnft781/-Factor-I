@@ -18,33 +18,37 @@
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
             </a>
 
-            <nav class="main-nav">
+            <nav class="navbar">
                 <ul class="nav-list">
                     <li><a href="index.html">Accueil</a></li>
+
                     <li class="dropdown">
                         <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="maintenance-pro.html">Maintenance Parc Informatique / Infogérance</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
+                            <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="reparation.html">Réparation / Atelier</a></li>
-                            <li><a href="forfaits-atelier.html">Forfaits Atelier</a></li>
-                            <li><a href="pc-sur-mesure.html">Assemblage PC gamer & pro</a></li>
-                            <li><a href="occasion.html">PC Reconditionné</a></li>
                             <li><a href="assistance.html">Assistance Particulier</a></li>
+                            <li><a href="reparation.html">Réparation / Atelier</a></li>
+                            <li><a href="sav-pc.html">Forfaits Atelier</a></li>
+                            <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
+                            <li><a href="occasion.html">Occasion</a></li>
                             <li><a href="sav-apple.html" class="active">SAV Apple</a></li>
                         </ul>
                     </li>
+
+                    <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
 
-            <a href="contact.html" class="btn btn-contact">Contact</a>
-
-            <!-- Mobile Menu Button -->
-            <div class="burger-menu">
+            <div class="burger-menu" id="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -57,120 +61,112 @@
             <h1 class="bento-title">Expertise <span>Apple</span></h1>
             <p class="bento-subtitle">Réparations certifiées et optimisations pour votre Mac & iPhone.</p>
 
-            <div class="service-switcher">
-                <a href="forfaits-atelier.html" class="switch-btn">Univers PC</a>
-                <a href="sav-apple.html" class="switch-btn active"><i class="fab fa-apple"></i> Univers Apple</a>
+            <div class="univers-switcher">
+                <a href="sav-pc.html" class="switcher-btn"><i class="fab fa-windows"></i> Univers PC</a>
+                <a href="sav-apple.html" class="switcher-btn active"><i class="fab fa-apple"></i> Univers Apple</a>
             </div>
         </section>
 
-        <div class="bento-container">
-            <div class="bento-grid">
+        <!-- Bento Grid -->
+        <div class="container" style="padding-bottom: 4rem;">
+            <div class="bento-grid grid-cols-3">
 
-                <!-- 1. Star Item: Diagnostic (Large) -->
-                <div class="bento-card span-2">
-                    <div class="card-icon-wrapper icon-gradient">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <h3 class="card-title">Diagnostic Complet</h3>
-                    <ul style="padding-left: 1.2rem; margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6;">
-                        <li>Tests matériels complets</li>
-                        <li>Analyse logicielle approfondie</li>
-                        <li>Devis détaillé gratuit</li>
-                    </ul>
-                    <div class="card-price">39 € <span>TTC</span></div>
-                    <!-- Decorative Icon -->
-                    <i class="fab fa-apple bento-bg-icon"></i>
-                </div>
-
-                <!-- Vertical Engagement Block (Span Row 2) -->
-                <div class="bento-card span-row-2">
-                    <div>
-                        <div class="card-icon-wrapper icon-gradient">
-                            <i class="fas fa-certificate"></i>
+                <!-- 1. PRISE EN CHARGE MAC OC -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-stethoscope bento-icon"></i>
+                            <h3>PRISE EN CHARGE MAC OC</h3>
                         </div>
-                        <h3 class="card-title">Expertise Apple</h3>
-                        <p class="card-desc" style="margin-bottom: 1.5rem;">
-                            Vos appareils méritent le meilleur.
-                        </p>
-                        <ul
-                            style="padding-left: 1.2rem; margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6;">
-                            <li>Pièces Qualité Originale</li>
-                            <li>Techniciens Certifiés</li>
-                            <li>Garantie Étendue</li>
-                        </ul>
+                        <p class="card-desc">Inclus la recherche de panne et diagnostique matériel et logiciel. Le coût
+                            d'intervention varie en fonction du type de Mac et de son année de production. <em>En cas de
+                                doute, n'hésitez pas à nous contacter ou à passer nous voir.</em></p>
+                        <div class="price-container">
+                            <p class="price-value">Forfait 45 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
-                    <div style="margin-top: 1rem;">
-                        <span
-                            style="display:inline-block; padding: 5px 15px; background: rgba(239, 62, 54, 0.1); border-radius: 0px; color: #ef3e36; font-size: 0.85rem; font-weight: 600;">Satisfaction
-                            Garantie</span>
+                    <i class="fab fa-apple bg-icon"></i>
+                </div>
+
+                <!-- 2. OPTIMISATION MAC OS -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-tachometer-alt bento-icon"></i>
+                            <h3>OPTIMISATION MAC OS</h3>
+                        </div>
+                        <p class="card-desc">Vous vous dites que votre Mac est lent voir dépassé, et vous louchez sur
+                            les nouveaux modèles ? Ne cédez pas à la tentation, II suffit souvent de faire le ménage
+                            dans le système pour lui rendre de ses performances ! malveillants.</p>
+                        <div class="price-container">
+                            <p class="price-value">Forfait 70 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 2. Reinstall System -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-compact-disc"></i>
-                    </div>
-                    <h3 class="card-title">Réinstall. macOS</h3>
-                    <p class="card-desc">Installation propre macOS.</p>
-                    <div class="card-price">69 € <span>TTC</span></div>
-                </div>
-
-                <!-- 3. Optimization -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper icon-gradient">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 class="card-title">Optimisation</h3>
-                    <p class="card-desc">Boostez votre Mac : nettoyage & vitesse.</p>
-                    <div class="card-price">59 € <span>TTC</span></div>
-                </div>
-
-                <!-- 4. Star Item: Screen/Battery -->
-                <div class="bento-card span-2">
-                    <div class="card-icon-wrapper icon-gradient">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="card-title">Écran & Batterie</h3>
-                    <ul style="padding-left: 1.2rem; margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.6;">
-                        <li>Remplacement Express (iPhone/Mac)</li>
-                        <li>Batteries Haute Capacité</li>
-                        <li>Écrans Retina Calibrés</li>
-                    </ul>
-                    <div class="card-price">
-                        <span class="from">à partir de</span> 89 € <span>TTC</span>
+                <!-- 3. DESINFECTION MAC OS -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-shield-virus bento-icon"></i>
+                            <h3>DESINFECTION MAC OS</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait atelier inclus : La recherche et l'analyse de votre panne
+                            système afin de confirmer les causes virales. Une analyse antivirus approfondie Système /
+                            Logiciels malveillants / Malware / Adwares / publiciel / PUP</p>
+                        <div class="price-container">
+                            <p class="price-value">Forfait 70 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 5. Keyboard/Trackpad -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-keyboard"></i>
+                <!-- 4. REMPLACEMENT MODULE MÉMOIRE IMAC 21.5 -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-memory bento-icon"></i>
+                            <h3>REMPLACEMENT MODULE MÉMOIRE IMAC 21.5</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait atelier Factor-i inclus : Le démontage et remontage de votre
+                            IMAC. Installations des modules de mémoires. Test des modules mémoire et système. <em>Ce
+                                forfait n'intègre pas les mémoires facturés en complément.</em></p>
+                        <div class="price-container">
+                            <p class="price-value">Forfait 180 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
-                    <h3 class="card-title">Clavier / Trackpad</h3>
-                    <p class="card-desc">Remplacement touches ou nappe.</p>
-                    <div class="card-price">Sur devis</div>
                 </div>
 
-                <!-- 6. Motherboard Repair -->
-                <div class="bento-card">
-                    <div class="card-icon-wrapper">
-                        <i class="fas fa-microchip"></i>
+                <!-- 5. CHANGEMENT DISQUE AVEC REINSTALLATION -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-hdd bento-icon"></i>
+                            <h3>CHANGEMENT DISQUE AVEC REINSTALLATION</h3>
+                        </div>
+                        <p class="card-desc">Ce forfait atelier Factor-i inclus : La réinstallation de votre system MAC
+                            Os. La réinstallation des pilotes de votre machines. La mise à niveau système de votre MAC.
+                            L'optimisation du matériel pour une meilleure expérience machine. <em>Ce tarif n'inclus pas
+                                le stockage de remplacement.</em></p>
+                        <div class="price-container">
+                            <p class="price-value">Forfait 230 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
-                    <h3 class="card-title">Microsoudure</h3>
-                    <p class="card-desc">Réparation carte mère.</p>
-                    <div class="card-price">Sur devis</div>
                 </div>
 
-                <!-- 7. Data Recovery -->
-                <div class="bento-card span-2">
-                    <div class="card-icon-wrapper icon-gradient">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3 class="card-title">Récupération Données</h3>
-                    <p class="card-desc">Disque HS ou Mac en panne ? Nous sauvons vos fichiers.</p>
-                    <div class="card-price">
-                        <span class="from">à partir de</span> 99 € <span>TTC</span>
+                <!-- 6. REMPLACEMENT ECRAN IMAC -->
+                <div class="bento-card bento-standard">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-desktop bento-icon"></i>
+                            <h3>REMPLACEMENT ECRAN IMAC</h3>
+                        </div>
+                        <p class="card-desc">L'écran de votre iMac semble ne plus rien afficher ? Ce forfait inclus le
+                            remplacement de l'écran et de sa vitre par nos techniciens. Notre service est garanti
+                            pendant 6 mois (hors casse)</p>
+                        <div class="price-container">
+                            <p class="price-label">À partir de</p>
+                            <p class="price-value">Forfait 499 € <span class="tax">TTC</span></p>
+                        </div>
                     </div>
                 </div>
 
@@ -178,7 +174,7 @@
 
             <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
                 <a href="contact.html" class="btn"
-                    style="background-color: #ef3e36; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block;">Prendre
+                    style="background: linear-gradient(135deg, #ef3e36, #ef3e36); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block;">Prendre
                     Rendez-vous</a>
             </div>
 
@@ -186,35 +182,70 @@
 
     </main>
 
-    <footer class="main-footer">
+    <!-- Footer Identique Index -->
+    <footer
+        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <!-- Colonne 1 -->
                 <div class="footer-col">
-                    <h3>Factor-I</h3>
-                    <p>Votre partenaire informatique professionnel à Lannion.</p>
+                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: #ccc; line-height: 1.6;">
+                        Votre expert en informatique à Lannion. Vente, réparation, maintenance pour particuliers et
+                        professionnels.
+                    </p>
                 </div>
+
+                <!-- Colonne 2 -->
                 <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p>Zone Industrielle du Rusquet-Sud<br>22300 Lannion</p>
-                    <p>Tél : 02 96 37 66 18</p>
-                    <p>Email : contact@factor-i.fr</p>
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Liens Rapides
+                        <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="index.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Accueil</a></li>
+                        <li style="margin-bottom: 10px;"><a href="reparation.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Atelier de réparation</a>
+                        </li>
+                        <li style="margin-bottom: 10px;"><a href="pc-sur-mesure.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">PC sur mesure</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html"
+                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Contact</a></li>
+                    </ul>
                 </div>
+
+                <!-- Colonne 3 -->
                 <div class="footer-col">
-                    <h3>Liens Rapides</h3>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="sav-apple.html">SAV Apple</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Contact
+                        <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-map-marker-alt"
+                                style="color: var(--primary-red); margin-right: 10px;"></i> 4 rue St Marc, 22300 Lannion
+                        </li>
+                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-phone"
+                                style="color: var(--primary-red); margin-right: 10px;"></i> 02 96 37 66 12</li>
+                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-envelope"
+                                style="color: var(--primary-red); margin-right: 10px;"></i> contact@factor-i.fr</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Factor-I. Tous droits réservés.</p>
+
+            <div
+                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888; font-size: 0.9rem;">
+                <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
