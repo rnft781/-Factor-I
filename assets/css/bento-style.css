@@ -126,6 +126,34 @@ body {
     grid-auto-rows: minmax(180px, auto);
     /* Flexible height */
     gap: 1.5rem;
+    grid-auto-flow: dense;
+    /* Packs the grid to remove gaps */
+}
+
+/* Custom List Styling for Bento Cards */
+.bento-card ul {
+    list-style: none;
+    /* Remove default bullets */
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.bento-card ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.bento-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #ef3e36;
+    /* Red bullet */
+    font-weight: bold;
 }
 
 /* Cards - Light Pro Glassmorphism */
