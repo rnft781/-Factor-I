@@ -271,11 +271,7 @@ h4 {
     color: var(--primary-red);
 }
 
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--white);
-    color: var(--white);
-}
+
 
 .btn-secondary:hover {
     background-color: var(--white);
