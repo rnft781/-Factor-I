@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Sur Mesure | Factor-I</title>
+    <title>Solutions Professionnelles | Factor-I</title>
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/pc.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/pro.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -52,74 +52,70 @@
 
     <main>
 
-        <section class="pc-hero">
+        <section class="pro-hero">
             <div class="container">
-                <div class="pc-hero-content">
-                    <h1>Votre Ordinateur,<br><span class="text-red">Votre Configuration</span></h1>
-                    <p>Pas de modèles préconçus. Nous assemblons la machine parfaite pour vos besoins, composant par composant.</p>
-                    <a href="#configurateur" class="btn btn-primary">Configurer mon PC</a>
-                </div>
+                <h1>L'Informatique d'Entreprise <br><span class="text-red">Simplifiée & Sécurisée</span></h1>
+                <p>Ne laissez plus les pannes ralentir votre activité. Nous gérons votre parc, vous gérez votre business.</p>
             </div>
         </section>
 
-        <section id="configurateur" class="section-padding bg-dark">
+        <section class="pro-interface section-padding">
             <div class="container">
-                <h2 class="section-title white-title">Quel est votre usage ?</h2>
                 
-                <div class="profile-selector">
-                    <button class="profile-btn active" data-profile="gaming">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Gaming</span>
+                <div class="service-nav">
+                    <button class="svc-btn active" data-target="maintenance">
+                        <i class="fas fa-tools"></i>
+                        <span>Maintenance</span>
                     </button>
-                    <button class="profile-btn" data-profile="office">
-                        <i class="fas fa-laptop"></i>
-                        <span>Bureautique</span>
+                    <button class="svc-btn" data-target="sauvegarde">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Sauvegarde</span>
                     </button>
-                    <button class="profile-btn" data-profile="creator">
-                        <i class="fas fa-pen-nib"></i>
-                        <span>Création / 3D</span>
+                    <button class="svc-btn" data-target="conseil">
+                        <i class="fas fa-handshake"></i>
+                        <span>Conseil & Audit</span>
                     </button>
                 </div>
 
-                <div class="config-display" id="config-area">
-                    <div class="config-content fade-in">
-                        <div class="config-text">
-                            <h3>Performance Gaming</h3>
-                            <p>Jouez aux derniers titres en Ultra (4K / 144Hz) sans compromis.</p>
-                            <ul class="specs-list">
-                                <li><i class="fas fa-microchip"></i> <strong>Processeur :</strong> Intel Core i5/i7 ou Ryzen 5/7</li>
-                                <li><i class="fas fa-memory"></i> <strong>Carte Graphique :</strong> NVIDIA RTX 4060 à 4090</li>
-                                <li><i class="fas fa-bolt"></i> <strong>RAM :</strong> 16 à 32 Go DDR5 Rapide</li>
+                <div class="service-display" id="display-area">
+                    <div class="display-content fade-in">
+                        <div class="text-col">
+                            <h2>Maintenance & Infogérance</h2>
+                            <p class="lead">Une panne informatique peut avoir de lourdes répercussions. Nous anticipons les problèmes avant qu'ils n'arrivent.</p>
+                            <ul class="pro-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>Préventif :</strong> Mises à jour et surveillance des serveurs.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Curatif :</strong> Intervention rapide sur site ou à distance.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Budget maîtrisé :</strong> Forfaits ajustés à votre parc.</li>
                             </ul>
-                            <div class="price-tag">Budget estimé : Dès 1200€</div>
-                            <a href="contact.html" class="btn btn-red">Demander un devis Gaming</a>
+                            <a href="contact.html" class="btn btn-primary">Demander un contrat</a>
                         </div>
-                        <div class="config-visual gaming-bg">
-                            </div>
+                        <div class="img-col">
+                            <div class="dynamic-img maintenance-img"></div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <section class="why-custom section-padding">
-            <div class="container">
-                <h2 class="section-title text-center">L'Expertise Factor-I</h2>
-                <div class="grid-3">
-                    <div class="card-box">
-                        <div class="icon-box"><i class="fas fa-comments"></i></div>
-                        <h3>Écoute Active</h3>
-                        <p>Nous discutons ensemble pour définir vos vrais besoins. Pas de survente inutile.</p>
+        <section class="why-us bg-light section-padding">
+            <div class="container text-center">
+                <h2 class="section-title">Pourquoi Factor-I ?</h2>
+                <div class="features-grid">
+                    <div class="feat-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Réactivité</h3>
+                        <p>Intervention sous 4h pour les pannes critiques.</p>
                     </div>
-                    <div class="card-box">
-                        <div class="icon-box"><i class="fas fa-tools"></i></div>
-                        <h3>Montage Soigné</h3>
-                        <p>Cable management propre, pâte thermique haute performance et tests de stabilité inclus.</p>
+                    <div class="feat-item">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Confidentialité</h3>
+                        <p>Vos données sont sensibles, nous les protégeons.</p>
                     </div>
-                    <div class="card-box">
-                        <div class="icon-box"><i class="fas fa-sync-alt"></i></div>
-                        <h3>Évolutivité</h3>
-                        <p>Contrairement aux PC de grande surface, nos tours sont conçues pour être améliorées dans le temps.</p>
+                    <div class="feat-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Proximité</h3>
+                        <p>Un expert local dédié à votre entreprise.</p>
                     </div>
                 </div>
             </div>
@@ -127,7 +123,7 @@
 
     </main>
 
-    <footer>
+        <footer>
         <div class="container footer-grid">
 
             <div class="footer-col">
@@ -162,5 +158,5 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/pc.js"></script> </body>
+    <script src="assets/js/pro.js"></script> </body>
 </html>
