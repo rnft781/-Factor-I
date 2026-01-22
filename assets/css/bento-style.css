@@ -111,6 +111,26 @@ body {
     margin: 0 auto;
 }
 
+/* Solution 2 + 4: Split Background & Compact */
+.bento-header.hero-split {
+    background-color: #f8fafc;
+    /* Off-white background */
+    padding: 3rem 1rem 2rem;
+    /* Reduced padding (-30%) */
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 0;
+    /* Remove bottom margin to connect with content */
+    width: 100%;
+    max-width: 100%;
+    /* Full width background */
+    box-sizing: border-box;
+}
+
+.bento-header.hero-split+.bento-container {
+    margin-top: 2rem;
+    /* Consistent spacing after hero */
+}
+
 /* --- Switcher --- */
 /* --- Switcher --- */
 .univers-switcher {
@@ -559,6 +579,67 @@ body {
     padding-top: 2rem;
     margin-top: 3rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
     color: #64748b;
+}
+
+/* --- Pricing Specifics --- */
+.bento-card.pricing-card {
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    justify-content: flex-start;
+}
+
+.bento-card.pricing-standard {
+    border-top: 4px solid #94a3b8;
+}
+
+.bento-card.pricing-premium {
+    border-top: 4px solid #ef3e36;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Stand out */
+    transform: scale(1.02);
+    /* Slight default lift */
+    border-color: rgba(239, 62, 54, 0.2);
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 1rem 0;
+}
+
+.pricing-price span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+ul.feature-list {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+ul.feature-list li {
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+ul.feature-list li::before {
+    content: '\f00c';
+    /* FontAwesome Check */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #10b981;
+    /* Green Check */
+    position: absolute;
+    left: 0;
+}
+
+.sub-note {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
 }

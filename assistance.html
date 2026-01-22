@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistance Informatique à Domicile | Factor-I</title>
-    
+    <title>Assistance Informatique | Factor-I</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/assistance.css">
-<<<<<<< Updated upstream
-
+    <link rel="stylesheet" href="assets/css/bento-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-=======
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
->>>>>>> Stashed changes
 </head>
+
 <body>
 
-   <header class="main-header">
+    <!-- Header (Consistent) -->
+    <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
-
             </a>
 
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-
+                    <li><a href="index.html">Accueil</a></li>
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
-                        <a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="assistance.html">Assistance Particulier</a></li>
+                            <li><a href="assistance.html" class="active">Assistance Particulier</a></li>
                             <li><a href="reparation.html">Réparation / Atelier</a></li>
-                            <li><a href="forfaits-atelier.html">Forfaits Atelier</a></li>
+                            <li><a href="sav-pc.html">SAV PC</a></li>
                             <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
                             <li><a href="occasion.html">Occasion</a></li>
                             <li><a href="sav-apple.html">SAV Apple</a></li>
                         </ul>
                     </li>
-
                     <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
@@ -61,137 +55,180 @@
 
     <main>
 
-        <section class="assist-hero">
-            <div class="container">
-                <div class="hero-text">
-                    <h1>Assistance Informatique <br><span class="text-red">à Domicile</span></h1>
-                    <p>PC lent, virus, problème de connexion ou besoin d'une formation ?<br>Nous intervenons directement chez vous.</p>
-                    <a href="contact.html" class="btn btn-primary">Prendre Rendez-vous</a>
-                </div>
-            </div>
+        <!-- Hero Section -->
+        <section class="bento-header">
+            <h1 class="bento-title">Assistance & <span>Sérénité</span></h1>
+            <p class="bento-subtitle">Ne restez plus seul face à vos soucis informatiques. Profitez d'une équipe
+                d'experts à vos côtés.</p>
         </section>
 
-        <section class="process-section section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title text-center">Intervention Simple & Rapide</h2>
-                
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-phone-alt"></i></div>
-                        <h3>1. Contact</h3>
-                        <p>Vous nous appelez pour expliquer votre problème.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
-                        <h3>2. Rendez-vous</h3>
-                        <p>Nous convenons d'un horaire de passage à votre domicile.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-icon"><i class="fas fa-tools"></i></div>
-                        <h3>3. Résolution</h3>
-                        <p>Le technicien règle le problème sur place.</p>
-                    </div>
-                </div>
+        <div class="bento-container">
+
+            <!-- PRICING SECTION (The Core) -->
+            <div style="text-align:center; margin-bottom: 3rem;">
+                <h2 style="font-size:2rem; font-weight:700; color:#1a1a1a;">Nos Formules D'Abbonnement</h2>
+                <p style="color:#64748b; margin-top:0.5rem;">Une tranquillité d'esprit totale pour votre informatique
+                    quotidienne.</p>
             </div>
-        </section>
 
-        <section class="problems-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Nos Prestations</h2>
-                <p style="text-align:center; margin-bottom: 40px; color:#666;">Cliquez sur un sujet pour voir les détails.</p>
-                
-                <div class="accordion">
-                    
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <i class="fas fa-laptop-medical"></i>
-                            <h3>Dépannage & Maintenance</h3>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+            <div class="bento-grid grid-cols-2">
+
+                <!-- PLAN ESSENTIEL -->
+                <div class="bento-card pricing-standard sizing-card">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-shield-alt bento-icon"></i>
+                            <h3 class="card-title">Assistance Essentiel</h3>
                         </div>
-                        <div class="accordion-body">
-                            <p>Votre ordinateur est lent ou ne démarre plus ? Nous effectuons un diagnostic complet, nettoyons les virus/malwares et optimisons votre système pour lui redonner sa rapidité.</p>
-                        </div>
+                        <p class="card-desc">L'accompagnement indispensable au quotidien pour ne jamais être bloqué.</p>
+
+                        <div class="pricing-price">19 € <span>TTC / mois</span></div>
+
+                        <ul class="feature-list">
+                            <li>Assistance par téléphone <strong>illimitée</strong></li>
+                            <li>Prise en main à distance <strong>illimitée</strong></li>
+                            <li>Priorité de prise en charge atelier</li>
+                            <li>Maintenance en atelier <strong>illimitée</strong></li>
+                            <li>Supervision et historique de la machine</li>
+                        </ul>
+
+                        <a href="contact.html" class="btn"
+                            style="background:#334155; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block; margin-top:auto;">Choisir
+                            Essentiel</a>
+                        <p class="sub-note">Sous réserve de souscription 24 mois</p>
                     </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <i class="fas fa-wifi"></i>
-                            <h3>Installation Internet & Box</h3>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="accordion-body">
-                            <p>Configuration de votre Box Internet (Orange, SFR, Bouygues, Free). Mise en place du Wifi, CPL ou répéteurs pour connecter toute la maison (TV, Ordinateurs, Tablettes).</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <i class="fas fa-print"></i>
-                            <h3>Périphériques (Imprimante, Scanner)</h3>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="accordion-body">
-                            <p>Installation et configuration de vos imprimantes, scanners ou webcams. Nous nous assurons que tout fonctionne avec votre ordinateur.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <i class="fas fa-user-graduate"></i>
-                            <h3>Initiation & Formation</h3>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="accordion-body">
-                            <p>Besoin d'aide pour débuter ? Nous vous formons à l'utilisation de base : navigation Internet, gestion des emails, classement de photos et bureautique (Word/Excel).</p>
-                        </div>
-                    </div>
-
                 </div>
-                
-                <div class="center-btn">
-                    <a href="contact.html" class="btn btn-primary big-btn">Contacter un technicien</a>
+
+                <!-- PLAN TRANQUILLITÉ -->
+                <div class="bento-card pricing-premium sizing-card">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-crown bento-icon"></i>
+                            <h3 class="card-title">Assistance Tranquillité</h3>
+                        </div>
+                        <p class="card-desc">Vivez votre informatique en toute tranquillité avec une couverture totale.
+                        </p>
+
+                        <div class="pricing-price">29 € <span>TTC / mois</span></div>
+
+                        <ul class="feature-list">
+                            <li><strong>Tout le pack Essentiel +</strong></li>
+                            <li><strong>Prise en charge à domicile</strong> (Zone 1)</li>
+                            <li>Antivirus inclus et actualisé</li>
+                            <li>Ordinateur de prêt en cas d'immobilisation</li>
+                            <li>Résolution des pannes complexes sur site</li>
+                        </ul>
+
+                        <a href="contact.html" class="btn"
+                            style="background:#ef3e36; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block; margin-top:auto; box-shadow: 0 4px 15px rgba(239,62,54,0.3);">Choisir
+                            Tranquillité</a>
+                        <p class="sub-note">Sous réserve de souscription 24 mois</p>
+                    </div>
                 </div>
 
             </div>
-        </section>
+
+            <!-- INTERVENTIONS PONCTUELLES (Services Grid) -->
+            <div style="text-align:center; margin: 4rem 0 3rem;">
+                <h2 style="font-size:2rem; font-weight:700; color:#1a1a1a;">Interventions Ponctuelles</h2>
+                <p style="color:#64748b; margin-top:0.5rem;">Besoin d'aide sans abonnement ? Nous sommes là aussi.</p>
+            </div>
+
+            <!-- 4 Column Grid for Services -->
+            <div class="bento-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+
+                <!-- Dépannage -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3 class="card-title">Dépannage & Maintenance</h3>
+                    <p class="card-desc">Diagnostic complet, nettoyage virus/malwares et optimisation système.</p>
+                </div>
+
+                <!-- Internet -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="card-title">Installation Internet</h3>
+                    <p class="card-desc">Configuration Box (Orange, SFR, etc.), Wifi, CPL et connexion de vos appareils.
+                    </p>
+                </div>
+
+                <!-- Périphériques -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="card-title">Périphériques</h3>
+                    <p class="card-desc">Installation certifiée de vos imprimantes, scanners et webcams.</p>
+                </div>
+
+                <!-- Formation -->
+                <div class="bento-card">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="card-title">Initiation & Formation</h3>
+                    <p class="card-desc">Apprenez les bases : Internet, Emails, Photos et Bureautique.</p>
+                </div>
+
+            </div>
+
+            <!-- CTA Final -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="contact.html" class="btn"
+                    style="background: linear-gradient(135deg, #ef3e36, #ef3e36); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block;">Contacter
+                    un technicien</a>
+            </div>
+
+        </div>
 
     </main>
 
-        <footer>
-        <div class="container footer-grid">
-
-            <div class="footer-col">
-                <h4>Factor-I</h4>
-                <p>L'informatique à vos côtés.</p>
-                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
-                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+    <!-- Footer -->
+    <footer
+        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
+        <div class="container">
+            <div class="footer-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div class="footer-col">
+                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: #ccc; line-height: 1.6;">Votre expert en informatique à Lannion.</p>
+                </div>
+                <div class="footer-col">
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Liens Rapides <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="index.html" style="color: #ccc; text-decoration: none;">Accueil</a></li>
+                        <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Contact <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; color: #ccc;">02 96 37 66 12</li>
+                        <li style="margin-bottom: 10px; color: #ccc;">contact@factor-i.fr</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="footer-col">
-                <h4>Liens Utiles</h4>
-                <ul>
-                    <li><a href="contact.html">Prendre rendez-vous</a></li>
-                    <li><a href="services-pro/maintenance.html">Maintenance Pro</a></li>
-                    <li><a href="services-particuliers/reparation.html">Réparation</a></li>
-                </ul>
+            <div
+                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888;">
+                <p>&copy; 2024 Factor-I.</p>
             </div>
-
-            <div class="footer-col">
-                <h4>Informations Légales</h4>
-                <ul>
-                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
-                    <li><a href="cgv.html">CGV</a></li>
-                    <li><a href="livraison.html">Livraison & Intervention</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/assistance.js"></script>
 </body>
+
 </html>
