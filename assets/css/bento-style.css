@@ -111,24 +111,105 @@ body {
     margin: 0 auto;
 }
 
-/* Solution 2 + 4: Split Background & Compact */
-.bento-header.hero-split {
+
+/* --- Hero Split Side-by-Side (Occasion) --- */
+.hero-si-split {
     background-color: #f8fafc;
-    /* Off-white background */
-    padding: 3rem 1rem 2rem;
-    /* Reduced padding (-30%) */
+    /* Solid background */
     border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 0;
-    /* Remove bottom margin to connect with content */
-    width: 100%;
-    max-width: 100%;
-    /* Full width background */
-    box-sizing: border-box;
+    margin-bottom: 2rem;
 }
 
-.bento-header.hero-split+.bento-container {
-    margin-top: 2rem;
-    /* Consistent spacing after hero */
+.hero-si-container {
+    max-width: 1200px;
+    /* Constrains width */
+    margin: 0 auto;
+    /* Centers on screen */
+    display: flex;
+    align-items: stretch;
+    /* Match heights */
+    min-height: 450px;
+}
+
+.hero-si-content {
+    flex: 1;
+    padding: 3rem 1rem;
+    /* Aligned with grid */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    z-index: 2;
+    /* Text on top */
+}
+
+.hero-si-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 0 40px;
+    /* Stylish corner */
+    min-height: 300px;
+}
+
+.hero-si-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-trust-list {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Card look for trust items */
+}
+
+.hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+}
+
+.hero-trust-item i {
+    color: #ef3e36;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    .hero-si-container {
+        flex-direction: column-reverse;
+        /* Text on top ? No, let's stick to standard flow usually. But user wants Image prominent? Let's keep Text top for conversion. */
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+
+    .hero-si-content {
+        padding: 3rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-si-image {
+        width: 100%;
+        height: 300px;
+        /* Fixed height mobile */
+        border-radius: 0;
+    }
+
+    .hero-trust-list {
+        justify-content: center;
+    }
 }
 
 /* --- Switcher --- */
@@ -602,6 +683,80 @@ body {
     border-color: rgba(239, 62, 54, 0.2);
 }
 
+/* --- Tips / Maintenance Page --- */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(239, 62, 54, 0.3);
+}
+
+.tip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.tip-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #f1f5f9;
+    /* Subtle background number */
+    line-height: 1;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 0;
+}
+
+.tip-icon-box {
+    width: 60px;
+    height: 60px;
+    background: #fef2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef3e36;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tip-content {
+    position: relative;
+    z-index: 1;
+}
+
+.tip-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.tip-desc {
+    color: #64748b;
+    line-height: 1.6;
+}
+
 .pricing-price {
     font-size: 2.5rem;
     font-weight: 800;
@@ -636,10 +791,124 @@ ul.feature-list li::before {
     left: 0;
 }
 
-.sub-note {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    text-align: center;
+/* --- Final Editorial Refinements (Compact) --- */
+.editorial-section {
+    padding: 3rem 0;
+}
+
+.editorial-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.editorial-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.editorial-row:last-child {
+    margin-bottom: 0;
+}
+
+.ed-text {
+    flex: 1;
+    position: relative;
+}
+
+.ed-visual {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 250px;
+}
+
+.ed-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ed-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.ed-desc {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.ed-tip-box {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: #064e3b;
     margin-top: 1rem;
-    font-style: italic;
+}
+
+.ed-tip-box strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.ed-warning {
+    font-size: 0.9rem;
+    color: #b91c1c;
+    background: #fef2f2;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.impact-hero-dark {
+    background-color: #0f172a;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.impact-hero-dark h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.impact-hero-dark p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+
+    .editorial-row,
+    .editorial-row.reverse {
+        flex-direction: column;
+        text-align: left;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .ed-visual {
+        width: 100%;
+        min-height: 200px;
+        height: auto;
+    }
+
+    .impact-hero-dark h1 {
+        font-size: 2rem;
+    }
 }
