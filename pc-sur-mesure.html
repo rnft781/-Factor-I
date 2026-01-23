@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Sur Mesure | Factor-I</title>
+    <title>Votre Projet PC sur Mesure | Factor-I</title>
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/pc.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/pc.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -14,39 +16,29 @@
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
-
             </a>
-
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-
+                    <li><a href="index.html">Accueil</a></li>
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
-                            <li><a href="mail-in-black.html">Mail in Black</a></li>
+                            <li><a href="services-pro.html">Solutions Pro</a></li>
+                            <li><a href="mail-in-black.html">Mailinblack</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
-                        <a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="assistance.html">Assistance Particulier</a></li>
-                            <li><a href="reparation.html">Réparation / Atelier</a></li>
+                            <li><a href="reparation.html">Réparation</a></li>
                             <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
-                            <li><a href="occasion.html">Occasion</a></li>
-                            <li><a href="sav-apple.html">SAV Apple</a></li>
                         </ul>
                     </li>
-
                     <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
-
-            <div class="burger-menu" id="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="burger-menu" id="burger-menu"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
@@ -55,72 +47,126 @@
         <section class="pc-hero">
             <div class="container">
                 <div class="pc-hero-content">
-                    <h1>Votre Ordinateur,<br><span class="text-red">Votre Configuration</span></h1>
-                    <p>Pas de modèles préconçus. Nous assemblons la machine parfaite pour vos besoins, composant par composant.</p>
-                    <a href="#configurateur" class="btn btn-primary">Configurer mon PC</a>
+                    <h1>Imaginons votre PC <br><span class="text-red">Ensemble</span></h1>
+                    <p>Ne choisissez pas un ordinateur au hasard. Discutons de vos besoins pour assembler la machine qui vous correspond vraiment.</p>
+                    <a href="#formulaire-projet" class="btn btn-primary">Parler de mon projet</a>
                 </div>
             </div>
         </section>
 
-        <section id="configurateur" class="section-padding bg-dark">
+        <section class="section-padding bg-dark">
             <div class="container">
-                <h2 class="section-title white-title">Quel est votre usage ?</h2>
+                <h2 class="section-title white-title">Quel est votre objectif ?</h2>
+                <p style="color:#ccc; text-align:center; margin-bottom:40px;">Découvrez des exemples de ce que nous réalisons au quotidien.</p>
                 
                 <div class="profile-selector">
                     <button class="profile-btn active" data-profile="gaming">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Gaming</span>
+                        <i class="fas fa-gamepad"></i> <span>Gaming</span>
                     </button>
                     <button class="profile-btn" data-profile="office">
-                        <i class="fas fa-laptop"></i>
-                        <span>Bureautique</span>
+                        <i class="fas fa-laptop"></i> <span>Bureautique</span>
                     </button>
-                    <button class="profile-btn" data-profile="creator">
-                        <i class="fas fa-pen-nib"></i>
-                        <span>Création / 3D</span>
+                    <button class="profile-btn" data-profile="multimedia">
+                        <i class="fas fa-photo-video"></i> <span>Multimédia</span>
                     </button>
                 </div>
 
                 <div class="config-display" id="config-area">
-                    <div class="config-content fade-in">
-                        <div class="config-text">
-                            <h3>Performance Gaming</h3>
-                            <p>Jouez aux derniers titres en Ultra (4K / 144Hz) sans compromis.</p>
-                            <ul class="specs-list">
-                                <li><i class="fas fa-microchip"></i> <strong>Processeur :</strong> Intel Core i5/i7 ou Ryzen 5/7</li>
-                                <li><i class="fas fa-memory"></i> <strong>Carte Graphique :</strong> NVIDIA RTX 4060 à 4090</li>
-                                <li><i class="fas fa-bolt"></i> <strong>RAM :</strong> 16 à 32 Go DDR5 Rapide</li>
-                            </ul>
-                            <div class="price-tag">Budget estimé : Dès 1200€</div>
-                            <a href="contact.html" class="btn btn-red">Demander un devis Gaming</a>
-                        </div>
-                        <div class="config-visual gaming-bg">
-                            </div>
                     </div>
-                </div>
-
             </div>
         </section>
 
-        <section class="why-custom section-padding">
+        <section id="formulaire-projet" class="section-padding">
             <div class="container">
-                <h2 class="section-title text-center">L'Expertise Factor-I</h2>
-                <div class="grid-3">
-                    <div class="card-box">
-                        <div class="icon-box"><i class="fas fa-comments"></i></div>
-                        <h3>Écoute Active</h3>
-                        <p>Nous discutons ensemble pour définir vos vrais besoins. Pas de survente inutile.</p>
+                <div class="form-wrapper">
+                    <div class="form-intro">
+                        <h2>Définissons votre besoin</h2>
+                        <p>Remplissez ce formulaire rapide. Un expert Factor-I vous recontactera pour affiner votre projet et vous proposer un devis personnalisé.</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check"></i> Conseil gratuit.</li>
+                            <li><i class="fas fa-check"></i> Composants de qualité sélectionnés.</li>
+                            <li><i class="fas fa-check"></i> Montage et test en atelier.</li>
+                        </ul>
                     </div>
-                    <div class="card-box">
-                        <div class="icon-box"><i class="fas fa-tools"></i></div>
-                        <h3>Montage Soigné</h3>
-                        <p>Cable management propre, pâte thermique haute performance et tests de stabilité inclus.</p>
-                    </div>
-                    <div class="card-box">
-                        <div class="icon-box"><i class="fas fa-sync-alt"></i></div>
-                        <h3>Évolutivité</h3>
-                        <p>Contrairement aux PC de grande surface, nos tours sont conçues pour être améliorées dans le temps.</p>
-                    </div>
+
+                    <form class="project-form" id="projectForm">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Prénom</label>
+                                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="exemple@mail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">Téléphone</label>
+                                <input type="tel" id="tel" name="tel" required placeholder="06 00 00 00 00">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-title">Type de machine souhaitée</label>
+                            <div class="radio-options">
+                                <label class="radio-card">
+                                    <input type="radio" name="machine_type" value="tour" checked>
+                                    <span class="radio-visual">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Tour (Fixe)</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="machine_type" value="portable">
+                                    <span class="radio-visual">
+                                        <i class="fas fa-laptop"></i>
+                                        <span>Portable</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-title">Usage Principal</label>
+                            <div class="radio-options three-cols">
+                                <label class="radio-card">
+                                    <input type="radio" name="usage" value="bureautique" checked>
+                                    <span class="radio-visual">
+                                        <i class="fas fa-file-word"></i>
+                                        <span>Bureautique</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="usage" value="multimedia">
+                                    <span class="radio-visual">
+                                        <i class="fas fa-video"></i>
+                                        <span>Multimédia</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="usage" value="gaming">
+                                    <span class="radio-visual">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Gaming</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Précisions (Logiciels utilisés, jeux, budget approximatif...)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Ex: Je veux jouer à Fortnite, ou faire du montage vidéo..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary full-width">Envoyer ma demande</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -129,38 +175,22 @@
 
     <footer>
         <div class="container footer-grid">
-
             <div class="footer-col">
                 <h4>Factor-I</h4>
                 <p>L'informatique à vos côtés.</p>
-                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
-                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
             </div>
-
             <div class="footer-col">
-                <h4>Liens Utiles</h4>
+                <h4>Liens</h4>
                 <ul>
-                    <li><a href="contact.html">Prendre rendez-vous</a></li>
-                    <li><a href="services-pro/maintenance.html">Maintenance Pro</a></li>
-                    <li><a href="services-particuliers/reparation.html">Réparation</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Informations Légales</h4>
-                <ul>
-                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
-                    <li><a href="cgv.html">CGV</a></li>
-                    <li><a href="livraison.html">Livraison & Intervention</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="pc-sur-mesure.html">PC Sur Mesure</a></li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
-        </div>
+        <div class="footer-bottom"><p>© 2024 Factor-I</p></div>
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/pc.js"></script> </body>
+    <script src="assets/js/pc.js"></script>
+</body>
 </html>

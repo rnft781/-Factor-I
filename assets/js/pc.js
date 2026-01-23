@@ -1,84 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // DONNEES DES PROFILS
+    // DONNEES : EXEMPLES DE PROJETS (Pas de specs fixes)
     const profiles = {
         gaming: {
-            title: "Performance Gaming",
-            desc: "Jouez aux derniers titres AAA en Ultra sans compromis. Fluidité et graphismes époustouflants.",
-            specs: [
-                { icon: "microchip", label: "Processeur", val: "Intel i5/i7 ou Ryzen 5/7" },
-                { icon: "memory", label: "Carte Graphique", val: "NVIDIA RTX 4060 à 4090" },
-                { icon: "bolt", label: "RAM", val: "16 à 32 Go DDR5" },
-                { icon: "hdd", label: "Stockage", val: "SSD NVMe 1To Ultra-Rapide" }
+            title: "Projet Gaming",
+            desc: "Que vous soyez joueur occasionnel ou compétiteur e-sport, nous trouvons l'équilibre entre fluidité (FPS) et qualité graphique.",
+            benefits: [
+                "Choix de la carte graphique selon VOS jeux.",
+                "Optimisation du refroidissement pour le silence.",
+                "Esthétique personnalisable (Boîtier, LED...)."
             ],
-            price: "Budget estimé : Dès 1200€",
-            bgClass: "gaming-bg",
-            btnText: "Demander un devis Gaming"
+            priceRange: "Budget moyen constaté : Entre 1000€ et 2500€",
+            bgClass: "gaming-bg"
         },
         office: {
-            title: "Bureautique & Télétravail",
-            desc: "Un PC silencieux, rapide au démarrage et parfait pour le multitâche. Fini les lenteurs.",
-            specs: [
-                { icon: "microchip", label: "Processeur", val: "Intel i3/i5 ou Ryzen 3/5" },
-                { icon: "volume-mute", label: "Silence", val: "Boîtier insonorisé" },
-                { icon: "bolt", label: "RAM", val: "8 à 16 Go DDR4/DDR5" },
-                { icon: "hdd", label: "Stockage", val: "SSD 500Go (Démarrage en 10s)" }
+            title: "Projet Bureautique",
+            desc: "Un ordinateur conçu pour durer, démarrer en quelques secondes et gérer tous vos logiciels sans ralentissement.",
+            benefits: [
+                "Composants fiables et durables.",
+                "Boîtier compact et silencieux.",
+                "Rapidité de démarrage (SSD inclus)."
             ],
-            price: "Budget estimé : Dès 600€",
-            bgClass: "office-bg",
-            btnText: "Configurer mon PC Bureau"
+            priceRange: "Budget moyen constaté : Entre 500€ et 900€",
+            bgClass: "office-bg"
         },
-        creator: {
-            title: "Workstation Créateur 3D/Vidéo",
-            desc: "Puissance de calcul brute pour le rendu vidéo, la modélisation 3D ou l'architecture.",
-            specs: [
-                { icon: "microchip", label: "Processeur", val: "Intel i7/i9 ou Threadripper" },
-                { icon: "layer-group", label: "Graphique", val: "RTX 4080 ou NVIDIA Quadro" },
-                { icon: "bolt", label: "RAM", val: "32 Go à 128 Go" },
-                { icon: "server", label: "Stockage", val: "RAID Sécurisé Multi-Disques" }
+        multimedia: {
+            title: "Projet Multimédia / Création",
+            desc: "Pour le montage vidéo, la retouche photo ou la 3D. Une puissance de calcul brute adaptée à vos logiciels professionnels.",
+            benefits: [
+                "Processeur puissant pour les calculs lourds.",
+                "Grande quantité de mémoire (RAM).",
+                "Stockage rapide et sécurisé pour vos fichiers."
             ],
-            price: "Budget estimé : Sur devis uniquement",
-            bgClass: "creator-bg",
-            btnText: "Contacter un expert Pro"
+            priceRange: "Budget moyen constaté : Sur devis uniquement",
+            bgClass: "multimedia-bg"
         }
     };
 
-    // LOGIQUE
+    // LOGIQUE D'AFFICHAGE DYNAMIQUE
     const btns = document.querySelectorAll('.profile-btn');
     const displayArea = document.getElementById('config-area');
 
+    // Fonction pour afficher le contenu
+    function showProfile(key) {
+        const data = profiles[key];
+
+        // Création de la liste des avantages
+        let listHTML = "";
+        data.benefits.forEach(b => {
+            listHTML += `<li><i class="fas fa-check"></i> ${b}</li>`;
+        });
+
+        // Injection HTML
+        displayArea.innerHTML = `
+            <div class="config-content fade-in">
+                <div class="config-text">
+                    <h3>${data.title}</h3>
+                    <p>${data.desc}</p>
+                    <ul class="benefits-list">
+                        ${listHTML}
+                    </ul>
+                    <div class="price-range">
+                        <i class="fas fa-wallet"></i> ${data.priceRange}
+                    </div>
+                </div>
+                <div class="config-visual ${data.bgClass}"></div>
+            </div>
+        `;
+    }
+
+    // Gestion des clics sur les boutons
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // 1. Gérer les classes actives
+            // Retirer la classe active partout
             btns.forEach(b => b.classList.remove('active'));
+            // Ajouter active au bouton cliqué
             btn.classList.add('active');
-
-            // 2. Récupérer les données
+            
+            // Afficher le contenu
             const key = btn.getAttribute('data-profile');
-            const data = profiles[key];
-
-            // 3. Construire la liste des specs
-            let specsHTML = "";
-            data.specs.forEach(s => {
-                specsHTML += `<li><i class="fas fa-${s.icon}"></i> <strong>${s.label} :</strong> ${s.val}</li>`;
-            });
-
-            // 4. Injecter le HTML
-            displayArea.innerHTML = `
-                <div class="config-content fade-in">
-                    <div class="config-text">
-                        <h3>${data.title}</h3>
-                        <p>${data.desc}</p>
-                        <ul class="specs-list">
-                            ${specsHTML}
-                        </ul>
-                        <div class="price-tag">${data.price}</div>
-                        <a href="contact.html" class="btn btn-red">${data.btnText}</a>
-                    </div>
-                    <div class="config-visual ${data.bgClass}"></div>
-                </div>
-            `;
+            showProfile(key);
         });
     });
+
+    // Afficher le premier profil (Gaming) au chargement de la page
+    showProfile('gaming');
+
+
+    // GESTION ENVOI FORMULAIRE (Simulation)
+    const form = document.getElementById('projectForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Empêche le rechargement
+            alert("Merci ! Votre demande de projet a bien été envoyée à l'équipe Factor-I. Nous vous recontactons très vite.");
+            form.reset(); // Vide le formulaire
+        });
+    }
 
 });
