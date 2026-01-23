@@ -4,43 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matériel d'Occasion | Factor-I</title>
+    <title>Matériel Reconditionné | Factor-I</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bento-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+
+    <!-- Header (Consistent) -->
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
-
             </a>
 
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-
+                    <li><a href="index.html">Accueil</a></li>
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
-                        <a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="active">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="assistance.html">Assistance Particulier</a></li>
                             <li><a href="reparation.html">Réparation / Atelier</a></li>
-                            <li><a href="forfaits-atelier.html">Forfaits Atelier</a></li>
+                            <li><a href="sav-pc.html">SAV PC</a></li>
                             <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
-                            <li><a href="occasion.html">Occasion</a></li>
+                            <li><a href="occasion.html" class="active">Occasion</a></li>
                             <li><a href="sav-apple.html">SAV Apple</a></li>
                         </ul>
                     </li>
-
                     <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
@@ -50,19 +52,133 @@
             </div>
         </div>
     </header>
+
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Matériel d'Occasion</h1>
-                <p class="tagline">Service en construction</p>
+
+        <!-- Centered Hero Section (No Image, No Badge) -->
+        <section class="bento-header"
+            style="background-color: #f8fafc; padding: 4rem 1rem; margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0;">
+            <h1 class="bento-title" style="font-size: 3rem; margin-bottom: 1rem;">Matériel <span
+                    style="color:#ef3e36;">Reconditionné</span></h1>
+            <p style="font-size: 1.15rem; color: #64748b; line-height: 1.6; max-width: 700px; margin: 0 auto 2rem;">
+                Des ordinateurs professionnels Dell, HP et Lenovo, rigoureusement testés et garantis. La performance
+                sans le prix du neuf.
+            </p>
+
+            <!-- Trust List Centered -->
+            <div class="hero-trust-list"
+                style="justify-content: center; background: transparent; box-shadow: none; padding: 0; margin-top: 0;">
+                <div class="hero-trust-item"><i class="fas fa-shield-alt"></i> Garantie 1 An</div>
+                <div class="hero-trust-item"><i class="fas fa-clipboard-check"></i> 30 points de contrôle</div>
+                <div class="hero-trust-item"><i class="fas fa-tools"></i> Préparé à Lannion</div>
             </div>
         </section>
+
+        <!-- Product Grid (Immediate Visibility) -->
+        <div class="bento-container" style="margin-top: 0;">
+            <div class="bento-grid grid-cols-2">
+
+                <!-- PC FIXE -->
+                <div class="bento-card product-card">
+                    <div class="product-image-container">
+                        <img src="assets/img/pc fixe.jpg" alt="PC Fixe Reconditionné">
+                    </div>
+                    <div class="product-content">
+                        <div class="card-header">
+                            <h3 class="card-title">PC Fixe Professionnel</h3>
+                        </div>
+
+                        <div class="pricing-price">119 € <span>À partir de</span></div>
+                        <a href="contact.html" class="btn"
+                            style="background:#334155; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block;">Voir
+                            les stocks</a>
+                    </div>
+                </div>
+
+                <!-- PC PORTABLE -->
+                <div class="bento-card product-card">
+                    <div class="product-image-container">
+                        <img src="assets/img/pc portable.jpg" alt="PC Portable Business">
+                    </div>
+                    <div class="product-content">
+                        <div class="card-header">
+                            <h3 class="card-title">PC Portable Business</h3>
+                        </div>
+
+                        <div class="pricing-price">159 € <span>À partir de</span></div>
+                        <a href="contact.html" class="btn"
+                            style="background:#ef3e36; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block;">Voir
+                            les stocks</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Eco Section (Lower) -->
+            <div class="eco-box" style="text-align: center; margin-top: 4rem;">
+                <h2 style="font-size:2rem; margin-bottom:1rem; position:relative; z-index:2; text-align: center;">
+                    L'informatique Durable</h2>
+                <p
+                    style="font-size:1.1rem; max-width:800px; margin:0 auto; position:relative; z-index:2; text-align: center;">
+                    Prolonger la vie d'un ordinateur, c'est réduire son empreinte carbone de 70%.<br>
+                    Faites le choix de la raison : <b>Performance pro, prix mini, impact positif.</b>
+                </p>
+            </div>
+
+            <!-- Final CTA -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3 style="margin-bottom:1rem;">Vous cherchez une configuration spécifique ?</h3>
+                <a href="contact.html" class="btn"
+                    style="background: linear-gradient(135deg, #1a1a1a, #1a1a1a); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(0,0,0, 0.2); display: inline-block;">Contacter
+                    l'atelier</a>
+            </div>
+
+        </div>
+
     </main>
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2024 Factor-I</p>
+
+    <!-- Footer -->
+    <footer
+        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
+        <div class="container">
+            <div class="footer-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div class="footer-col">
+                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
+                        style="height: 40px; margin-bottom: 1.5rem;">
+                    <p style="color: #ccc; line-height: 1.6;">Votre expert en informatique à Lannion.</p>
+                </div>
+                <div class="footer-col">
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Liens Rapides <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="index.html" style="color: #ccc; text-decoration: none;">Accueil</a></li>
+                        <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4
+                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
+                        Contact <span
+                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; color: #ccc;">02 96 37 66 12</li>
+                        <li style="margin-bottom: 10px; color: #ccc;">contact@factor-i.fr</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888;">
+                <p>&copy; 2024 Factor-I.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

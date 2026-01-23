@@ -37,7 +37,7 @@
                         <ul class="dropdown-content">
                             <li><a href="assistance.html">Assistance Particulier</a></li>
                             <li><a href="reparation.html">Réparation / Atelier</a></li>
-                            <li><a href="sav-pc.html">Forfaits Atelier</a></li>
+                            <li><a href="sav-pc.html">SAV PC</a></li>
                             <li><a href="pc-sur-mesure.html">PC sur mesure</a></li>
                             <li><a href="occasion.html">Occasion</a></li>
                             <li><a href="sav-apple.html" class="active">SAV Apple</a></li>
@@ -59,113 +59,108 @@
         <!-- Header & Switcher -->
         <section class="bento-header">
             <h1 class="bento-title">Expertise <span>Apple</span></h1>
-            <p class="bento-subtitle">Réparations certifiées et optimisations pour votre Mac & iPhone.</p>
+            <!-- Dynamic Banner Text -->
+            <p class="bento-subtitle" id="category-description">Réparations certifiées et optimisations pour votre Mac &
+                iPhone.</p>
 
-            <div class="univers-switcher">
-                <a href="sav-pc.html" class="switcher-btn"><i class="fab fa-windows"></i> Univers PC</a>
-                <a href="sav-apple.html" class="switcher-btn active"><i class="fab fa-apple"></i> Univers Apple</a>
-            </div>
+
         </section>
 
         <!-- Bento Grid -->
         <div class="container" style="padding-bottom: 4rem;">
-            <div class="bento-grid grid-cols-3">
 
-                <!-- 1. PRISE EN CHARGE MAC OC -->
-                <div class="bento-card bento-standard">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="filterServices('hardware')"><i class="fas fa-microchip"></i>
+                    Hardware</button>
+                <button class="tab-btn" onclick="filterServices('software')"><i class="fas fa-code"></i>
+                    Software</button>
+            </div>
+
+            <div class="bento-grid grid-cols-2">
+
+                <!-- 1. PRISE EN CHARGE MAC OC (HARDWARE) -->
+                <div class="bento-card bento-standard" data-category="hardware">
                     <div class="card-content">
                         <div class="card-header">
                             <i class="fas fa-stethoscope bento-icon"></i>
-                            <h3>PRISE EN CHARGE MAC OC</h3>
+                            <h3>Prise en charge macOS</h3>
                         </div>
-                        <p class="card-desc">Inclus la recherche de panne et diagnostique matériel et logiciel. Le coût
-                            d'intervention varie en fonction du type de Mac et de son année de production. <em>En cas de
-                                doute, n'hésitez pas à nous contacter ou à passer nous voir.</em></p>
+                        <p class="card-desc">Inclus la recherche de panne et diagnostique matériel et logiciel.</p>
                         <div class="price-container">
-                            <p class="price-value">Forfait 45 € <span class="tax">TTC</span></p>
+                            <p class="price-value">45 € <span class="tax">TTC</span></p>
                         </div>
                     </div>
-                    <i class="fab fa-apple bg-icon"></i>
                 </div>
 
-                <!-- 2. OPTIMISATION MAC OS -->
-                <div class="bento-card bento-standard">
+                <!-- 2. OPTIMISATION MAC OS (SOFTWARE) -->
+                <div class="bento-card bento-standard" data-category="software" style="display: none;">
                     <div class="card-content">
                         <div class="card-header">
                             <i class="fas fa-tachometer-alt bento-icon"></i>
-                            <h3>OPTIMISATION MAC OS</h3>
+                            <h3>Optimisation macOS</h3>
                         </div>
-                        <p class="card-desc">Vous vous dites que votre Mac est lent voir dépassé, et vous louchez sur
-                            les nouveaux modèles ? Ne cédez pas à la tentation, II suffit souvent de faire le ménage
-                            dans le système pour lui rendre de ses performances ! malveillants.</p>
+                        <p class="card-desc">Il suffit souvent de faire le ménage dans le système pour lui rendre ses
+                            performances !</p>
                         <div class="price-container">
-                            <p class="price-value">Forfait 70 € <span class="tax">TTC</span></p>
+                            <p class="price-value">70 € <span class="tax">TTC</span></p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. DESINFECTION MAC OS -->
-                <div class="bento-card bento-standard">
+                <!-- 3. DESINFECTION MAC OS (SOFTWARE) -->
+                <div class="bento-card bento-standard" data-category="software" style="display: none;">
                     <div class="card-content">
                         <div class="card-header">
                             <i class="fas fa-shield-virus bento-icon"></i>
-                            <h3>DESINFECTION MAC OS</h3>
+                            <h3>Désinfection macOS</h3>
                         </div>
-                        <p class="card-desc">Ce forfait atelier inclus : La recherche et l'analyse de votre panne
-                            système afin de confirmer les causes virales. Une analyse antivirus approfondie Système /
-                            Logiciels malveillants / Malware / Adwares / publiciel / PUP</p>
+                        <p class="card-desc">Analyse approfondie : Malware / Adwares / Publiciel.</p>
                         <div class="price-container">
-                            <p class="price-value">Forfait 70 € <span class="tax">TTC</span></p>
+                            <p class="price-value">70 € <span class="tax">TTC</span></p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. REMPLACEMENT MODULE MÉMOIRE IMAC 21.5 -->
-                <div class="bento-card bento-standard">
+                <!-- 4. REMPLACEMENT MODULE MÉMOIRE IMAC 21.5 (HARDWARE) -->
+                <div class="bento-card bento-standard" data-category="hardware">
                     <div class="card-content">
                         <div class="card-header">
                             <i class="fas fa-memory bento-icon"></i>
-                            <h3>REMPLACEMENT MODULE MÉMOIRE IMAC 21.5</h3>
+                            <h3>Remplacement mémoire</h3>
                         </div>
-                        <p class="card-desc">Ce forfait atelier Factor-i inclus : Le démontage et remontage de votre
-                            IMAC. Installations des modules de mémoires. Test des modules mémoire et système. <em>Ce
-                                forfait n'intègre pas les mémoires facturés en complément.</em></p>
+                        <p class="card-desc">Démontage/Remontage et installation de modules mémoires sur iMac.</p>
                         <div class="price-container">
-                            <p class="price-value">Forfait 180 € <span class="tax">TTC</span></p>
+                            <p class="price-value">180 € <span class="tax">TTC</span></p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. CHANGEMENT DISQUE AVEC REINSTALLATION -->
-                <div class="bento-card bento-standard">
+                <!-- 5. CHANGEMENT DISQUE AVEC REINSTALLATION (HARDWARE) -->
+                <div class="bento-card bento-standard" data-category="hardware">
                     <div class="card-content">
                         <div class="card-header">
                             <i class="fas fa-hdd bento-icon"></i>
-                            <h3>CHANGEMENT DISQUE AVEC REINSTALLATION</h3>
+                            <h3>Changement disque</h3>
                         </div>
-                        <p class="card-desc">Ce forfait atelier Factor-i inclus : La réinstallation de votre system MAC
-                            Os. La réinstallation des pilotes de votre machines. La mise à niveau système de votre MAC.
-                            L'optimisation du matériel pour une meilleure expérience machine. <em>Ce tarif n'inclus pas
-                                le stockage de remplacement.</em></p>
+                        <p class="card-desc">Remplacement disque physique et réinstallation macOS complète.</p>
                         <div class="price-container">
-                            <p class="price-value">Forfait 230 € <span class="tax">TTC</span></p>
+                            <p class="price-value">230 € <span class="tax">TTC</span></p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 6. REMPLACEMENT ECRAN IMAC -->
-                <div class="bento-card bento-standard">
+                <!-- 6. REMPLACEMENT ECRAN IMAC (HARDWARE) -->
+                <div class="bento-card bento-standard" data-category="hardware">
                     <div class="card-content">
                         <div class="card-header">
                             <i class="fas fa-desktop bento-icon"></i>
-                            <h3>REMPLACEMENT ECRAN IMAC</h3>
+                            <h3>Remplacement écran iMac</h3>
                         </div>
-                        <p class="card-desc">L'écran de votre iMac semble ne plus rien afficher ? Ce forfait inclus le
-                            remplacement de l'écran et de sa vitre par nos techniciens. Notre service est garanti
-                            pendant 6 mois (hors casse)</p>
+                        <p class="card-desc">Remplacement de l'écran et de sa vitre par nos techniciens.</p>
                         <div class="price-container">
-                            <p class="price-label">À partir de</p>
-                            <p class="price-value">Forfait 499 € <span class="tax">TTC</span></p>
+                            <p class="price-value"><span style="font-size:0.9rem; color:#666; font-weight:normal;">À
+                                    partir de</span> 499 € <span class="tax">TTC</span></p>
                         </div>
                     </div>
                 </div>
@@ -246,6 +241,56 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js"></script>
+    <script>
+        const descriptions = {
+            'hardware': "Ce sont les interventions physiques sur les composants de l'ordinateur (ce que l'on peut toucher).",
+            'software': "Ce sont les interventions sur le système d'exploitation (Windows, macOS) et les programmes."
+        };
+
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.bento-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            const descElement = document.getElementById('category-description');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (event) event.currentTarget.classList.add('active');
+
+            // Update description with fade effect
+            if (descriptions[category]) {
+                descElement.style.opacity = 0;
+                setTimeout(() => {
+                    descElement.textContent = descriptions[category];
+                    descElement.style.opacity = 1;
+                }, 200);
+            }
+
+            // Filter cards
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                if (cardCategory === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Initial setup for Hardware
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            cards.forEach(card => {
+                if (card.getAttribute('data-category') === 'hardware') {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('category-description').textContent = descriptions['hardware'];
+        });
+    </script>
 </body>
 
 </html>

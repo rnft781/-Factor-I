@@ -111,6 +111,107 @@ body {
     margin: 0 auto;
 }
 
+
+/* --- Hero Split Side-by-Side (Occasion) --- */
+.hero-si-split {
+    background-color: #f8fafc;
+    /* Solid background */
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+.hero-si-container {
+    max-width: 1200px;
+    /* Constrains width */
+    margin: 0 auto;
+    /* Centers on screen */
+    display: flex;
+    align-items: stretch;
+    /* Match heights */
+    min-height: 450px;
+}
+
+.hero-si-content {
+    flex: 1;
+    padding: 3rem 1rem;
+    /* Aligned with grid */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    z-index: 2;
+    /* Text on top */
+}
+
+.hero-si-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 0 40px;
+    /* Stylish corner */
+    min-height: 300px;
+}
+
+.hero-si-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-trust-list {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Card look for trust items */
+}
+
+.hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+}
+
+.hero-trust-item i {
+    color: #ef3e36;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    .hero-si-container {
+        flex-direction: column-reverse;
+        /* Text on top ? No, let's stick to standard flow usually. But user wants Image prominent? Let's keep Text top for conversion. */
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+
+    .hero-si-content {
+        padding: 3rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-si-image {
+        width: 100%;
+        height: 300px;
+        /* Fixed height mobile */
+        border-radius: 0;
+    }
+
+    .hero-trust-list {
+        justify-content: center;
+    }
+}
+
 /* --- Switcher --- */
 /* --- Switcher --- */
 .univers-switcher {
@@ -144,6 +245,50 @@ body {
 .switcher-btn:hover:not(.active) {
     color: #1a1a1a;
     background: #e2e8f0;
+    transform: translateY(-1px);
+    /* Subtle lift */
+}
+
+/* --- Category Tabs (New) --- */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #333;
+    /* Dark background as in screenshot */
+    color: #fff;
+    border: 1px solid #444;
+    padding: 10px 25px;
+    border-radius: 6px;
+    /* Slightly rounded, rectangular look */
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn i {
+    font-size: 0.9rem;
+}
+
+.tab-btn:hover {
+    background-color: #444;
+}
+
+.tab-btn.active {
+    background-color: #ef3e36;
+    /* Brand Red */
+    border-color: #ef3e36;
+    box-shadow: 0 4px 12px rgba(239, 62, 54, 0.4);
+    transform: translateY(-1px);
 }
 
 /* --- Grid System --- */
@@ -161,28 +306,123 @@ body {
 }
 
 .grid-cols-3 {
+    /* Legacy Grid Support - Kept if needed, but we prefer Flex for centering */
     grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 1100px;
+    /* Restrict width to avoid huge cards */
+    margin: 0 auto;
+    /* Center the grid */
+}
+
+/* New Flex Grid for Centered Items */
+.flex-centered-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.flex-centered-grid .bento-card {
+    width: calc((100% - 3rem) / 3);
+    /* 3 cards per row, 2 gaps of 1.5rem */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .flex-centered-grid .bento-card {
+        width: calc((100% - 1.5rem) / 2);
+        /* 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .flex-centered-grid .bento-card {
+        width: 100%;
+        /* 1 card per row */
+    }
 }
 
 /* --- Cards --- */
 .bento-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    /* Slightly rounded for modern feel, or 0px if square strict requested */
-    padding: 2rem;
+    border-radius: 12px;
+    /* Smoother corners */
+    padding: 2.5rem 2rem;
+    /* More breathing room */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 240px;
+    /* Harmonized Height */
+    justify-content: space-between;
+    /* Pushes footer to bottom */
+
+    /* Animation Entrance */
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger Animations */
+.bento-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.bento-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bento-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.bento-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.bento-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.bento-card:nth-child(6) {
+    animation-delay: 0.6s;
 }
 
 .bento-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-    border-color: #ef3e36;
+    transform: translateY(-8px) scale(1.01);
+    /* Smooth Lift */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(239, 62, 54, 0.4);
+    /* Subtle Glow Border */
+}
+
+/* Price Highlight on Card Hover */
+.bento-card:hover .price-value {
+    transform: scale(1.05);
+    /* Micro-interaction */
+    transition: transform 0.2s ease-out;
+    display: inline-block;
+    /* Required for transform */
 }
 
 /* Checkbox/List Styles */
@@ -210,6 +450,31 @@ body {
 }
 
 /* Icons */
+/* Icons as Chips */
+.bento-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(239, 62, 54, 0.08);
+    /* Subtle Red Tint */
+    border-radius: 10px;
+    /* Chip Shape */
+    display: flex !important;
+    /* Force Flex */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #ef3e36;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover .bento-icon {
+    background: #ef3e36;
+    color: #ffffff;
+    transform: rotate(5deg);
+    /* Playful interaction */
+}
+
 .card-icon-wrapper {
     width: 50px;
     height: 50px;
@@ -223,7 +488,8 @@ body {
 
 .card-icon-wrapper i {
     font-size: 1.5rem;
-    color: #334155;
+    color: #ef3e36;
+    /* Brand Red as requested */
 }
 
 .icon-gradient i {
@@ -235,24 +501,50 @@ body {
 .card-title {
     font-size: 1.25rem;
     font-weight: 700;
-    margin: 0 0 0.5rem;
-    color: #1a1a1a;
+    margin: 0 0 0.75rem;
+    /* Increased spacing */
+    color: #111827;
+    /* Darker black for better contrast */
+    line-height: 1.3;
+    /* Better readability for multi-line titles */
 }
 
 .card-desc {
     font-size: 0.95rem;
-    color: #64748b;
+    color: #6b7280;
+    /* Lighter grey for better hierarchy */
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
+    /* Relaxed reading */
     flex-grow: 1;
+    /* Ensures text takes available space pushing price down */
 }
 
 .card-price {
-    margin-top: 1.5rem;
+    margin-top: auto;
+    /* Pushes to bottom */
+    padding-top: 1.5rem;
     text-align: right;
+    font-size: 1.8rem;
+    /* Larger */
+    font-weight: 800;
+    color: #1a1a1a;
+    /* Darker for readability as asked */
+}
+
+.price-value {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #ef3e36;
+    color: #111827;
+    /* Deep black */
+    letter-spacing: -0.5px;
+    /* Tighter modern tracking */
+}
+
+.price-value .tax {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
 }
 
 .card-price span {
@@ -263,10 +555,13 @@ body {
 }
 
 .card-price .from {
-    font-size: 0.9rem;
-    color: #64748b;
-    font-weight: normal;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-weight: 500;
     text-transform: none;
+    display: block;
+    /* Moves 'From' to its own line if needed, but we keep inline per user request in HTML */
+    margin-right: 5px;
 }
 
 /* Decorative Helper */
@@ -365,6 +660,255 @@ body {
     padding-top: 2rem;
     margin-top: 3rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
     color: #64748b;
+}
+
+/* --- Pricing Specifics --- */
+.bento-card.pricing-card {
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    justify-content: flex-start;
+}
+
+.bento-card.pricing-standard {
+    border-top: 4px solid #94a3b8;
+}
+
+.bento-card.pricing-premium {
+    border-top: 4px solid #ef3e36;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Stand out */
+    transform: scale(1.02);
+    /* Slight default lift */
+    border-color: rgba(239, 62, 54, 0.2);
+}
+
+/* --- Tips / Maintenance Page --- */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(239, 62, 54, 0.3);
+}
+
+.tip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.tip-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #f1f5f9;
+    /* Subtle background number */
+    line-height: 1;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 0;
+}
+
+.tip-icon-box {
+    width: 60px;
+    height: 60px;
+    background: #fef2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef3e36;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tip-content {
+    position: relative;
+    z-index: 1;
+}
+
+.tip-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.tip-desc {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 1rem 0;
+}
+
+.pricing-price span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+ul.feature-list {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+ul.feature-list li {
+    padding-left: 25px;
+    margin-bottom: 12px;
+}
+
+ul.feature-list li::before {
+    content: '\f00c';
+    /* FontAwesome Check */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #10b981;
+    /* Green Check */
+    position: absolute;
+    left: 0;
+}
+
+/* --- Final Editorial Refinements (Compact) --- */
+.editorial-section {
+    padding: 3rem 0;
+}
+
+.editorial-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.editorial-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.editorial-row:last-child {
+    margin-bottom: 0;
+}
+
+.ed-text {
+    flex: 1;
+    position: relative;
+}
+
+.ed-visual {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 250px;
+}
+
+.ed-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ed-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.ed-desc {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.ed-tip-box {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: #064e3b;
+    margin-top: 1rem;
+}
+
+.ed-tip-box strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.ed-warning {
+    font-size: 0.9rem;
+    color: #b91c1c;
+    background: #fef2f2;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.impact-hero-dark {
+    background-color: #0f172a;
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.impact-hero-dark h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.impact-hero-dark p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+
+    .editorial-row,
+    .editorial-row.reverse {
+        flex-direction: column;
+        text-align: left;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .ed-visual {
+        width: 100%;
+        min-height: 200px;
+        height: auto;
+    }
+
+    .impact-hero-dark h1 {
+        font-size: 2rem;
+    }
 }
