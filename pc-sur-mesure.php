@@ -1,3 +1,44 @@
+<?php
+// --- 1. CONFIGURATION DE LA BASE DE DONNÉES ---
+$host = 'localhost';
+$user = 'admin';
+$pass = 'admin123';
+$db   = 'formulaire_contact';
+
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) { die("Erreur critique : " . $conn->connect_error); }
+
+$status_message = "";
+
+// --- 2. TRAITEMENT DU FORMULAIRE ---
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // On nettoie les données pour éviter les problèmes d'accents ou de piratage
+    $nom      = $conn->real_escape_string($_POST['nom']);
+    $prenom   = $conn->real_escape_string($_POST['prenom']);
+    $email    = $conn->real_escape_string($_POST['email']);
+    $tel      = $conn->real_escape_string($_POST['tel']);
+    $type     = $conn->real_escape_string($_POST['machine_type']); // Vient des boutons radio "Tour" ou "Portable"
+    $usage    = $conn->real_escape_string($_POST['usage']);        // Vient des boutons radio "Gaming", etc.
+    $details  = $conn->real_escape_string($_POST['message']);
+
+    // On prépare la commande d'enregistrement
+    $sql = "INSERT INTO projets_pc (nom, prenom, email, telephone, type_machine, usage_principal, details) 
+            VALUES ('$nom', '$prenom', '$email', '$tel', '$type', '$usage', '$details')";
+
+    // On envoie
+    if ($conn->query($sql) === TRUE) {
+        $status_message = "<div style='background:#d4edda; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>
+                            ✅ <strong>Demande reçue !</strong> Nous allons étudier votre projet de PC.
+                           </div>";
+    } else {
+        $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>
+                            ❌ Oups ! Une erreur est survenue : " . $conn->error . "
+                           </div>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,11 +53,10 @@
 </head>
 <body>
 
-        <header class="main-header">
+    <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
-
             </a>
 
             <nav class="navbar">
@@ -83,7 +123,7 @@
                 </div>
 
                 <div class="config-display" id="config-area">
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -93,6 +133,9 @@
                     <div class="form-intro">
                         <h2>Définissons votre besoin</h2>
                         <p>Remplissez ce formulaire rapide. Un expert Factor-I vous recontactera pour affiner votre projet et vous proposer un devis personnalisé.</p>
+                        
+                        <?php echo $status_message; ?>
+
                         <ul class="check-list">
                             <li><i class="fas fa-check"></i> Conseil gratuit.</li>
                             <li><i class="fas fa-check"></i> Composants de qualité sélectionnés.</li>
@@ -100,7 +143,7 @@
                         </ul>
                     </div>
 
-                    <form class="project-form" id="projectForm">
+                    <form class="project-form" id="projectForm" method="POST" action="">
                         
                         <div class="form-row">
                             <div class="form-group">

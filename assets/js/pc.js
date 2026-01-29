@@ -86,15 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Afficher le premier profil (Gaming) au chargement de la page
     showProfile('gaming');
 
-
-    // GESTION ENVOI FORMULAIRE (Simulation)
-    const form = document.getElementById('projectForm');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Empêche le rechargement
-            alert("Merci ! Votre demande de projet a bien été envoyée à l'équipe Factor-I. Nous vous recontactons très vite.");
-            form.reset(); // Vide le formulaire
-        });
-    }
-
+    // --- ZONE MODIFIÉE ---
+    // J'ai supprimé tout le bloc "form.addEventListener" qui bloquait l'envoi.
+    // Maintenant, quand tu cliques sur envoyer, c'est le PHP qui prend le relais.
 });
