@@ -8,13 +8,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bento-style.css">
+    <link rel="stylesheet" href="assets/css/assistance.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- Header (Consistent) -->
-        <header class="main-header">
+    <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
@@ -26,9 +27,12 @@
                     <li><a href="index.html" class="active">Accueil</a></li>
 
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
+                            <li><a href="pour-pro.html">Pour les professionnels</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
@@ -190,43 +194,38 @@
     </main>
 
     <!-- Footer -->
-    <footer
-        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
-        <div class="container">
-            <div class="footer-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <div class="footer-col">
-                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
-                        style="height: 40px; margin-bottom: 1.5rem;">
-                    <p style="color: #ccc; line-height: 1.6;">Votre expert en informatique à Lannion.</p>
-                </div>
-                <div class="footer-col">
-                    <h4
-                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
-                        Liens Rapides <span
-                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
-                    </h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="index.html" style="color: #ccc; text-decoration: none;">Accueil</a></li>
-                        <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4
-                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
-                        Contact <span
-                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
-                    </h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px; color: #ccc;">02 96 37 66 12</li>
-                        <li style="margin-bottom: 10px; color: #ccc;">contact@factor-i.fr</li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <h4>Factor-I</h4>
+                <p>L'informatique à vos côtés.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
             </div>
-            <div
-                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888;">
-                <p>&copy; 2024 Factor-I.</p>
+
+            <div class="footer-col">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><a href="contact.html">Prendre rendez-vous</a></li>
+                    <li><a href="maintenance.html">Maintenance Pro</a></li>
+                    <li><a href="reparation.html">Réparation</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">CGV</a></li>
+                    <li><a href="livraison.html">Livraison & Intervention</a></li>
+                    <li><a href="bonus-reparation.html">Bonus Réparation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
         </div>
     </footer>
 

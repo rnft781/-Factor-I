@@ -64,9 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li><a href="index.html" class="active">Accueil</a></li>
 
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
+                            <li><a href="pour-pro.html">Pour les professionnels</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
@@ -229,19 +232,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <footer>
         <div class="container footer-grid">
+
             <div class="footer-col">
                 <h4>Factor-I</h4>
                 <p>L'informatique à vos côtés.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
             </div>
+
             <div class="footer-col">
-                <h4>Liens</h4>
+                <h4>Liens Utiles</h4>
                 <ul>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="pc-sur-mesure.html">PC Sur Mesure</a></li>
+                    <li><a href="contact.html">Prendre rendez-vous</a></li>
+                    <li><a href="maintenance.html">Maintenance Pro</a></li>
+                    <li><a href="reparation.html">Réparation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">CGV</a></li>
+                    <li><a href="livraison.html">Livraison & Intervention</a></li>
+                    <li><a href="bonus-reparation.html">Bonus Réparation</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom"><p>© 2024 Factor-I</p></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
+        </div>
     </footer>
 
     <script src="assets/js/main.js"></script>

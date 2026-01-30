@@ -8,13 +8,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bento-style.css">
+    <link rel="stylesheet" href="assets/css/occasion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- Header (Consistent) -->
-        <header class="main-header">
+    <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
@@ -26,9 +27,12 @@
                     <li><a href="index.html" class="active">Accueil</a></li>
 
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
+                            <li><a href="pour-pro.html">Pour les professionnels</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
@@ -80,37 +84,80 @@
         <div class="bento-container" style="margin-top: 0;">
             <div class="bento-grid grid-cols-2">
 
-                <!-- PC FIXE -->
+                <!-- PC FIXES PRO (Regroupés) -->
                 <div class="bento-card product-card">
                     <div class="product-image-container">
-                        <img src="assets/img/pc fixe.jpg" alt="PC Fixe Reconditionné">
+                        <img src="assets/img/pc-fixe.jpg" alt="PC Fixes Reconditionnés">
                     </div>
                     <div class="product-content">
                         <div class="card-header">
-                            <h3 class="card-title">PC Fixe Professionnel</h3>
+                            <h3 class="card-title">Unités Centrales Pro</h3>
+                            <p style="font-size:0.9rem; color:#64748b; margin-top:0.2rem;">Dell Optiplex & Lenovo
+                                ThinkCentre</p>
                         </div>
 
-                        <div class="pricing-price">119 € <span>À partir de</span></div>
+                        <div style="margin: 1rem 0; font-size: 0.95rem;">
+                            <!-- Model 1 -->
+                            <div style="margin-bottom: 0.8rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                                    <strong>Dell Optiplex 3060</strong>
+                                    <span style="font-weight:700; color:#ef3e36;">219 €</span>
+                                </div>
+                                <div style="color:#64748b; font-size:0.85rem;">i5-8500T (6 Cœurs) • 8Go RAM • Win 11 Pro
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <hr style="border:0; border-top:1px solid #e2e8f0; margin: 0.5rem 0;">
+
+                            <!-- Model 2 -->
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                                    <strong>Lenovo ThinkCentre M725s</strong>
+                                    <span style="font-weight:700; color:#ef3e36;">169 €</span>
+                                </div>
+                                <div style="color:#64748b; font-size:0.85rem;">Ryzen 3 Pro • 8Go RAM • Win 11 Pro</div>
+                            </div>
+                        </div>
+
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.5rem;">Garantie 1 an • Stockage
+                            Personnalisé</div>
+
                         <a href="contact.html" class="btn"
-                            style="background:#334155; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block;">Voir
-                            les stocks</a>
+                            style="background:#ef3e36; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block; font-weight:700;">
+                            Nous contacter
+                        </a>
                     </div>
                 </div>
 
-                <!-- PC PORTABLE -->
+                <!-- PC PORTABLE HP 15-FC0139NF -->
                 <div class="bento-card product-card">
                     <div class="product-image-container">
-                        <img src="assets/img/pc portable.jpg" alt="PC Portable Business">
+                        <img src="assets/img/pc-portable.jpg" alt="HP 15-FC0139NF">
                     </div>
                     <div class="product-content">
                         <div class="card-header">
-                            <h3 class="card-title">PC Portable Business</h3>
+                            <h3 class="card-title">HP 15-FC0139NF</h3>
+                            <p style="font-size:0.9rem; color:#64748b; margin-top:0.2rem;">Ultra-Performant & Polyvalent
+                            </p>
                         </div>
 
-                        <div class="pricing-price">159 € <span>À partir de</span></div>
+                        <ul>
+                            <li><b>Processeur :</b> AMD Ryzen 7 5825U (8 Coeurs)</li>
+                            <li><b>Mémoire :</b> 16 Go RAM</li>
+                            <li><b>Stockage :</b> 512 Go SSD</li>
+                            <li><b>Écran :</b> 15.6" Full HD (1920x1080)</li>
+                            <li><b>OS :</b> Windows 11 Home</li>
+                        </ul>
+
+                        <div class="pricing-price" style="font-size: 2.2rem; margin: 1rem 0 0.5rem;">599.99 €</div>
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.5rem;">dont éco-part 3.98 €
+                        </div>
+
                         <a href="contact.html" class="btn"
-                            style="background:#ef3e36; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block;">Voir
-                            les stocks</a>
+                            style="background:#ef3e36; color:white; width:100%; text-align:center; padding:12px; border-radius:8px; text-decoration:none; display:block; font-weight:700;">
+                            Nous contacter
+                        </a>
                     </div>
                 </div>
 
@@ -122,7 +169,7 @@
                     L'informatique Durable</h2>
                 <p
                     style="font-size:1.1rem; max-width:800px; margin:0 auto; position:relative; z-index:2; text-align: center;">
-                    Prolonger la vie d'un ordinateur, c'est réduire son empreinte carbone de 70%.<br>
+                    Prolonger la vie d'un ordinateur, c'est w²duire son empreinte carbone de 70%.<br>
                     Faites le choix de la raison : <b>Performance pro, prix mini, impact positif.</b>
                 </p>
             </div>
@@ -140,43 +187,38 @@
     </main>
 
     <!-- Footer -->
-    <footer
-        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
-        <div class="container">
-            <div class="footer-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <div class="footer-col">
-                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
-                        style="height: 40px; margin-bottom: 1.5rem;">
-                    <p style="color: #ccc; line-height: 1.6;">Votre expert en informatique à Lannion.</p>
-                </div>
-                <div class="footer-col">
-                    <h4
-                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
-                        Liens Rapides <span
-                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
-                    </h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="index.html" style="color: #ccc; text-decoration: none;">Accueil</a></li>
-                        <li><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4
-                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
-                        Contact <span
-                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
-                    </h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px; color: #ccc;">02 96 37 66 12</li>
-                        <li style="margin-bottom: 10px; color: #ccc;">contact@factor-i.fr</li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <h4>Factor-I</h4>
+                <p>L'informatique à vos côtés.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
             </div>
-            <div
-                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888;">
-                <p>&copy; 2024 Factor-I.</p>
+
+            <div class="footer-col">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><a href="contact.html">Prendre rendez-vous</a></li>
+                    <li><a href="maintenance.html">Maintenance Pro</a></li>
+                    <li><a href="reparation.html">Réparation</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">CGV</a></li>
+                    <li><a href="livraison.html">Livraison & Intervention</a></li>
+                    <li><a href="bonus-reparation.html">Bonus Réparation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
         </div>
     </footer>
 

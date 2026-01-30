@@ -8,11 +8,12 @@
     <!-- Use the new Unified Bento Style -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bento-style.css">
+    <link rel="stylesheet" href="assets/css/sav-apple.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-       <header class="main-header">
+    <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
@@ -24,9 +25,12 @@
                     <li><a href="index.html" class="active">Accueil</a></li>
 
                     <li class="dropdown">
-                        <a href="#">Services Professionels <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
-                            <li><a href="pour-pro.html">pour les professionnels</a></li>
+                            <li><a href="pour-pro.html">Pour les professionnels</a></li>
+                            <li><a href="maintenance.html">Comprendre la maintenance</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                         </ul>
                     </li>
@@ -79,13 +83,16 @@
             <div class="bento-grid grid-cols-2">
 
                 <!-- 1. PRISE EN CHARGE MAC OC (HARDWARE) -->
-                <div class="bento-card bento-standard" data-category="hardware">
+                <div class="bento-card" data-category="hardware">
+                    <div class="card-img-container">
+                        <img src="assets/img/diagnostic.png" alt="Diagnostic Mac">
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
-                            <i class="fas fa-stethoscope bento-icon"></i>
                             <h3>Prise en charge macOS</h3>
                         </div>
-                        <p class="card-desc">Inclus la recherche de panne et diagnostique matériel et logiciel.</p>
+                        <p class="card-desc">Inclus la recherche de panne et diagnostique matériel et logiciel complet
+                            pour votre Mac.</p>
                         <div class="price-container">
                             <p class="price-value">45 € <span class="tax">TTC</span></p>
                         </div>
@@ -93,14 +100,16 @@
                 </div>
 
                 <!-- 2. OPTIMISATION MAC OS (SOFTWARE) -->
-                <div class="bento-card bento-standard" data-category="software" style="display: none;">
+                <div class="bento-card" data-category="software" style="display: none;">
+                    <div class="card-img-container">
+                        <img src="assets/img/optimisation.webp" alt="Optimisation macOS">
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
-                            <i class="fas fa-tachometer-alt bento-icon"></i>
                             <h3>Optimisation macOS</h3>
                         </div>
                         <p class="card-desc">Il suffit souvent de faire le ménage dans le système pour lui rendre ses
-                            performances !</p>
+                            performances ! Suppression de fichiers inutiles et optimisation du démarrage.</p>
                         <div class="price-container">
                             <p class="price-value">70 € <span class="tax">TTC</span></p>
                         </div>
@@ -108,13 +117,16 @@
                 </div>
 
                 <!-- 3. DESINFECTION MAC OS (SOFTWARE) -->
-                <div class="bento-card bento-standard" data-category="software" style="display: none;">
+                <div class="bento-card" data-category="software" style="display: none;">
+                    <div class="card-img-container">
+                        <img src="assets/img/desinfection.jpg" alt="Antivirus Mac">
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
-                            <i class="fas fa-shield-virus bento-icon"></i>
                             <h3>Désinfection macOS</h3>
                         </div>
-                        <p class="card-desc">Analyse approfondie : Malware / Adwares / Publiciel.</p>
+                        <p class="card-desc">Analyse approfondie : Malware / Adwares / Publiciels qui ralentissent votre
+                            Mac.</p>
                         <div class="price-container">
                             <p class="price-value">70 € <span class="tax">TTC</span></p>
                         </div>
@@ -122,13 +134,16 @@
                 </div>
 
                 <!-- 4. REMPLACEMENT MODULE MÉMOIRE IMAC 21.5 (HARDWARE) -->
-                <div class="bento-card bento-standard" data-category="hardware">
+                <div class="bento-card" data-category="hardware">
+                    <div class="card-img-container">
+                        <img src="assets/img/imac-memoire.jpg" alt="RAM iMac">
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
-                            <i class="fas fa-memory bento-icon"></i>
                             <h3>Remplacement mémoire</h3>
                         </div>
-                        <p class="card-desc">Démontage/Remontage et installation de modules mémoires sur iMac.</p>
+                        <p class="card-desc">Démontage, nettoyage et installation de nouveaux modules de mémoire vive
+                            (RAM) sur iMac.</p>
                         <div class="price-container">
                             <p class="price-value">180 € <span class="tax">TTC</span></p>
                         </div>
@@ -136,13 +151,16 @@
                 </div>
 
                 <!-- 5. CHANGEMENT DISQUE AVEC REINSTALLATION (HARDWARE) -->
-                <div class="bento-card bento-standard" data-category="hardware">
+                <div class="bento-card" data-category="hardware">
+                    <div class="card-img-container">
+                        <img src="assets/img/imac-disque.jpg" alt="Disque Dur Mac">
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
-                            <i class="fas fa-hdd bento-icon"></i>
                             <h3>Changement disque</h3>
                         </div>
-                        <p class="card-desc">Remplacement disque physique et réinstallation macOS complète.</p>
+                        <p class="card-desc">Remplacement de votre ancien disque par un SSD rapide et réinstallation
+                            macOS complète.</p>
                         <div class="price-container">
                             <p class="price-value">230 € <span class="tax">TTC</span></p>
                         </div>
@@ -150,13 +168,15 @@
                 </div>
 
                 <!-- 6. REMPLACEMENT ECRAN IMAC (HARDWARE) -->
-                <div class="bento-card bento-standard" data-category="hardware">
+                <div class="bento-card" data-category="hardware">
+                    <div class="card-img-container">
+                        <img src="assets/img/imac-ecran.jpg" alt="Écran iMac">
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
-                            <i class="fas fa-desktop bento-icon"></i>
                             <h3>Remplacement écran iMac</h3>
                         </div>
-                        <p class="card-desc">Remplacement de l'écran et de sa vitre par nos techniciens.</p>
+                        <p class="card-desc">Remplacement de l'écran et de sa vitre par nos techniciens certifiés.</p>
                         <div class="price-container">
                             <p class="price-value"><span style="font-size:0.9rem; color:#666; font-weight:normal;">À
                                     partir de</span> 499 € <span class="tax">TTC</span></p>
@@ -177,66 +197,38 @@
     </main>
 
     <!-- Footer Identique Index -->
-    <footer
-        style="background-color: var(--dark-black); color: white; padding: 4rem 0; border-top: 3px solid var(--primary-red);">
-        <div class="container">
-            <div class="footer-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <!-- Colonne 1 -->
-                <div class="footer-col">
-                    <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I"
-                        style="height: 40px; margin-bottom: 1.5rem;">
-                    <p style="color: #ccc; line-height: 1.6;">
-                        Votre expert en informatique à Lannion. Vente, réparation, maintenance pour particuliers et
-                        professionnels.
-                    </p>
-                </div>
+    <footer>
+        <div class="container footer-grid">
 
-                <!-- Colonne 2 -->
-                <div class="footer-col">
-                    <h4
-                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
-                        Liens Rapides
-                        <span
-                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
-                    </h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><a href="index.html"
-                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Accueil</a></li>
-                        <li style="margin-bottom: 10px;"><a href="reparation.html"
-                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Atelier de réparation</a>
-                        </li>
-                        <li style="margin-bottom: 10px;"><a href="pc-sur-mesure.html"
-                                style="color: #ccc; text-decoration: none; transition: 0.3s;">PC sur mesure</a></li>
-                        <li style="margin-bottom: 10px;"><a href="contact.html"
-                                style="color: #ccc; text-decoration: none; transition: 0.3s;">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Colonne 3 -->
-                <div class="footer-col">
-                    <h4
-                        style="color: white; font-size: 1.2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 10px;">
-                        Contact
-                        <span
-                            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background-color: var(--primary-red);"></span>
-                    </h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-map-marker-alt"
-                                style="color: var(--primary-red); margin-right: 10px;"></i> 4 rue St Marc, 22300 Lannion
-                        </li>
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-phone"
-                                style="color: var(--primary-red); margin-right: 10px;"></i> 02 96 37 66 12</li>
-                        <li style="margin-bottom: 10px; color: #ccc;"><i class="fas fa-envelope"
-                                style="color: var(--primary-red); margin-right: 10px;"></i> contact@factor-i.fr</li>
-                    </ul>
-                </div>
+            <div class="footer-col">
+                <h4>Factor-I</h4>
+                <p>L'informatique à vos côtés.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
             </div>
 
-            <div
-                style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #888; font-size: 0.9rem;">
-                <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
+            <div class="footer-col">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><a href="contact.html">Prendre rendez-vous</a></li>
+                    <li><a href="maintenance.html">Maintenance Pro</a></li>
+                    <li><a href="reparation.html">Réparation</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col">
+                <h4>Informations Légales</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">CGV</a></li>
+                    <li><a href="livraison.html">Livraison & Intervention</a></li>
+                    <li><a href="bonus-reparation.html">Bonus Réparation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
         </div>
     </footer>
 

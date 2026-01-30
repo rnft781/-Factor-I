@@ -1,81 +1,103 @@
-/* SAV Apple Specific Styles */
-
-/* Background Override */
-body {
-    background-color: #f8f9fa;
-}
-
-/* Service Card Styling */
-.cards-grid {
-    gap: 2rem;
-    justify-content: center;
-}
-
-.card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #eee;
+/* Styling specific for "Option A" - Discrete & Pro */
+.bento-card {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    /* Slightly more rounded */
+    overflow: hidden;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    /* Uniform height */
 }
 
-.card:hover {
+.bento-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-bottom: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    border-color: #ef3e36;
 }
 
-.card-header {
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #ef3e36;
-    padding-bottom: 0.5rem;
-    display: inline-block;
+/* Image Container - Fixed 35% Height */
+.card-img-container {
+    height: 180px;
+    /* Fixed px height for consistency */
     width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f7fafc;
+    /* Placeholder bg */
 }
 
-.card h3 {
-    color: #2c3e50;
-    font-size: 1.3rem;
-    margin: 0;
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Desaturate slightly for "Pro" look */
+    filter: saturate(0.85);
+    transition: filter 0.3s ease, transform 0.5s ease;
+}
+
+.bento-card:hover .card-img-container img {
+    filter: saturate(1.1);
+    /* Pop color on hover */
+    transform: scale(1.05);
+    /* Slight zoom */
+}
+
+/* Content Container */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Fills the rest of the card */
+}
+
+/* Typography */
+.card-header h3 {
+    font-size: 1.2rem;
     font-weight: 700;
+    color: #1a202c;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    text-shadow: none;
 }
 
-.card-description {
-    color: #555;
+p.card-desc {
     font-size: 0.95rem;
+    color: #4a5568;
     line-height: 1.5;
     margin-bottom: 1.5rem;
     flex-grow: 1;
+    /* Pushes price down */
 }
 
-.price-tag {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ef3e36;
+.price-container {
     margin-top: auto;
-    text-align: right;
+    /* Always at bottom */
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
 }
 
-.price-tag span {
-    font-size: 1rem;
-    color: #95a5a6;
-    font-weight: normal;
+.price-value {
+    font-size: 1.5rem;
+    /* Prominent price */
+    font-weight: 800;
+    color: #1a202c;
 }
 
-/* Hero Badge Override */
-.hero-section {
-    height: auto !important;
-    /* Override the 85vh from style.css */
-    min-height: 40vh;
-    /* Reasonable height for a service page */
-    padding: 80px 0 !important;
+.tax {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    font-weight: 400;
 }
 
-.hero-section h1 {
-    font-size: 2.5rem !important;
-    /* Smaller than homepage 3.5rem */
+/* Responsive */
+@media (max-width: 768px) {
+    .card-img-container {
+        height: 150px;
+    }
 }
