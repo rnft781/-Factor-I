@@ -3,20 +3,13 @@
 ========================================= */
 :root {
     /* --- PALETTE DE COULEURS --- */
-    --primary-red: #E62020;
-    /* Rouge vif (Action, Important) */
-    --primary-red-dark: #b30000;
-    /* Rouge plus foncé (au survol) */
-
-    --dark-black: #121212;
-    /* Noir presque pur (Header, Footer) */
-    --dark-grey: #2C2C2C;
-    /* Gris foncé (Cartes, éléments secondaires) */
-    --medium-grey: #666666;
-    /* Gris moyen (Texte secondaire) */
-    --light-grey: #f4f4f4;
-    /* Gris très clair (Fond de site) */
-
+    --primary-red: #E62020;         /* Rouge vif */
+    --primary-red-dark: #b30000;    /* Rouge foncé */
+    --dark-black: #121212;          /* Noir presque pur */
+    --pure-black: #231f20;          /* Noir pur pour le header */
+    --dark-grey: #2C2C2C;           /* Gris foncé */
+    --medium-grey: #666666;         /* Gris moyen */
+    --light-grey: #f4f4f4;          /* Gris très clair */
     --white: #ffffff;
 
     /* --- CONFIGURATION --- */
@@ -24,79 +17,46 @@
     --transition: all 0.3s ease-in-out;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: var(--white);
     color: #333;
-    /* Texte gris foncé pour lecture agréable */
-}
+    }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-}
-
-ul {
-    list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    color: var(--dark-black);
-    font-weight: 700;
-}
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+h1, h2, h3, h4 { color: var(--dark-black); font-weight: 700; }
 
 /* =========================================
    2. UTILITAIRES
 ========================================= */
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-padding {
-    padding: 80px 0;
-}
-
-.bg-light {
-    background-color: var(--light-grey);
-}
-
-.text-red {
-    color: var(--primary-red);
-}
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; }
+.bg-light { background-color: var(--light-grey); }
+.text-red { color: var(--primary-red); }
 
 /* =========================================
-   3. HEADER (MENU) - STYLE NOIR & ROUGE
+   3. HEADER (MENU) - MODIFIÉ (GRAND LOGO)
 ========================================= */
 .main-header {
-    background-color: var(--dark-black);
+    background-color: var(--pure-black); /* MODIFIÉ : Noir pur */
     color: var(--white);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* Ombre plus marquée */
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 3px solid var(--primary-red);
-    /* Ligne rouge distinctive */
+    padding: 10px 0; /* MODIFIÉ : Un peu d'espace pour le gros logo */
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    /* height: 80px;  <-- RETIRÉ pour laisser la hauteur s'adapter au logo */
 }
 
 /* Logo */
@@ -108,20 +68,16 @@ h4 {
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-.logo-text span {
-    color: var(--primary-red);
-    /* Si tu veux colorer une partie du logo */
+    border: none; /* Sécurité */
 }
 
 .logo-img {
-    height: 50px;
+    height: 90px; /* MODIFIÉ : Logo beaucoup plus grand */
+    width: auto;
     margin-right: 15px;
-    background: var(--white);
-    /* Petit fond blanc si le logo est transparent */
-    border-radius: 5px;
-    padding: 2px;
+    background: transparent; /* MODIFIÉ : Plus de fond blanc */
+    border-radius: 0;        /* MODIFIÉ : Plus de bords arrondis */
+    padding: 0;              /* MODIFIÉ : Plus de marge interne */
 }
 
 /* Navigation Desktop */
@@ -135,18 +91,13 @@ h4 {
     font-size: 0.95rem;
     font-weight: 500;
     color: #e0e0e0;
-    /* Blanc cassé */
 }
 
 .nav-list a:hover,
-.nav-list a.active {
-    color: var(--primary-red);
-}
+.nav-list a.active { color: var(--primary-red); }
 
 /* Menu Déroulant */
-.dropdown {
-    position: relative;
-}
+.dropdown { position: relative; }
 
 .dropdown-content {
     display: none;
@@ -154,7 +105,6 @@ h4 {
     top: 100%;
     left: 0;
     background-color: var(--dark-grey);
-    /* Fond gris foncé */
     min-width: 240px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     padding: 0;
@@ -171,15 +121,11 @@ h4 {
 
 .dropdown-content li a:hover {
     background-color: var(--primary-red);
-    /* Fond rouge au survol */
     color: var(--white);
     padding-left: 25px;
-    /* Petit effet de glissement */
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+.dropdown:hover .dropdown-content { display: block; }
 
 /* Bouton Contact (Menu) */
 .btn-contact {
@@ -212,7 +158,6 @@ h4 {
     background-size: cover;
     background-position: center;
     background-color: #222;
-    /* Fallback couleur */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,10 +165,7 @@ h4 {
     color: var(--white);
 }
 
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-}
+.hero-content { max-width: 800px; padding: 20px; }
 
 .hero-content h1 {
     font-size: 3.5rem;
@@ -271,8 +213,6 @@ h4 {
     color: var(--primary-red);
 }
 
-
-
 .btn-secondary:hover {
     background-color: var(--white);
     color: var(--dark-black);
@@ -290,7 +230,6 @@ h4 {
     padding-bottom: 20px;
 }
 
-/* Petite barre rouge sous le titre */
 .section-title::after {
     content: '';
     position: absolute;
@@ -316,7 +255,6 @@ h4 {
     text-align: center;
     transition: var(--transition);
     border-bottom: 4px solid transparent;
-    /* Prêt pour l'effet hover */
 }
 
 .card:hover {
@@ -332,15 +270,8 @@ h4 {
     transition: var(--transition);
 }
 
-.card:hover .card-icon {
-    color: var(--primary-red);
-    /* L'icône devient rouge au survol */
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
+.card:hover .card-icon { color: var(--primary-red); }
+.card h3 { margin-bottom: 15px; font-size: 1.4rem; }
 
 .link-arrow {
     display: inline-block;
@@ -354,10 +285,9 @@ h4 {
 .link-arrow:hover {
     color: var(--dark-black);
     letter-spacing: 1px;
-    /* Petit effet d'écartement */
 }
 
-/* Section Trust (Satisfaction) */
+/* Section Trust */
 .trust-section {
     background-color: var(--light-grey);
     border-top: 1px solid #e1e1e1;
@@ -414,7 +344,6 @@ footer {
     padding-left: 15px;
 }
 
-/* Petit trait rouge à gauche des titres du footer */
 .footer-col h4::before {
     content: '';
     position: absolute;
@@ -425,18 +354,9 @@ footer {
     background-color: var(--primary-red);
 }
 
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
-    transition: var(--transition);
-}
-
-.footer-col ul li a:hover {
-    color: var(--primary-red);
-    padding-left: 5px;
-}
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { transition: var(--transition); }
+.footer-col ul li a:hover { color: var(--primary-red); padding-left: 5px; }
 
 .footer-bottom {
     background-color: #000;
@@ -450,76 +370,23 @@ footer {
    7. RESPONSIVE (MOBILE)
 ========================================= */
 @media (max-width: 768px) {
-
-    .burger-menu {
-        display: block;
-    }
-
-    .main-header .container {
-        position: relative;
-    }
+    .burger-menu { display: block; }
+    .main-header .container { position: relative; }
 
     .nav-list {
         position: fixed;
-        /* Mieux que absolute pour le mobile */
-        top: 80px;
+        top: 80px; /* À ajuster si le header est plus grand */
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
-        /* Prend toute la hauteur restante */
         background-color: var(--dark-black);
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 40px;
         transform: translateX(-100%);
-        /* Caché à gauche */
         transition: transform 0.4s ease;
     }
 
-    .nav-list.active {
-        transform: translateX(0);
-        /* Apparait */
-    }
-
-    .nav-list li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-list a {
-        display: block;
-        padding: 15px;
-        font-size: 1.2rem;
-        border-bottom: 1px solid #333;
-    }
-
-    /* Sous-menus mobile */
-    .dropdown-content {
-        position: static;
-        background-color: #222;
-        box-shadow: none;
-        border-top: none;
-        width: 100%;
-    }
-
-    .dropdown-content li a {
-        font-size: 1rem;
-        padding-left: 30px;
-        border-bottom: 1px solid #333;
-        color: #ccc;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .content-row {
-        flex-direction: column;
-    }
-
-    .btn {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-    }
-}
+    .nav-list.active { transform: translateX(0); }
+    .nav-list li { width: 100%; text-align: center; }
+    .nav-list a { display: block; padding: 15px; font

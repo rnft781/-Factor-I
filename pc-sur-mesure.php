@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo-link">
-                <img src="assets/img/logo-Factor-i.png" alt="Logo Factor-I" class="logo-img">
+                <img src="assets/img/logo.png" alt="Logo Factor-I" class="logo-img">
             </a>
 
             <nav class="navbar">
