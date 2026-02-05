@@ -1,10 +1,6 @@
 <?php
 // --- 1. CONFIGURATION DE LA BASE DE DONNÉES ---
-$host = 'localhost';
-$user = 'admin';
-$pass = 'admin123';
-$db   = 'formulaire_contact';
-
+$host = 'localhost'; $user = 'admin'; $pass = 'admin123'; $db = 'formulaire_contact';
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) { die("Erreur critique : " . $conn->connect_error); }
 
@@ -13,29 +9,34 @@ $status_message = "";
 // --- 2. TRAITEMENT DU FORMULAIRE ---
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // On nettoie les données pour éviter les problèmes d'accents ou de piratage
-    $nom      = $conn->real_escape_string($_POST['nom']);
-    $prenom   = $conn->real_escape_string($_POST['prenom']);
-    $email    = $conn->real_escape_string($_POST['email']);
-    $tel      = $conn->real_escape_string($_POST['tel']);
-    $type     = $conn->real_escape_string($_POST['machine_type']); // Vient des boutons radio "Tour" ou "Portable"
-    $usage    = $conn->real_escape_string($_POST['usage']);        // Vient des boutons radio "Gaming", etc.
-    $details  = $conn->real_escape_string($_POST['message']);
+    // Nettoyage des données
+    $nom     = $conn->real_escape_string($_POST['nom']);
+    $prenom  = $conn->real_escape_string($_POST['prenom']);
+    $email   = $conn->real_escape_string($_POST['email']);
+    $tel     = $conn->real_escape_string($_POST['tel']);
+    $type    = $conn->real_escape_string($_POST['machine_type']);
+    $usage   = $conn->real_escape_string($_POST['usage']);
+    $details = $conn->real_escape_string($_POST['message']);
 
-    // On prépare la commande d'enregistrement
+    // Enregistrement SQL
     $sql = "INSERT INTO projets_pc (nom, prenom, email, telephone, type_machine, usage_principal, details) 
             VALUES ('$nom', '$prenom', '$email', '$tel', '$type', '$usage', '$details')";
 
-    // On envoie
     if ($conn->query($sql) === TRUE) {
-        $status_message = "<div style='background:#d4edda; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>
-                            ✅ <strong>Demande reçue !</strong> Nous allons étudier votre projet de PC.
-                           </div>";
+        // === LA CORRECTION EST ICI ===
+        // On redirige l'utilisateur vers la même page avec un petit paramètre "?success=1"
+        // Cela "nettoie" l'envoi du formulaire.
+        header("Location: pc-sur-mesure.php?success=1#formulaire-projet");
+        exit(); 
     } else {
-        $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>
-                            ❌ Oups ! Une erreur est survenue : " . $conn->error . "
-                           </div>";
+        $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>❌ Erreur : " . $conn->error . "</div>";
     }
+}
+
+// --- 3. AFFICHAGE DU MESSAGE DE SUCCÈS (APRÈS REDIRECTION) ---
+// On regarde si l'URL contient "?success=1"
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    $status_message = "<div style='background:#d4edda; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>✅ <strong>Demande reçue !</strong> Nous allons étudier votre projet de PC.</div>";
 }
 ?>
 
@@ -45,10 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votre Projet PC sur Mesure | Factor-I</title>
-    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/pc.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -57,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo.png" alt="Logo Factor-I" class="logo-img">
+
             </a>
 
             <nav class="navbar">
@@ -96,14 +96,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </header>
 
-    <main>
 
+    <main>
         <section class="pc-hero">
             <div class="container">
                 <div class="pc-hero-content">
                     <h1>Imaginons votre PC <br><span class="text-red">Ensemble</span></h1>
-                    <p>Ne choisissez pas un ordinateur au hasard. Discutons de vos besoins pour assembler la machine qui vous correspond vraiment.</p>
-                    <a href="#formulaire-projet" class="btn btn-primary">Parler de mon projet</a>
+                    <p>Ne choisissez pas un ordinateur au hasard. Discutons de vos besoins.</p>
                 </div>
             </div>
         </section>
@@ -111,22 +110,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <section class="section-padding bg-dark">
             <div class="container">
                 <h2 class="section-title white-title">Quel est votre objectif ?</h2>
-                <p style="color:#ccc; text-align:center; margin-bottom:40px;">Découvrez des exemples de ce que nous réalisons au quotidien.</p>
-                
                 <div class="profile-selector">
-                    <button class="profile-btn active" data-profile="gaming">
-                        <i class="fas fa-gamepad"></i> <span>Gaming</span>
-                    </button>
-                    <button class="profile-btn" data-profile="office">
-                        <i class="fas fa-laptop"></i> <span>Bureautique</span>
-                    </button>
-                    <button class="profile-btn" data-profile="multimedia">
-                        <i class="fas fa-photo-video"></i> <span>Multimédia</span>
-                    </button>
+                    <button class="profile-btn active" data-profile="gaming"><i class="fas fa-gamepad"></i> <span>Gaming</span></button>
+                    <button class="profile-btn" data-profile="office"><i class="fas fa-laptop"></i> <span>Bureautique</span></button>
+                    <button class="profile-btn" data-profile="multimedia"><i class="fas fa-photo-video"></i> <span>Multimédia</span></button>
                 </div>
-
-                <div class="config-display" id="config-area">
-                </div>
+                <div class="config-display" id="config-area"></div>
             </div>
         </section>
 
@@ -135,57 +124,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-wrapper">
                     <div class="form-intro">
                         <h2>Définissons votre besoin</h2>
-                        <p>Remplissez ce formulaire rapide. Un expert Factor-I vous recontactera pour affiner votre projet et vous proposer un devis personnalisé.</p>
-                        
                         <?php echo $status_message; ?>
-
-                        <ul class="check-list">
-                            <li><i class="fas fa-check"></i> Conseil gratuit.</li>
-                            <li><i class="fas fa-check"></i> Composants de qualité sélectionnés.</li>
-                            <li><i class="fas fa-check"></i> Montage et test en atelier.</li>
-                        </ul>
                     </div>
 
                     <form class="project-form" id="projectForm" method="POST" action="">
-                        
                         <div class="form-row">
-                            <div class="form-group">
-                                <label for="nom">Nom</label>
-                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
-                            </div>
-                            <div class="form-group">
-                                <label for="prenom">Prénom</label>
-                                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
-                            </div>
+                            <div class="form-group"><label>Nom</label><input type="text" name="nom" required></div>
+                            <div class="form-group"><label>Prénom</label><input type="text" name="prenom" required></div>
                         </div>
-
                         <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="exemple@mail.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="tel">Téléphone</label>
-                                <input type="tel" id="tel" name="tel" required placeholder="06 00 00 00 00">
-                            </div>
+                            <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+                            <div class="form-group"><label>Téléphone</label><input type="tel" name="tel" required></div>
                         </div>
 
                         <div class="form-group">
-                            <label class="label-title">Type de machine souhaitée</label>
+                            <label class="label-title">Type de machine</label>
                             <div class="radio-options">
                                 <label class="radio-card">
                                     <input type="radio" name="machine_type" value="tour" checked>
-                                    <span class="radio-visual">
-                                        <i class="fas fa-desktop"></i>
-                                        <span>Tour (Fixe)</span>
-                                    </span>
+                                    <span class="radio-visual"><i class="fas fa-desktop"></i><span>Tour</span></span>
                                 </label>
                                 <label class="radio-card">
                                     <input type="radio" name="machine_type" value="portable">
-                                    <span class="radio-visual">
-                                        <i class="fas fa-laptop"></i>
-                                        <span>Portable</span>
-                                    </span>
+                                    <span class="radio-visual"><i class="fas fa-laptop"></i><span>Portable</span></span>
                                 </label>
                             </div>
                         </div>
@@ -195,39 +156,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="radio-options three-cols">
                                 <label class="radio-card">
                                     <input type="radio" name="usage" value="bureautique" checked>
-                                    <span class="radio-visual">
-                                        <i class="fas fa-file-word"></i>
-                                        <span>Bureautique</span>
-                                    </span>
+                                    <span class="radio-visual"><i class="fas fa-file-word"></i><span>Bureautique</span></span>
                                 </label>
                                 <label class="radio-card">
                                     <input type="radio" name="usage" value="multimedia">
-                                    <span class="radio-visual">
-                                        <i class="fas fa-video"></i>
-                                        <span>Multimédia</span>
-                                    </span>
+                                    <span class="radio-visual"><i class="fas fa-video"></i><span>Multimédia</span></span>
                                 </label>
                                 <label class="radio-card">
                                     <input type="radio" name="usage" value="gaming">
-                                    <span class="radio-visual">
-                                        <i class="fas fa-gamepad"></i>
-                                        <span>Gaming</span>
-                                    </span>
+                                    <span class="radio-visual"><i class="fas fa-gamepad"></i><span>Gaming</span></span>
                                 </label>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Précisions (Logiciels utilisés, jeux, budget approximatif...)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Ex: Je veux jouer à Fortnite, ou faire du montage vidéo..."></textarea>
+                            <label>Précisions</label>
+                            <textarea name="message" rows="4"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary full-width">Envoyer ma demande</button>
+                        <p id="msg-bloque" style="color:#E62020; font-size:0.9rem; margin-bottom:10px; display:none; text-align:center;">
+                            * Veuillez accepter les conditions (popup) pour envoyer votre demande.
+                        </p>
+                        
+                        <button type="submit" id="btn-send-form" class="btn btn-primary full-width" disabled>
+                            Envoyer ma demande
+                        </button>
+
                     </form>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -264,6 +222,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <div id="cookie-popup" class="cookie-overlay">
+        <div class="cookie-modal">
+            <div class="modal-icon"><i class="fas fa-cookie-bite"></i></div>
+            <h3>Avant de commencer</h3>
+            <p>
+                Pour configurer votre PC et nous envoyer votre demande, nous avons besoin de votre accord pour l'utilisation de cookies.
+                <br><a href="mentions-legales.html" target="_blank">Politique de confidentialité</a>.
+            </p>
+            <button id="accept-cookies-btn" class="btn-modal">J'accepte et je continue</button>
+        </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/pc.js"></script>

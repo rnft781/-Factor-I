@@ -1,6 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Chargement du script PC...");
 
-    // DONNEES : EXEMPLES DE PROJETS (Pas de specs fixes)
+    /* ============================================================
+       1. LOGIQUE POPUP & SÉCURITÉ FORMULAIRE
+       ============================================================ */
+    const sendBtn = document.getElementById('btn-send-form');
+    const cookiePopup = document.getElementById('cookie-popup');
+    const acceptBtn = document.getElementById('accept-cookies-btn');
+    const msgBloque = document.getElementById('msg-bloque');
+
+    // Fonction pour tout débloquer
+    function unlockForm() {
+        if (sendBtn) {
+            sendBtn.disabled = false;
+            sendBtn.style.cursor = 'pointer';
+            sendBtn.style.opacity = '1';
+        }
+        if (cookiePopup) cookiePopup.style.display = 'none';
+        if (msgBloque) msgBloque.style.display = 'none';
+    }
+
+    // Fonction pour bloquer (Afficher le popup)
+    function lockForm() {
+        if (sendBtn) sendBtn.disabled = true;
+        // On affiche le popup en Flex pour le centrer
+        if (cookiePopup) cookiePopup.style.display = 'flex';
+        if (msgBloque) msgBloque.style.display = 'block';
+    }
+
+    // Vérification au chargement de la page
+    if (localStorage.getItem('cookieConsent') === 'true') {
+        unlockForm(); // Déjà accepté
+    } else {
+        lockForm(); // Pas encore accepté
+    }
+
+    // Action au clic sur le bouton "J'accepte" du Popup
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'true');
+            unlockForm();
+        });
+    }
+
+    /* ============================================================
+       2. LOGIQUE D'AFFICHAGE DYNAMIQUE (GAMING / OFFICE / MULTIMEDIA)
+       ============================================================ */
     const profiles = {
         gaming: {
             title: "Projet Gaming",
@@ -37,56 +82,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // LOGIQUE D'AFFICHAGE DYNAMIQUE
     const btns = document.querySelectorAll('.profile-btn');
     const displayArea = document.getElementById('config-area');
 
-    // Fonction pour afficher le contenu
+    // Fonction d'affichage
     function showProfile(key) {
-        const data = profiles[key];
+        if (!profiles[key]) return; // Sécurité
 
-        // Création de la liste des avantages
+        const data = profiles[key];
         let listHTML = "";
         data.benefits.forEach(b => {
             listHTML += `<li><i class="fas fa-check"></i> ${b}</li>`;
         });
 
-        // Injection HTML
-        displayArea.innerHTML = `
-            <div class="config-content fade-in">
-                <div class="config-text">
-                    <h3>${data.title}</h3>
-                    <p>${data.desc}</p>
-                    <ul class="benefits-list">
-                        ${listHTML}
-                    </ul>
-                    <div class="price-range">
-                        <i class="fas fa-wallet"></i> ${data.priceRange}
+        if (displayArea) {
+            displayArea.innerHTML = `
+                <div class="config-content fade-in">
+                    <div class="config-text">
+                        <h3>${data.title}</h3>
+                        <p>${data.desc}</p>
+                        <ul class="benefits-list">
+                            ${listHTML}
+                        </ul>
+                        <div class="price-range">
+                            <i class="fas fa-wallet"></i> ${data.priceRange}
+                        </div>
                     </div>
+                    <div class="config-visual ${data.bgClass}"></div>
                 </div>
-                <div class="config-visual ${data.bgClass}"></div>
-            </div>
-        `;
+            `;
+        }
     }
 
-    // Gestion des clics sur les boutons
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Retirer la classe active partout
-            btns.forEach(b => b.classList.remove('active'));
-            // Ajouter active au bouton cliqué
-            btn.classList.add('active');
-            
-            // Afficher le contenu
-            const key = btn.getAttribute('data-profile');
-            showProfile(key);
+    // Écouteurs sur les boutons (Gaming, Bureautique...)
+    if (btns.length > 0) {
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons
+                btns.forEach(b => b.classList.remove('active'));
+                // Ajouter au bouton cliqué
+                btn.classList.add('active');
+                
+                const key = btn.getAttribute('data-profile');
+                showProfile(key);
+            });
         });
-    });
 
-    // Afficher le premier profil (Gaming) au chargement de la page
-    showProfile('gaming');
-
-    // --- ZONE MODIFIÉE ---
-    // J'ai supprimé tout le bloc "form.addEventListener" qui bloquait l'envoi.
-    // Maintenant, quand tu cliques sur envoyer, c'est le PHP qui prend le relais.
+        // Afficher le premier profil par défaut au chargement
+        showProfile('gaming');
+    }
 });

@@ -149,3 +149,37 @@ input:focus, textarea:focus { border-color: #E62020; outline: none; }
     .form-row { grid-template-columns: 1fr; }
     .radio-options.three-cols { grid-template-columns: 1fr; }
 }
+/* --- Style du bouton désactivé --- */
+button:disabled, .btn:disabled {
+    background-color: #cccccc !important; /* Gris */
+    color: #666666 !important;
+    cursor: not-allowed; /* Curseur sens interdit */
+    opacity: 0.7;
+    transform: none !important; /* Pas d'animation au survol */
+    box-shadow: none !important;
+}
+
+/* --- Style du Bandeau Cookie (requis pour le faire fonctionner) --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    display: none; /* Caché par défaut, géré par JS */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 9999;
+    border-top: 3px solid #E62020;
+}
+.cookie-banner button {
+    background-color: #E62020;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
