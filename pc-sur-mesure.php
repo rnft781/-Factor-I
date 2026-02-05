@@ -1,15 +1,28 @@
 <?php
-// --- 1. CONFIGURATION DE LA BASE DE DONNÉES ---
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+// --- 0. IMPORTATION DE PHPMAILER ---
+// Assure-toi que le chemin est bon par rapport à ton fichier php
+use PHPMailer\PHPmailer\PHPMailer;
+use PHPMailer\PHPmailer\Exception;
+use PHPMailer\PHPmailer\SMTP;
+
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
+// --- 1. CONFIGURATION BDD ---
 $host = 'localhost'; $user = 'admin'; $pass = 'admin123'; $db = 'formulaire_contact';
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) { die("Erreur critique : " . $conn->connect_error); }
 
 $status_message = "";
 
-// --- 2. TRAITEMENT DU FORMULAIRE ---
+// --- 2. TRAITEMENT ---
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Nettoyage des données
+    // Nettoyage
     $nom     = $conn->real_escape_string($_POST['nom']);
     $prenom  = $conn->real_escape_string($_POST['prenom']);
     $email   = $conn->real_escape_string($_POST['email']);
@@ -18,25 +31,74 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usage   = $conn->real_escape_string($_POST['usage']);
     $details = $conn->real_escape_string($_POST['message']);
 
-    // Enregistrement SQL
+    // Insertion SQL
     $sql = "INSERT INTO projets_pc (nom, prenom, email, telephone, type_machine, usage_principal, details) 
             VALUES ('$nom', '$prenom', '$email', '$tel', '$type', '$usage', '$details')";
 
     if ($conn->query($sql) === TRUE) {
-        // === LA CORRECTION EST ICI ===
-        // On redirige l'utilisateur vers la même page avec un petit paramètre "?success=1"
-        // Cela "nettoie" l'envoi du formulaire.
+        
+        // === 3. ENVOI MAIL VIA SMTP (PHPMailer) ===
+        $mail = new PHPMailer(true);
+
+        try {
+            // A. Configuration du Serveur SMTP (C'est ici qu'il faut tes infos !)
+            $mail->SMTPDebug =0; // Décommente cette ligne si le mail ne part pas (pour voir l'erreur)
+            
+            $mail->isSMTP();
+            
+            // EXEMPLE POUR GMAIL (Si tu utilises Gmail)
+            $mail->Host       = 'smtp.gmail.com'; 
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'testfactorienvoie@gmail.com'; // Ton adresse Gmail
+            $mail->Password   = 'urey jzju ffiz pqcu '; // Voir note en bas*
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = 465;
+
+            // EXEMPLE POUR OVH / IONOS (Si tu as un mail pro)
+            /*
+            $mail->Host       = 'ssl0.ovh.net'; 
+            $mail->Username   = 'contact@factor-i.fr';
+            $mail->Password   = 'ton-mot-de-passe-mail';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+            */
+
+            // B. Expéditeur et Destinataire
+            $mail->setFrom('testfactorienvoie@gmail.com', 'Site Factor-I'); // Qui envoie (ta propre adresse)
+            $mail->addAddress('testfactorienvoie@gmail.com');     // Qui reçoit (toi aussi)
+            $mail->addReplyTo($email, "$prenom $nom");        // Pour répondre au client en 1 clic
+
+            // C. Contenu
+            $mail->isHTML(false); // Format texte simple
+            $mail->Subject = "Nouveau Projet PC : " . stripslashes($prenom) . " " . stripslashes($nom);
+            
+            $corpsMessage = "Bonjour,\n\nUne nouvelle demande est arrivée !\n\n";
+            $corpsMessage .= "Nom : " . stripslashes($nom) . " " . stripslashes($prenom) . "\n";
+            $corpsMessage .= "Email : " . stripslashes($email) . "\n";
+            $corpsMessage .= "Tel : " . stripslashes($tel) . "\n";
+            $corpsMessage .= "Type : " . ucfirst($type) . " | Usage : " . ucfirst($usage) . "\n\n";
+            $corpsMessage .= "Details :\n" . stripslashes($details);
+            
+            $mail->Body = $corpsMessage;
+
+            $mail->send(); // Envoi !
+
+        } catch (Exception $e) {
+            // Si le mail plante, on ne bloque pas le site, mais on peut loguer l'erreur
+            // echo "Erreur Mail: {$mail->ErrorInfo}";
+        }
+
+        // === 4. REDIRECTION ===
         header("Location: pc-sur-mesure.php?success=1#formulaire-projet");
         exit(); 
+
     } else {
-        $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>❌ Erreur : " . $conn->error . "</div>";
+        $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>❌ Erreur SQL : " . $conn->error . "</div>";
     }
 }
 
-// --- 3. AFFICHAGE DU MESSAGE DE SUCCÈS (APRÈS REDIRECTION) ---
-// On regarde si l'URL contient "?success=1"
 if (isset($_GET['success']) && $_GET['success'] == 1) {
-    $status_message = "<div style='background:#d4edda; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>✅ <strong>Demande reçue !</strong> Nous allons étudier votre projet de PC.</div>";
+    $status_message = "<div style='background:#d4edda; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>✅ <strong>Demande reçue !</strong> Nous allons étudier votre projet.</div>";
 }
 ?>
 
