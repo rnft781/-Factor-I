@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande de Devis | Factor-I</title>
+    <title>Keeper Security : Gestionnaire de Mots de Passe | Factor-I</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/devis.css">
+    <link rel="stylesheet" href="assets/css/mib.css">
+    <!-- Factor-I standard theme applied -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -18,13 +19,11 @@
         <div class="container">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo.png" alt="Logo Factor-I" class="logo-img">
-
             </a>
 
             <nav class="navbar">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-
+                    <li><a href="index.html">Accueil</a></li>
                     <li class="dropdown">
                         <a href="#">Pour le professionnel <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
@@ -35,17 +34,15 @@
                             <li><a href="conseil.html">5 Conseils d'entretien</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
-                        <a href="#">Cybersécurité <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="active">Cybersécurité <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
                             <li><a href="eset.html">ESET & EDR/MDR</a></li>
-                            <li><a href="keeper.html">Keeper Security</a></li>
+                            <li><a href="keeper.html" class="active">Keeper Security</a></li>
                             <li><a href="xguard.html">XGuard</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
                         <a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-content">
@@ -57,7 +54,6 @@
                             <li><a href="sav-apple.html">SAV Apple</a></li>
                         </ul>
                     </li>
-
                     <li><a href="contact.html" class="btn-contact">Contact</a></li>
                 </ul>
             </nav>
@@ -67,81 +63,83 @@
             </div>
         </div>
     </header>
+
     <main>
 
-        <!-- UNIVERSAL HERO -->
-        <section class="universal-hero">
-            <div class="hero-inner">
-                <div class="shield-icon-hero"><i class="fas fa-file-invoice-dollar"></i></div>
-                <h1>Demander un Devis</h1>
-                <p class="subtitle">Vous avez un projet ? Contactez-nous directement ou laissez-nous un message.</p>
+        <section class="mib-hero">
+            <div class="mib-content">
+                <div class="shield-icon"><i class="fas fa-key"></i></div>
+                <h1>Keeper Security</h1>
+                <p class="subtitle">La fin des post-it avec les mots de passe. Sécurisez vos accès, simplifiez votre
+                    vie.</p>
+                <a href="contact.html" class="btn btn-primary">Essai Gratuit</a>
             </div>
         </section>
 
         <section class="section-padding">
             <div class="container">
-                <div class="devis-wrapper">
-
-                    <div class="info-box">
-                        <h2>Contact Direct</h2>
-                        <p>Besoin d'une réponse immédiate ? Appelez-nous.</p>
-
-                        <div class="direct-contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h3>Par Téléphone</h3>
-                                <a href="tel:0296379868" class="big-link">02 96 37 98 68</a>
-                            </div>
-
-                        </div>
-                        <div class="direct-contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h3>Ou</h3>
-                                <a href="tel:0618650747" class="big-link">06 18 65 07 47</a>
-                            </div>
-
-                        </div>
-
-                        <div class="direct-contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Par Email</h3>
-                                <a href="mailto:f.mangard@factor-i.fr" class="big-link">f.mangard@factor-i.fr</a>
-                            </div>
+                <h2 class="section-title">Le mot de passe : <span class="text-red">Maillon Faible</span></h2>
+                <div class="content-flex" style="gap: 4rem;">
+                    <div class="text">
+                        <p class="lead">81% des brèches de sécurité sont dues à des mots de passe faibles ou volés.</p>
+                        <p>Vos collaborateurs utilisent-ils "123456", le nom de l'entreprise, ou le même mot de passe
+                            partout ? C'est une porte ouverte pour les pirates.</p>
+                        <p><strong>Keeper Security</strong> est la solution leader de gestion des mots de passe et des
+                            secrets pour les entreprises.</p>
+                    </div>
+                    <div class="img-col">
+                        <div
+                            style="background: #f9f9f9; padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-red);">
+                            <h4>Risques courants</h4>
+                            <ul class="check-list" style="margin-top:1rem;">
+                                <li><i class="fas fa-times" style="color:red;"></i> Mots de passe stockés dans
+                                    Excel/Word</li>
+                                <li><i class="fas fa-times" style="color:red;"></i> Partage par email ou SMS</li>
+                                <li><i class="fas fa-times" style="color:red;"></i> Oublis fréquents et pertes de temps
+                                </li>
+                            </ul>
                         </div>
                     </div>
-
-                    <div class="form-box">
-                        <h2>Écrivez-nous</h2>
-                        <form id="simple-contact-form">
-
-                            <div class="input-group">
-                                <label for="nom">Votre Nom</label>
-                                <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="email">Votre Email</label>
-                                <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="tel">Téléphone (Optionnel)</label>
-                                <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00">
-                            </div>
-
-                            <div class="input-group">
-                                <label for="message">Votre demande</label>
-                                <textarea id="message" name="message" rows="6"
-                                    placeholder="Bonjour, j'aimerais un devis pour..." required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary full-width">Envoyer le message</button>
-                        </form>
-                    </div>
-
                 </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Pourquoi <span class="text-red">Keeper</span> ?</h2>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-vault"></i></div>
+                        <h3>Coffre-fort Numérique</h3>
+                        <p>Stockez un nombre illimité de mots de passe, fichiers et données confidentielles dans un
+                            coffre-fort chiffré.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-share-alt"></i></div>
+                        <h3>Partage Sécurisé</h3>
+                        <p>Partagez des accès avec vos collègues ou équipes sans jamais révéler les mots de passe en
+                            clair.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Accès Partout</h3>
+                        <p>Accédez à vos données sur tous vos appareils : PC, Mac, Smartphone, Tablette. Synchronisation
+                            instantanée.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Déployez Keeper en moins d'une heure</h2>
+                <p>Factor-I vous accompagne dans la configuration et la formation de vos équipes.</p>
+                <a href="contact.html" class="btn btn-white">Sécuriser mes accès</a>
             </div>
         </section>
 
@@ -149,14 +147,12 @@
 
     <footer>
         <div class="container footer-grid">
-
             <div class="footer-col">
                 <h4>Factor-I</h4>
                 <p>L'informatique à vos côtés.</p>
                 <p><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise ici</p>
                 <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
             </div>
-
             <div class="footer-col">
                 <h4>Liens Utiles</h4>
                 <ul>
@@ -165,7 +161,6 @@
                     <li><a href="reparation.html">Réparation</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4>Informations Légales</h4>
                 <ul>
@@ -176,20 +171,12 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2024 Factor-I. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
-
-    <script>
-        document.getElementById('simple-contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert("Merci ! Votre message a bien été envoyé (Simulation).");
-        });
-    </script>
 </body>
 
 </html>

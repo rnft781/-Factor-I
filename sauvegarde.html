@@ -22,9 +22,19 @@
                         <ul class="dropdown-content">
                             <li><a href="pour-pro.html">Pour les professionnels</a></li>
                             <li><a href="maintenance.html">Comprendre la maintenance</a></li>
-                            <li><a href="sauvegarde.html" class="active">Solutions de sauvegarde</a></li>
-                            <li><a href="conseil.html">Conseil & Accompagnement</a></li>
+                            <li><a href="sauvegarde.html">Solutions de sauvegarde</a></li>
+                            <li><a href="accompagnement.html">Conseil & Accompagnement</a></li>
+                            <li><a href="conseil.html">5 Conseils d'entretien</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">Cybersécurité <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
                             <li><a href="mail-in-black.html">Mail in Black</a></li>
+                            <li><a href="eset.html">ESET & EDR/MDR</a></li>
+                            <li><a href="keeper.html">Keeper Security</a></li>
+                            <li><a href="xguard.html">XGuard</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#">Nos services Informatique <i class="fas fa-chevron-down"></i></a>
@@ -48,11 +58,13 @@
 
     <main>
         <!-- 1. HERO SECTION -->
-        <section class="sauvegarde-hero">
-            <div class="container hero-content">
-                <h1 class="hero-title">Protégez votre <span class="text-red">Patrimoine Numérique</span>.</h1>
-                <p class="hero-subtitle">Vol, panne, rançongiciel : ne laissez pas le hasard décider du sort de vos
-                    données. <br>Adoptez une stratégie professionnelle dès aujourd'hui.</p>
+        <!-- UNIVERSAL HERO -->
+        <section class="universal-hero">
+            <div class="hero-inner">
+                <div class="shield-icon-hero"><i class="fas fa-save"></i></div>
+                <h1>Solutions de Sauvegarde</h1>
+                <p class="subtitle">Protégez votre patrimoine numérique contre toute perte accidentelle ou malveillante.
+                </p>
             </div>
         </section>
 
@@ -61,32 +73,34 @@
             <div class="container">
                 <h2>La réalité des risques</h2>
                 <p class="intro-text">
-                    La perte de données n'arrive pas qu'aux autres. Disque dur qui lâche, fichier effacé par erreur ou
-                    cyberattaque : les menaces sont multiples, mais la solution est unique :
-                    <strong>l'anticipation</strong>.
+                    La perte de données n'arrive pas qu'aux autres. Disque dur qui lâche ou cyberattaque :
+                    la question n'est pas de savoir <strong>si</strong> ça va arriver, mais <strong>quand</strong>.
+                    <br><span
+                        style="color:var(--primary-red); font-weight:700; display:block; margin-top:10px;">L'anticipation
+                        est votre seule protection.</span>
                 </p>
             </div>
         </section>
 
-        <!-- 3. MODULE A: La Menace (Texte Gauche / Media Droite) -->
+        <!-- 3. MODULE A: La Menace -->
         <section class="module-section">
             <div class="container module-grid">
                 <div class="module-text">
-                    <h3 class="module-title">Tout peut disparaître en une seconde</h3>
+                    <h3 class="module-title mb-4">Tout peut disparaître<br>en une seconde.</h3>
                     <p>
                         Imaginez perdre 10 ans de photos, votre comptabilité ou vos dossiers clients en un instant.
-                        Sans sauvegarde fiable, la récupération est souvent impossible ou hors de prix.
+                        Sans sauvegarde fiable, c'est définitif.
                         <br><br>
-                        Une simple coupure de courant ou un vol de matériel suffit à tout effacer. Êtes-vous prêt à
-                        prendre ce risque ?
+                        Une simple coupure de courant suffit. Êtes-vous vraiment prêt à prendre ce risque ?
                     </p>
                 </div>
                 <div class="module-media">
-                    <!-- ZONE RÉSERVÉE FUTURE ILLUSTRATION -->
                     <div class="media-placeholder">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Illustration à venir :<br>Schéma "Risques & Conséquences"</span>
                     </div>
+                    <p style="text-align:center; font-size:0.8rem; color:#999; margin-top:0.5rem; font-style:italic;">
+                        Schéma explicatif bientôt disponible</p>
                 </div>
             </div>
         </section>
@@ -94,51 +108,45 @@
         <!-- 4. BLOC CENTRAL : RÈGLE 3-2-1 -->
         <section class="rule-321-section">
             <div class="container">
-                <h2 class="section-title text-center text-white">La Règle d'Or : <span class="text-red">3 - 2 - 1</span>
-                </h2>
-                <p class="text-center text-gray-300 mb-5">Le standard mondial recommandé par l'ANSSI pour une sécurité
-                    absolue.</p>
+                <h2 class="section-title text-center">La Règle d'Or : <span class="text-red">3 - 2 - 1</span></h2>
+                <p class="text-center">La méthode de référence recommandée par l'ANSSI.</p>
 
                 <div class="rule-grid">
                     <!-- 3 -->
                     <div class="rule-item">
                         <span class="rule-big-number">3</span>
-                        <h4>Copies de vos données</h4>
-                        <p>Ne jamais dépendre d'un seul fichier original. Multipliez les exemplaires.</p>
+                        <h4>Copies</h4>
+                        <p>Ne jamais dépendre d'un seul fichier. Gardez trois exemplaires minimum.</p>
                     </div>
                     <!-- 2 -->
                     <div class="rule-item">
                         <span class="rule-big-number">2</span>
-                        <h4>Supports différents</h4>
-                        <p>Disque Dur + Cloud. Si une technologie échoue, l'autre prend le relais.</p>
+                        <h4>Supports</h4>
+                        <p>Disque Dur + Cloud. Diversifiez les technologies pour réduire le risque.</p>
                     </div>
                     <!-- 1 -->
                     <div class="rule-item">
                         <span class="rule-big-number">1</span>
-                        <h4>Copie hors-site</h4>
-                        <p>Indispensable en cas d'incendie ou de cambriolage. Vos données sont ailleurs, en sécurité.
-                        </p>
+                        <h4>Hors-site</h4>
+                        <p>En cas d'incendie ou vol, vos données doivent exister ailleurs.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. MODULE B: Nos Solutions (Media Gauche / Texte Droite) -->
+        <!-- 5. MODULE B: Nos Solutions -->
         <section class="module-section bg-light">
             <div class="container module-grid reverse-mobile">
                 <div class="module-media">
-                    <!-- ZONE RÉSERVÉE FUTURE PHOTO PRODUIT -->
                     <div class="media-placeholder">
                         <i class="fas fa-server"></i>
                         <span>Illustration à venir :<br>Photo NAS / Cloud Factor-I</span>
                     </div>
                 </div>
                 <div class="module-text">
-                    <h3 class="module-title">Des solutions sur mesure</h3>
+                    <h3 class="module-title">Nous ne vendons pas du stockage.<br>Nous concevons une stratégie.</h3>
                     <p>
-                        Nous ne vendons pas juste du matériel, nous vendons de la sérénité.
-                        Que ce soit pour un particulier (photos, documents) ou un professionnel (bases de données,
-                        serveurs), nous avons l'architecture qu'il vous faut.
+                        Que ce soit pour un particulier ou un pro, nous avons l'architecture qu'il vous faut.
                     </p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check text-red"></i> Sauvegarde Locale Automatique</li>

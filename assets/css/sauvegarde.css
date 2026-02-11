@@ -179,58 +179,113 @@
     letter-spacing: 1px;
 }
 
-/* 4. 3-2-1 RULE SECTION */
+/* 4. 3-2-1 RULE SECTION - LIGHT & MODERN */
 .rule-321-section {
-    background-color: #000000;
-    /* Strict Black */
+    background-color: white;
     padding: 5rem 1rem;
-    color: white;
+    color: var(--text-dark);
 }
 
+.rule-321-section .container {
+    /* CLEAN RESET: No heavy black background */
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    max-width: 1100px;
+    /* Control width for readability */
+}
+
+/* Specific overrides for this section title to handle the White->Dark transition */
+.rule-321-section .section-title {
+    color: var(--text-dark);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.rule-321-section p.text-center {
+    color: var(--text-body);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    /* Spacing before grid */
+}
+
+/* Grid Layout */
 .rule-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    max-width: 1200px;
+    gap: 2rem;
     margin: 0 auto;
     text-align: center;
 }
 
+/* Individual Item Styling - Elevated Label Style */
 .rule-item {
-    background: rgba(255, 255, 255, 0.05);
-    /* Glassmorphism light */
+    background: white;
     padding: 2.5rem 2rem;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    border: 1px solid #f1f5f9;
+    /* Permanent Shadow for "Raised/Etiquette" effect - All Around */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Hover Effect: Higher Lift */
 .rule-item:hover {
     transform: translateY(-5px);
     border-color: var(--primary-red);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* RED ACCENT BAR on top of each card */
+.rule-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--bg-placeholder);
+    /* Neutral by default */
+    transition: background 0.3s ease;
+}
+
+.rule-item:hover::before {
+    background: var(--primary-red);
+}
+
+/* Typography */
 .rule-big-number {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 900;
     line-height: 1;
     display: block;
     margin-bottom: 1rem;
+    color: var(--text-dark);
+    /* Black number... */
+}
+
+/* ...Or Red Number? User asked for Red/Black/White. 
+   Let's highlight the number in RED for hierarchy */
+.rule-big-number {
     color: var(--primary-red);
-    text-shadow: 0 4px 10px rgba(239, 62, 54, 0.3);
+    text-shadow: none;
+    /* Clean flat design */
 }
 
 .rule-item h4 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--text-dark);
 }
 
 .rule-item p {
-    color: #cbd5e1;
+    color: var(--text-body);
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* 5. CTA SECTION */
