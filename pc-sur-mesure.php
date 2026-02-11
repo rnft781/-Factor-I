@@ -13,9 +13,9 @@ require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';
 
 // --- 1. CONFIGURATION BDD ---
-$host = 'localhost'; $user = 'admin'; $pass = 'admin123'; $db = 'formulaire_contact';
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) { die("Erreur critique : " . $conn->connect_error); }
+//$host = 'localhost'; $user = 'admin'; $pass = 'admin123'; $db = 'formulaire_contact';
+//$conn = new mysqli($host, $user, $pass, $db);
+//if ($conn->connect_error) { die("Erreur critique : " . $conn->connect_error); }
 
 $status_message = "";
 
@@ -23,19 +23,19 @@ $status_message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Nettoyage
-    $nom     = $conn->real_escape_string($_POST['nom']);
-    $prenom  = $conn->real_escape_string($_POST['prenom']);
-    $email   = $conn->real_escape_string($_POST['email']);
-    $tel     = $conn->real_escape_string($_POST['tel']);
-    $type    = $conn->real_escape_string($_POST['machine_type']);
-    $usage   = $conn->real_escape_string($_POST['usage']);
-    $details = $conn->real_escape_string($_POST['message']);
+    $nom     = htmlspecialchars($_POST['nom']);
+    $prenom  = htmlspecialchars($_POST['prenom']);
+    $email   = htmlspecialchars($_POST['email']);
+    $tel     = htmlspecialchars($_POST['tel']);
+    $type    = htmlspecialchars($_POST['machine_type']);
+    $usage   = htmlspecialchars($_POST['usage']);
+    $details = htmlspecialchars($_POST['message']);
 
     // Insertion SQL
-    $sql = "INSERT INTO projets_pc (nom, prenom, email, telephone, type_machine, usage_principal, details) 
-            VALUES ('$nom', '$prenom', '$email', '$tel', '$type', '$usage', '$details')";
+   // $sql = "INSERT INTO projets_pc (nom, prenom, email, telephone, type_machine, usage_principal, details) 
+           // VALUES ('$nom', '$prenom', '$email', '$tel', '$type', '$usage', '$details')";
 
-    if ($conn->query($sql) === TRUE) {
+    //if ($conn->query($sql) === TRUE) {
         
         // === 3. ENVOI MAIL VIA SMTP (PHPMailer) ===
         $mail = new PHPMailer(true);
@@ -83,19 +83,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $mail->send(); // Envoi !
 
+            header("Location: pc-sur-mesure.php?success=1#formulaire-projet");
+            exit();
+
         } catch (Exception $e) {
             // Si le mail plante, on ne bloque pas le site, mais on peut loguer l'erreur
             // echo "Erreur Mail: {$mail->ErrorInfo}";
-        }
+                    $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>❌ Erreur Mail : " . $mail->ErrorInfo . "</div>";
 
-        // === 4. REDIRECTION ===
-        header("Location: pc-sur-mesure.php?success=1#formulaire-projet");
-        exit(); 
-
-    } else {
-        $status_message = "<div style='background:#f8d7da; color:#721c24; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>❌ Erreur SQL : " . $conn->error . "</div>";
-    }
-}
+        }   
+}     
 
 if (isset($_GET['success']) && $_GET['success'] == 1) {
     $status_message = "<div style='background:#d4edda; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; text-align:center;'>✅ <strong>Demande reçue !</strong> Nous allons étudier votre projet.</div>";
