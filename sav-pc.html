@@ -88,154 +88,276 @@
                     Hardware</button>
                 <button class="tab-btn" onclick="filterServices('software')"><i class="fas fa-code"></i>
                     Software</button>
-                <button class="tab-btn" onclick="filterServices('security')"><i class="fas fa-shield-alt"></i>
-                    Sécurité</button>
+
+                <!-- CSS for Option A -->
+
+
+                <div class="bento-grid grid-cols-2">
+
+                    <!-- === HARDWARE === -->
+                    <!-- 1. Montage -->
+                    <div class="bento-card" data-category="hardware">
+                        <div class="card-img-container">
+                            <img src="assets/img/montage-des-pieces.webp" alt="Montage PC">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Montage de pièce et composant</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait comprend le montage et test d'un composant sur carte mère.
+                                Il exclut les éléments demandant une opération plus complexe tel que carte mère ou
+                                alimentation.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">15 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Pâte thermique Fixe -->
+                    <div class="bento-card" data-category="hardware">
+                        <div class="card-img-container">
+                            <img src="assets/img/pate-thermique.jpg" alt="Pâte thermique Fixe">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Remplacement de pâte thermique PC Fixe</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait comprend le démontage, puis le remontage de votre ordinateur fixe.
+                                Le nettoyage composant processeur, et mise en place de la nouvelle pâte thermique.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">15 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Pâte thermique Portable -->
+                    <div class="bento-card" data-category="hardware">
+                        <div class="card-img-container">
+                            <img src="assets/img/pate-thermique-portable.jpg" alt="Pâte thermique Portable">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Remplacement pâte thermique PC Portable</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait comprend le démontage, le remontage de votre ordinateur portable.
+                                Le nettoyage composant processeur, et mise en place de la nouvelle pâte thermique.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">59 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Diagnostic -->
+                    <div class="bento-card" data-category="hardware">
+                        <div class="card-img-container">
+                            <img src="assets/img/diagnostic.png" alt="Diagnostic panne">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Diagnostique de panne</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait inclus une prise en charge pour la détection de panne sur votre PC fixe et
+                                portable.
+                                Le diagnostique inclus matériel et logiciel.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">45 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Charnière -->
+                    <div class="bento-card" data-category="hardware">
+                        <div class="card-img-container">
+                            <img src="assets/img/reparation-charniere.png" alt="Réparation charnière">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Réparation de charnière</h3>
+                            </div>
+                            <p class="card-desc">
+                                Le forfait atelier inclus le démontage de l'ancien jeu de charnières de votre ordinateur
+                                portable,
+                                et le montage des nouvelles charnières. <br><em
+                                    style="font-size:0.8rem; color:#a0aec0;">Ce
+                                    tarif exclus le coût des pièces.</em>
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">99 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Dalle PC -->
+                    <div class="bento-card bento-large" data-category="hardware">
+                        <div class="card-img-container">
+                            <img src="assets/img/reparation-ecran.webp" alt="Remplacement écran">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Remplacement dalle PC</h3>
+                            </div>
+                            <p class="card-desc">
+                                Le forfait inclus le démontage de l'ancienne dalle sur votre ordinateur portable et le
+                                montage de la nouvelle.
+                                <br><em style="font-size:0.8rem; color:#a0aec0;">Ce tarif exclus les dalles tactiles qui
+                                    feront l'objet d'un devis.</em>
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value"><span
+                                        style="font-size:0.9rem; color:#a0aec0; font-weight:normal; margin-right:4px;">à
+                                        partir de</span> 169 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ... (Hardware cards unchanged) ... -->
+
+                    <!-- === SOFTWARE === -->
+
+                    <!-- 1. Optimisation -->
+                    <div class="bento-card" data-category="software" style="display: none;">
+                        <div class="card-img-container">
+                            <img src="assets/img/optimisation.webp" alt="Optimisation PC">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Préparation & Optimisation</h3>
+                            </div>
+                            <p class="card-desc">
+                                La performance de votre PC au quotidien commence par une bonne mise en service !
+                                Nous optimisons Windows sans surcouches logiciels et publicitaires.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">59 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Désinfection -->
+                    <div class="bento-card" data-category="software" style="display: none;">
+                        <div class="card-img-container">
+                            <img src="assets/img/desinfection.jpg" alt="Désinfection virus">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Désinfection ordinateur</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait atelier inclus la recherche et l'analyse de votre panne système afin de
+                                confirmer
+                                les causes virales.
+                                Une analyse antivirus approfondie du système et des logiciels malveillants.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">70 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Récupération Données -->
+                    <div class="bento-card" data-category="software" style="display: none;">
+                        <div class="card-img-container">
+                            <img src="assets/img/recuperation-donnees.jpg" alt="Récupération de données">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Récupération de données</h3>
+                            </div>
+                            <p class="card-desc">
+                                Que ce soit dans le cas d'une panne, de casse ou suite à une erreur de manipulation
+                                ayant
+                                entrainé la suppression de tous vos documents.
+                                Consultez nous.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value"><span
+                                        style="font-size:0.9rem; color:#a0aec0; font-weight:normal; margin-right:4px;">à
+                                        partir de</span> 70 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 4. Réparation Système -->
+                    <div class="bento-card" data-category="software" style="display: none;">
+                        <div class="card-img-container">
+                            <!-- Placeholder or same as Update/Clean -->
+                            <img src="assets/img/Réparation-du-système.png" alt="Réparation Système">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Réparation du système</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait atelier inclus la recherche et l'analyse de votre panne système, l'analyse
+                                antivirus,
+                                la réparation ou la reconstruction du niveau système (Windows & MacOS).
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">70 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Réinstallation -->
+                    <div class="bento-card" data-category="software" style="display: none;">
+                        <div class="card-img-container">
+                            <img src="assets/img/stockage.jpg" style="object-fit: cover;" alt="Réinstallation">
+                            <!-- Swapped logo for generic storage/system image -->
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Réinstallation du système</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait inclus la réinstallation de votre système (Windows, mac ou linux),
+                                la réinstallation des pilotes de votre machine. La mise à niveau système de votre
+                                ordinateur.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">75 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Réinstall + Sauvegarde -->
+                    <div class="bento-card bento-large" data-category="software" style="display: none;">
+                        <div class="card-img-container">
+                            <img src="assets/img/reinstall-sauvegarde.jpg" alt="Réinstallation avec sauvegarde">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Réinstallation avec sauvegarde</h3>
+                            </div>
+                            <p class="card-desc">
+                                Ce forfait inclus la réinstallation du system et des pilotes de votre machines.
+                                La récupération de l'ensemble de vos données contenu sur votre ancien ordinateur ou
+                                disque
+                                dur.
+                            </p>
+                            <div class="price-container">
+                                <p class="price-value">140 € <span class="tax">TTC</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
+                    <a href="contact.html" class="btn"
+                        style="background: linear-gradient(135deg, #ef3e36, #ef3e36); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block; transition: all 0.3s ease;">
+                        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Prendre Rendez-vous
+                    </a>
+                </div>
+
             </div>
-
-            <!-- CSS for Option A -->
-
-
-            <div class="bento-grid grid-cols-2">
-
-                <!-- === HARDWARE === -->
-                <!-- ... (Hardware cards unchanged) ... -->
-
-                <!-- === SOFTWARE === -->
-
-                <!-- 1. Optimisation -->
-                <div class="bento-card" data-category="software" style="display: none;">
-                    <div class="card-img-container">
-                        <img src="assets/img/optimisation.webp" alt="Optimisation PC">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3>Préparation & Optimisation</h3>
-                        </div>
-                        <p class="card-desc">
-                            La performance de votre PC au quotidien commence par une bonne mise en service !
-                            Nous optimisons Windows sans surcouches logiciels et publicitaires.
-                        </p>
-                        <div class="price-container">
-                            <p class="price-value">59 € <span class="tax">TTC</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Désinfection -->
-                <div class="bento-card" data-category="security" style="display: none;">
-                    <div class="card-img-container">
-                        <img src="assets/img/desinfection.jpg" alt="Désinfection virus">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3>Désinfection ordinateur</h3>
-                        </div>
-                        <p class="card-desc">
-                            Ce forfait atelier inclus la recherche et l'analyse de votre panne système afin de confirmer
-                            les causes virales.
-                            Une analyse antivirus approfondie du système et des logiciels malveillants.
-                        </p>
-                        <div class="price-container">
-                            <p class="price-value">70 € <span class="tax">TTC</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Récupération Données -->
-                <div class="bento-card" data-category="security" style="display: none;">
-                    <div class="card-img-container">
-                        <img src="assets/img/recuperation-donnees.jpg" alt="Récupération de données">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3>Récupération de données</h3>
-                        </div>
-                        <p class="card-desc">
-                            Que ce soit dans le cas d'une panne, de casse ou suite à une erreur de manipulation ayant
-                            entrainé la suppression de tous vos documents.
-                            Consultez nous.
-                        </p>
-                        <div class="price-container">
-                            <p class="price-value"><span
-                                    style="font-size:0.9rem; color:#a0aec0; font-weight:normal; margin-right:4px;">à
-                                    partir de</span> 70 € <span class="tax">TTC</span></p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- 4. Réparation Système -->
-                <div class="bento-card" data-category="software" style="display: none;">
-                    <div class="card-img-container">
-                        <!-- Placeholder or same as Update/Clean -->
-                        <img src="assets/img/Réparation-du-système.png" alt="Réparation Système">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3>Réparation du système</h3>
-                        </div>
-                        <p class="card-desc">
-                            Ce forfait atelier inclus la recherche et l'analyse de votre panne système, l'analyse
-                            antivirus,
-                            la réparation ou la reconstruction du niveau système (Windows & MacOS).
-                        </p>
-                        <div class="price-container">
-                            <p class="price-value">70 € <span class="tax">TTC</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Réinstallation -->
-                <div class="bento-card" data-category="software" style="display: none;">
-                    <div class="card-img-container">
-                        <img src="assets/img/stockage.jpg" style="object-fit: cover;" alt="Réinstallation">
-                        <!-- Swapped logo for generic storage/system image -->
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3>Réinstallation du système</h3>
-                        </div>
-                        <p class="card-desc">
-                            Ce forfait inclus la réinstallation de votre système (Windows, mac ou linux),
-                            la réinstallation des pilotes de votre machine. La mise à niveau système de votre
-                            ordinateur.
-                        </p>
-                        <div class="price-container">
-                            <p class="price-value">75 € <span class="tax">TTC</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Réinstall + Sauvegarde -->
-                <div class="bento-card bento-large" data-category="software" style="display: none;">
-                    <div class="card-img-container">
-                        <img src="assets/img/reinstall-sauvegarde.jpg" alt="Réinstallation avec sauvegarde">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3>Réinstallation avec sauvegarde</h3>
-                        </div>
-                        <p class="card-desc">
-                            Ce forfait inclus la réinstallation du system et des pilotes de votre machines.
-                            La récupération de l'ensemble de vos données contenu sur votre ancien ordinateur ou disque
-                            dur.
-                        </p>
-                        <div class="price-container">
-                            <p class="price-value">140 € <span class="tax">TTC</span></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
-                <a href="contact.html" class="btn"
-                    style="background: linear-gradient(135deg, #ef3e36, #ef3e36); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(239, 62, 54, 0.4); display: inline-block; transition: all 0.3s ease;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Prendre Rendez-vous
-                </a>
-            </div>
-
-        </div>
 
     </main>
 
@@ -280,7 +402,6 @@
         const descriptions = {
             'hardware': "Cette section regroupe toutes les interventions physiques sur l'ordinateur.",
             'software': "Cette section concerne tout ce qui touche au système d'exploitation et aux données.",
-            'security': "Nos services de protection, désinfection et récupération de données."
         };
 
         function filterServices(category) {
