@@ -96,33 +96,76 @@
             </div>
         </section>
 
-        <section class="section-padding bg-light">
+        <section class="section-padding bg-light" id="xguard-tabs">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Fonctionnalités <span class="text-red">XGuard</span></h2>
 
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-filter"></i></div>
-                        <h3>Filtrage Web</h3>
-                        <p>Contrôlez l'accès internet de vos collaborateurs. Bloquez les sites malveillants ou
-                            inappropriés.</p>
+                <!-- TABS BUTTONS -->
+                <div class="tabs-buttons centered-tabs">
+                    <button class="tab-btn active" data-tab="tab-filter">
+                        <i class="fas fa-filter"></i> Filtrage Web
+                    </button>
+                    <button class="tab-btn" data-tab="tab-vpn">
+                        <i class="fas fa-network-wired"></i> VPN Sécurisé
+                    </button>
+                    <button class="tab-btn" data-tab="tab-ips">
+                        <i class="fas fa-search-dollar"></i> Intrusion Prevention
+                    </button>
+                </div>
+
+                <!-- TABS CONTENT -->
+                <div class="tabs-content-wrapper">
+
+                    <!-- FILTRAGE CONTENT -->
+                    <div class="tab-content active" id="tab-filter">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>Filtrage Web</h3>
+                                <p>Contrôlez l'accès internet de vos collaborateurs. Bloquez les sites malveillants ou
+                                    inappropriés.</p>
+                                <p>Optimisez la bande passante et réduisez les risques d'infection par téléchargement
+                                    involontaire.</p>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-filter big-icon red"></i>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-network-wired"></i>
+                    <!-- VPN CONTENT -->
+                    <div class="tab-content" id="tab-vpn">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>VPN Sécurisé</h3>
+                                <p>Permettez à vos équipes en télétravail d'accéder au réseau de l'entreprise via un
+                                    tunnel
+                                    crypté et sécurisé.</p>
+                                <p>Garantissez la confidentialité des échanges de données, même depuis des réseaux Wi-Fi
+                                    publics.</p>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-network-wired big-icon"></i>
+                            </div>
                         </div>
-                        <h3>VPN Sécurisé</h3>
-                        <p>Permettez à vos équipes en télétravail d'accéder au réseau de l'entreprise via un tunnel
-                            crypté et sécurisé.</p>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-search-dollar"></i>
+                    <!-- IPS CONTENT -->
+                    <div class="tab-content" id="tab-ips">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>Intrusion Prevention (IPS)</h3>
+                                <p>Système IPS détectant et bloquant les tentatives d'exploitation de failles réseau en
+                                    temps
+                                    réel.</p>
+                                <p>Une surveillance active qui bloque les attaques avant même qu'elles ne pénètrent le
+                                    réseau.</p>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-search-dollar big-icon red"></i>
+                            </div>
                         </div>
-                        <h3>Intrusion Prevention</h3>
-                        <p>Système IPS détectant et bloquant les tentatives d'exploitation de failles réseau en temps
-                            réel.</p>
                     </div>
+
                 </div>
 
             </div>
@@ -170,6 +213,7 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/mib.js"></script>
 </body>
 
 </html>

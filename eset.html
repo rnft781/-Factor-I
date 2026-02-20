@@ -107,54 +107,87 @@
             </div>
         </section>
 
-        <section class="section-padding bg-light">
+        <section class="section-padding bg-light" id="eset-tabs">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Nos Solutions <span class="text-red">ESET</span></h2>
 
-                <div class="cards-grid">
-                    <!-- EDR -->
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3>EDR : Détection Avancée</h3>
-                        <p>L'EDR surveille l'activité de vos terminaux (PC, Serveurs) pour identifier les comportements
-                            anormaux qui échappent aux antivirus classiques.</p>
-                        <ul class="check-list" style="margin-top: 1rem; text-align: left;">
-                            <li><i class="fas fa-check"></i> Détection des menaces inconnues</li>
-                            <li><i class="fas fa-check"></i> Analyse des processus en mémoire</li>
-                            <li><i class="fas fa-check"></i> Isolation immédiate du poste infecté</li>
-                        </ul>
-                    </div>
-
-                    <!-- MDR -->
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-user-shield"></i>
-                        </div>
-                        <h3>MDR : Service Managé</h3>
-                        <p>Le MDR ajoute une couche humaine. Nos experts SOC surveillent les alertes EDR pour vous,
-                            analysent les faux positifs et interviennent.</p>
-                        <ul class="check-list" style="margin-top: 1rem; text-align: left;">
-                            <li><i class="fas fa-check"></i> Expertise humaine dédiée</li>
-                            <li><i class="fas fa-check"></i> Réponse rapide aux incidents</li>
-                            <li><i class="fas fa-check"></i> Rapports de sécurité</li>
-                        </ul>
-                    </div>
-
-                    <!-- Chiffrement -->
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-file-contract"></i>
-                        </div>
-                        <h3>Chiffrement des données</h3>
-                        <p>Protégez vos données sensibles en cas de vol d'ordinateur portable ou de clé USB grâce au
-                            chiffrement complet (Full Disk Encryption).</p>
-                        <ul class="check-list" style="margin-top: 1rem; text-align: left;">
-                            <li><i class="fas fa-check"></i> Conformité RGPD</li>
-                            <li><i class="fas fa-check"></i> Transparence pour l'utilisateur</li>
-                            <li><i class="fas fa-check"></i> Gestion centralisée</li>
-                        </ul>
-                    </div>
+                <!-- TABS BUTTONS -->
+                <div class="tabs-buttons centered-tabs">
+                    <button class="tab-btn active" data-tab="tab-edr">
+                        <i class="fas fa-network-wired"></i> EDR
+                    </button>
+                    <button class="tab-btn" data-tab="tab-mdr">
+                        <i class="fas fa-user-shield"></i> MDR
+                    </button>
+                    <button class="tab-btn" data-tab="tab-encrypt">
+                        <i class="fas fa-file-contract"></i> Chiffrement
+                    </button>
                 </div>
 
+                <!-- TABS CONTENT -->
+                <div class="tabs-content-wrapper">
+
+                    <!-- EDR CONTENT -->
+                    <div class="tab-content active" id="tab-edr">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>EDR : Détection Avancée</h3>
+                                <p>L'EDR surveille l'activité de vos terminaux (PC, Serveurs) pour identifier les
+                                    comportements
+                                    anormaux qui échappent aux antivirus classiques.</p>
+                                <ul class="check-list inline-list">
+                                    <li><i class="fas fa-check"></i> Détection des menaces inconnues</li>
+                                    <li><i class="fas fa-check"></i> Analyse des processus en mémoire</li>
+                                    <li><i class="fas fa-check"></i> Isolation immédiate du poste infecté</li>
+                                </ul>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-network-wired big-icon red"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MDR CONTENT -->
+                    <div class="tab-content" id="tab-mdr">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>MDR : Service Managé</h3>
+                                <p>Le MDR ajoute une couche humaine. Nos experts SOC surveillent les alertes EDR pour
+                                    vous,
+                                    analysent les faux positifs et interviennent.</p>
+                                <ul class="check-list inline-list">
+                                    <li><i class="fas fa-check"></i> Expertise humaine dédiée</li>
+                                    <li><i class="fas fa-check"></i> Réponse rapide aux incidents</li>
+                                    <li><i class="fas fa-check"></i> Rapports de sécurité</li>
+                                </ul>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-user-shield big-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CHIFFREMENT CONTENT -->
+                    <div class="tab-content" id="tab-encrypt">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>Chiffrement des données</h3>
+                                <p>Protégez vos données sensibles en cas de vol d'ordinateur portable ou de clé USB
+                                    grâce au
+                                    chiffrement complet (Full Disk Encryption).</p>
+                                <ul class="check-list inline-list">
+                                    <li><i class="fas fa-check"></i> Conformité RGPD</li>
+                                    <li><i class="fas fa-check"></i> Transparence pour l'utilisateur</li>
+                                    <li><i class="fas fa-check"></i> Gestion centralisée</li>
+                                </ul>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-file-contract big-icon red"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -200,6 +233,7 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/mib.js"></script>
 </body>
 
 </html>

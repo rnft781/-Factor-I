@@ -110,13 +110,23 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card-img-placeholder {
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    color: rgba(255, 255, 255, 0.9);
+.card-img-wrapper {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.price-card:hover .card-img-top {
+    transform: scale(1.1);
+    /* Zoom effect on hover */
 }
 
 .red-theme {

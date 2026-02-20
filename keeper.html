@@ -103,32 +103,78 @@
             </div>
         </section>
 
-        <section class="section-padding bg-light">
+        <section class="section-padding bg-light" id="keeper-tabs">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Pourquoi <span class="text-red">Keeper</span> ?</h2>
 
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-vault"></i></div>
-                        <h3>Coffre-fort Numérique</h3>
-                        <p>Stockez un nombre illimité de mots de passe, fichiers et données confidentielles dans un
-                            coffre-fort chiffré.</p>
-                    </div>
+                <!-- TABS BUTTONS -->
+                <div class="tabs-buttons centered-tabs">
+                    <button class="tab-btn active" data-tab="tab-vault">
+                        <i class="fas fa-vault"></i> Coffre-fort
+                    </button>
+                    <button class="tab-btn" data-tab="tab-share">
+                        <i class="fas fa-share-alt"></i> Partage
+                    </button>
+                    <button class="tab-btn" data-tab="tab-access">
+                        <i class="fas fa-mobile-alt"></i> Accès Partout
+                    </button>
+                </div>
 
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-share-alt"></i></div>
-                        <h3>Partage Sécurisé</h3>
-                        <p>Partagez des accès avec vos collègues ou équipes sans jamais révéler les mots de passe en
-                            clair.</p>
-                    </div>
+                <!-- TABS CONTENT -->
+                <div class="tabs-content-wrapper">
 
-                    <div class="card">
-                        <div class="card-icon" style="color: var(--primary-red);"><i class="fas fa-mobile-alt"></i>
+                    <!-- COFFRE-FORT CONTENT -->
+                    <div class="tab-content active" id="tab-vault">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>Coffre-fort Numérique</h3>
+                                <p>Stockez un nombre illimité de mots de passe, fichiers et données confidentielles dans
+                                    un
+                                    coffre-fort chiffré.</p>
+                                <p>Fini les post-it et les fichiers Excel non sécurisés. Tout est protégé par une
+                                    sécurité
+                                    "Zero-Knowledge".</p>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-vault big-icon red"></i>
+                            </div>
                         </div>
-                        <h3>Accès Partout</h3>
-                        <p>Accédez à vos données sur tous vos appareils : PC, Mac, Smartphone, Tablette. Synchronisation
-                            instantanée.</p>
                     </div>
+
+                    <!-- PARTAGE CONTENT -->
+                    <div class="tab-content" id="tab-share">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>Partage Sécurisé</h3>
+                                <p>Partagez des accès avec vos collègues ou équipes sans jamais révéler les mots de
+                                    passe en
+                                    clair.</p>
+                                <p>Gérez les permissions (lecture seule, modification, transfert) et révoquez l'accès à
+                                    tout
+                                    moment.</p>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-share-alt big-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACCES PARTOUT CONTENT -->
+                    <div class="tab-content" id="tab-access">
+                        <div class="content-flex centered-content">
+                            <div class="text text-center">
+                                <h3>Accès Partout</h3>
+                                <p>Accédez à vos données sur tous vos appareils : PC, Mac, Smartphone, Tablette.</p>
+                                <p>La synchronisation est instantanée et vous permet de retrouver vos identifiants où
+                                    que
+                                    vous soyez.</p>
+                            </div>
+                            <div class="visual">
+                                <i class="fas fa-mobile-alt big-icon red"></i>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -176,6 +222,7 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/mib.js"></script>
 </body>
 
 </html>
